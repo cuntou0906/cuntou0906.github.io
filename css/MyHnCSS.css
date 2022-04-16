@@ -1,0 +1,219 @@
+
+ .main-content{
+  background: linear-gradient(rgb(247, 247, 239), rgb(255, 255, 255));
+  width: 100%;
+}
+
+/* .main-content-Night {
+  background: rgb(39, 38, 38);
+}  */
+
+
+
+.user-info-navbar{
+  background: rgb(247, 247, 243)
+}
+
+.night2{
+  background-color: #0f93c7;
+}
+.IsMenuFoldLi{
+
+}
+
+.Maintitle{
+  font-size: large;
+}
+/* .text-gray :hover{
+  font-size: 25px;
+} */
+
+.icon :hover {
+  font-size: 50px;
+}
+.LibSpan:hover{
+  font-size: 25px;
+}
+.IsMenuFoldLi :hover
+{ 
+background-color:rgb(58, 58, 51);
+} 
+
+.xe-comment >a.xe-user-name strong:hover
+{ 
+  font-size: 24px;
+  color:#226985;
+} 
+
+.xe-comment >a.xe-user-name strong
+{ 
+  font-size:17px;
+} 
+
+.main-menu li :hover
+{
+  color:#1d88b3;
+
+}
+
+.has-sub a :hover
+{
+  color:#1d88b3;
+
+}
+.SlideNav
+{
+  border-radius: 10px;
+  height: 130px;
+  width: 600px;
+
+}
+.carousel > div{
+  width: 80%;
+  height: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.carousel > li{
+  color: black;
+}
+.carousel-caption{
+  position:absolute;
+  bottom:0;
+  color: black;
+}
+.carousel-indicators li{
+  position:absolute;
+  bottom:0;
+
+}
+
+.carousel-inner{
+
+}
+.LibSpan{
+  background: #EEE url(data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAIAAAAmkwkpAAAAHklEQVQImWNkYGBgYGD4//8/A5wF5SBYyAr+//8PAPOCFO0Q2zq7AAAAAElFTkSuQmCC) repeat;
+  text-shadow: 5px -5px #4f4e4d, 4px -4px #716f6d;
+  font-weight: bold;
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text
+}
+.MainContentTitleID{
+
+  
+}
+
+.subMenu{}
+.GrayColor{
+
+}
+
+.navLi :hover{
+  height: 100%;
+
+}
+
+.navLia{
+  height: 100%;
+
+
+}
+.navdiv{
+  height: 100%;
+
+}
+.navul{
+  height: auto;
+  line-height: 60px;
+}
+
+.nav.nav-tabs>li>a:hover{
+ height: 100%; 
+ border-radius: 20px;
+ background-color: #dff1f7;
+
+}
+
+.nav>li>a {
+
+  text-align: center;
+  vertical-align: middle;
+}
+
+.nav>li>a >h3 {
+
+  height: 100%;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.Nav-BackColor-night{
+  border: 0 none;
+  background: rgb(77, 76, 76);
+  border-radius: 15px;
+  color: #fff;
+}
+
+.nav>li {
+  position: relative;
+  height: 100%;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.tab .nav-tabs {
+  border-bottom: 0 none;
+  
+  }
+  .tab .nav-tabs li a {
+  background: transparent;
+  border-radius: 0;
+  font-size: 16px;
+  border: none;
+  color: #333;
+  padding: 12px 22px;
+  }
+  .tab .nav-tabs li.active a, .tab .nav-tabs li.active a i {
+  border: 0 none;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f3e0d1), color-stop(100%,#ffffff));
+  border-radius: 15px;
+  color: #fff;
+  }
+  .tab .nav-tabs li.active a:after {
+  content: "";
+  position: absolute;
+  left: 45%;
+  bottom: -14px;
+  border: 7px solid transparent;
+  border-top: 7px solid #f2e5db;
+  }
+  .tab .tab-content {
+  padding: 5px;
+  color: #5a5c5d;
+  font-size: 14px;
+  line-height: 20px;
+  margin-top: 3px;
+  border-bottom: 1px solid #f2e5db;
+  }
+  @media only screen and (max-width: 480px) {
+  .tab .nav-tabs, .tab .nav-tabs li {
+  width: 100%;
+  background: transparent;
+  }
+  .tab .nav-tabs li.active a {
+  border-radius: 10px 10px 0 0;
+  }
+  .tab .nav-tabs li:first-child a {
+  border-bottom-left-radius: 0;
+  }
+  .tab .nav-tabs li a {
+  margin-bottom: 10px;
+  border: 1px solid lightgray;
+  }
+  .tab .nav-tabs li.active a:after {
+  border: none;
+  }
+  }
