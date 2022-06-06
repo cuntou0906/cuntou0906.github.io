@@ -1,0 +1,122 @@
+.title{
+    text-align: center;
+    z-index: -4;
+  }
+  .starBtn{
+    /* z-index: -4;
+    width: 100px;
+    height:25px; */
+
+    margin-top: 20px;
+    width: 150px;
+    height: 50px;
+    border-radius: 10px;
+    background: yellowgreen;
+    line-height: 50px;
+    text-align: center;
+    color: #fff;
+    position: absolute;
+    top: 10px;
+    left:10px;
+    cursor: pointer;
+    box-shadow:1px 1px 5px yellowgreen;
+  }
+  .stopBtn{
+    /* z-index: -4;
+    width: 100px;
+    height:25px; */
+
+    margin-top: 20px;
+    width: 150px;
+    height: 50px;
+    border-radius: 10px;
+    background: rgb(221, 35, 35);
+    line-height: 50px;
+    text-align: center;
+    color: #fff;
+    position: absolute;
+    top: 70px;
+    left:10px;
+    cursor: pointer;
+    box-shadow:1px 1px 5px rgb(221, 35, 35);
+  }
+  .scoreDiv{
+    /* z-index: -4;
+    width: 100px;
+    height:25px; */
+
+    margin-top: 20px;
+    width: 150px;
+    height: 50px;
+    border-radius: 10px;
+    background: rgb(214, 202, 97);
+    line-height: 50px;
+    text-align: center;
+    color: #fff;
+    position: absolute;
+    top: 130px;
+    left:10px;
+    cursor: pointer;
+    box-shadow:1px 1px 5px rgb(214, 202, 97);
+  }
+.SelOptRank{
+
+    margin-top: 20px;
+    width: 150px;
+    height: 50px;
+    position: absolute;
+    text-align: center;
+    top: 200px;
+    left:10px;
+    box-shadow:1px 1px 5px #169BD5;
+    border-radius: 10px;
+}
+.SelOptRank>option:hover{
+    background-color: aliceblue;
+
+}
+.SelOptRank{
+    font-size: 16px;
+}
+
+
+  .div{
+      position: absolute;
+      left: 0px;
+      top:0px;
+      margin: 20px;
+  }
+  .head{
+      z-index: 3;
+      width: 10px;
+      height: 10px;
+      background: red;
+      position: absolute;
+      left: 500px;
+      top: 200px;
+  }
+  .snackbody{
+      z-index: 3;
+      width: 10px;
+      height: 10px;
+      background: rgb(184, 161, 61);
+      position: absolute;
+      left: 510px;
+      top: 200px;
+  }
+  .snackbody1{
+      z-index: 3;
+      width: 10px;
+      height: 10px;
+      background: rgb(184, 161, 61);
+      position: absolute;
+      left: 520px;
+      top: 200px;
+  }
+  .food{
+      z-index: 3;
+      width: 10px;
+      height: 10px;
+      background: blue;
+      position: absolute;
+  }

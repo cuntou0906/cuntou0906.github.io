@@ -42,7 +42,7 @@ background-color:rgb(58, 58, 51);
 .xe-comment >a.xe-user-name strong:hover
 { 
   font-size: 24px;
-  color:#226985;
+  color:#088abd;
 } 
 
 .xe-comment >a.xe-user-name strong
@@ -58,9 +58,10 @@ background-color:rgb(58, 58, 51);
 
 .has-sub a :hover
 {
-  color:#1d88b3;
+  color:#06abec;
 
 }
+
 .SlideNav
 {
   border-radius: 10px;
@@ -94,31 +95,58 @@ background-color:rgb(58, 58, 51);
 .carousel-inner{
 
 }
+
+/* 标题字体样式 */
 .LibSpan{
-  background: #EEE url(data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAIAAAAmkwkpAAAAHklEQVQImWNkYGBgYGD4//8/A5wF5SBYyAr+//8PAPOCFO0Q2zq7AAAAAElFTkSuQmCC) repeat;
+
+
+  width: auto;
+  height: auto;
+  /* position: absolute;
+  left: 1%; */
+  margin-left: 0px;
+  background-image: -webkit-linear-gradient(left,rgb(125, 125, 245),#a5eeee 10%,#e7c2f0 20%,#fc6afc 30%, #CCCCFF 40%, #00FFFF 50%,#CCCCFF 60%,#f38cf3 70%,#e38ff8 80%,#66FFFF 90%,rgb(116, 116, 243) 100%);
+  -webkit-text-fill-color: transparent;/* 将字体设置成透明色 */
+  -webkit-background-clip: text;/* 裁剪背景图，使文字作为裁剪区域向外裁剪 */
+  -webkit-background-size: 200% 100%; 
+  -webkit-animation: masked-animation 4s linear infinite;
+  font-weight: bold;
+  font-size: 28px;
+  /* font-size: 35px; */
+  /* background: #EEE url(data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAIAAAAmkwkpAAAAHklEQVQImWNkYGBgYGD4//8/A5wF5SBYyAr+//8PAPOCFO0Q2zq7AAAAAElFTkSuQmCC) repeat;
   text-shadow: 5px -5px #4f4e4d, 4px -4px #716f6d;
   font-weight: bold;
   -webkit-text-fill-color: transparent;
-  -webkit-background-clip: text
-}
-.MainContentTitleID{
-
-  
+  -webkit-background-clip: text */
 }
 
+@keyframes masked-animation {
+  0% {
+      background-position: 0  0;
+  }
+  100% {
+      background-position: -100%  0;
+  }
+}
+
+/*                 */
+
+
+.MainContentTitleID{}
 .subMenu{}
-.GrayColor{
+.GrayColor{}
 
-}
-
-.navLi :hover{
+/* .navLi :hover{
   height: 100%;
 
-}
+} */
 
 .navLia{
-  height: 100%;
+  height: 40px;
+}
+div.row{
 
+  clear: both;
 
 }
 .navdiv{
@@ -127,13 +155,14 @@ background-color:rgb(58, 58, 51);
 }
 .navul{
   height: auto;
-  line-height: 60px;
+  line-height: 40px;
+  float: left;
 }
 
 .nav.nav-tabs>li>a:hover{
  height: 100%; 
  border-radius: 20px;
- background-color: #dff1f7;
+ background-color: #f7b889;
 
 }
 
@@ -141,13 +170,37 @@ background-color:rgb(58, 58, 51);
 
   text-align: center;
   vertical-align: middle;
+  padding: 0px 0px;
+
 }
 
 .nav>li>a >h3 {
 
-  height: 100%;
+  height: 40px;
   text-align: center;
   vertical-align: middle;
+  margin-top: 0;
+  margin-bottom: 0;
+  display: center;
+  position: relative;
+
+	display:-webkit-box;
+	display:-moz-box;
+	display:-ms-flexbox;
+	display: -webkit-flex;
+	display:flex; 
+	-webkit-align-items:center;
+	align-items:center;
+	-webkit-justify-content: center;
+	justify-content: center;
+
+}
+
+.nav>li>a >h3 >span {
+
+  text-align: center;
+  vertical-align: middle;
+
 }
 
 .Nav-BackColor-night{
@@ -159,36 +212,57 @@ background-color:rgb(58, 58, 51);
 
 .nav>li {
   position: relative;
-  height: 100%;
+  height: 40px;
   text-align: center;
   vertical-align: middle;
+
 }
 
 .tab .nav-tabs {
   border-bottom: 0 none;
   
   }
+
+.nav.nav-tabs>li>a{
+  margin-right: 0;
+  }
+  
+ul.nav{
+  background-color: #EDEDED;
+  /* border: #EDEDED solid 1px; */
+  border-radius: 20px;
+}
+
   .tab .nav-tabs li a {
   background: transparent;
-  border-radius: 0;
+  border-radius: 0px;
   font-size: 16px;
   border: none;
   color: #333;
-  padding: 12px 22px;
+  /* padding: 12px 22px; */
   }
   .tab .nav-tabs li.active a, .tab .nav-tabs li.active a i {
   border: 0 none;
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f3e0d1), color-stop(100%,#ffffff));
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#61d4fa), color-stop(100%,#d4f4ff));
   border-radius: 15px;
-  color: #fff;
+  color: #f8f8f8;
   }
+
+.nav.nav-tabs>li>a {
+
+    /* margin-right: 5px; */
+    padding-left: 15px;
+    padding-right: 15px;
+
+}
+
   .tab .nav-tabs li.active a:after {
   content: "";
   position: absolute;
   left: 45%;
   bottom: -14px;
   border: 7px solid transparent;
-  border-top: 7px solid #f2e5db;
+  border-top: 7px solid #b8e6f5;
   }
   .tab .tab-content {
   padding: 5px;
@@ -222,8 +296,6 @@ background-color:rgb(58, 58, 51);
 
 
   /*  googole助手  */
-
-
 
   #zkqbutton {
     display: center;
@@ -264,3 +336,85 @@ background-color:rgb(58, 58, 51);
     opacity: 1;
     right: 0;
   }
+
+
+
+  .icon {
+    width: 1em;
+    height: 1em;
+    vertical-align: -0.15em;
+    fill: currentColor;
+    overflow: hidden;
+  }
+
+
+ /* 爱心飘落 */
+  .snowfall-flakes:before,.snowfall-flakes:after{
+		content: '';
+		position: absolute;
+		width: 10px;
+		height: 16px;
+		border-radius: 10px 10px 0 0;
+		background-color: red;
+	}
+	.snowfall-flakes:before{
+		transform: rotate(-45deg);
+	}
+	.snowfall-flakes:after{
+		transform: translateX(4.3px) rotate(45deg);
+	}
+
+  
+/* Tab标签动画 */
+  .navLi>* {
+    transition: all .2s linear;
+    transition-property: all;
+    transition-duration: 0.2s;
+    transition-timing-function: linear;
+    transition-delay: 0s;
+}
+
+li.active>* {
+  transition: all .2s linear;
+  transition-property: all;
+  transition-duration: 0.2s;
+  transition-timing-function: linear;
+  transition-delay: 0s;
+}
+
+
+
+
+/* 页顶部菜单 */
+
+.entertamentMenu{
+
+}
+.dropdown>a{
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.entertamentMenu>ul>li>a>img {
+  width:23px;
+  height:20px;
+  padding-right: 5px;
+}
+
+#MenuLogoHeader{
+  width:30px;
+  height:30px;
+}
+
+ul.entertamentMenuUL>li>a>img{
+  width:23px;
+  height:20px;
+  padding-right: 5px;
+}
+
+.entertamentMenu>ul>li>a>i{
+  position:absolute;
+  right:10px;
+
+}
+
