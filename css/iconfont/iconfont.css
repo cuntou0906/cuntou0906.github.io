@@ -775,3 +775,26 @@
   content: "\e6b1";
 }
 
+.icon-xuehua:before {
+  content: "\e8d6";
+}
+
+.icon-wuguan:before {
+  content: "\ec5f";
+}
+
+.icon-dc-icon-rengongzhineng:before {
+  content: "\e64e";
+}
+
+.icon-rengongzhinengdanao:before {
+  content: "\e610";
+}
+
+.icon-24px2x:before {
+  content: "\e607";
+}
+
+.icon-rengongzhineng:before {
+  content: "\e69a";
+}
