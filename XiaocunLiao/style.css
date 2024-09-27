@@ -226,7 +226,9 @@ nav .container
 	background: linear-gradient(0deg, #00d22d, #158a00);
   }
 
-
+.container h3{
+	justify-content: center;
+}
 
 nav ul
 {
