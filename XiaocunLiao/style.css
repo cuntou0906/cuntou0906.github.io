@@ -267,11 +267,11 @@ nav ul a.selected
 }
 
 
-nav ul a:focus
+/* nav ul a:focus
 {
 	color: #262626;
 	background-color: #ff544f;
-}
+} */
 
 nav ul a:hover
 {
