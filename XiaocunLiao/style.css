@@ -454,3 +454,18 @@ footer.main-footer.fixed {
     margin-right: 0;
     margin-top: 10px!important
 }
+
+
+
+.ScholarDiv{
+	/* white-space: nowrap; */
+	/* display: flex; */
+	/* float: left; */
+	flex-wrap: nowrap;
+}
+
+.ScholarDiv ul{
+	width: 40%;
+	display: inline-block;
+}
+
