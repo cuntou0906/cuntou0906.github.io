@@ -153,7 +153,6 @@ nav .container
 }
 */
 
-
 /* 中英文切换按钮 */
   .LanguageCheckbox{
 	transform: translate(-50%, -50%);
@@ -250,6 +249,9 @@ nav ul a
 	color: #000000;
 	text-decoration: none;
 	font-size: 20px;
+	border-radius: 0px;
+	transition: border-radius 0.3s ease;
+
 }
 
 nav ul a:link { color: rgb(0, 0, 0); }
@@ -258,10 +260,10 @@ nav ul a.selected
 {
 	border: 0 none;
 	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#61d4fa), color-stop(100%,#d4f4ff));
-	border-radius: 15px;
+	border-radius: 20px;
 	color: #000000;
-	transition: border-radius 0.3s ease, transform 0.3s ease;
-	transition: background-color 0.3s ease, transform 0.3s ease;
+	transition: border-radius 0.3s ease;
+	transition: background-color 0.3s ease;
 }
 
 
@@ -276,14 +278,14 @@ nav ul a:hover
 	color: #262626;
 	border-radius: 20px;
 	background-color: #f7b889;
-	transition: border-radius 0.3s ease, transform 0.3s ease;
-	transition: background-color 0.3s ease, transform 0.3s ease;
+	transition: background-color 0.3s ease;
+	transition: border-radius 0.3s ease;
 }
 
 nav ul a:active
 {
-	color: #ffca4d;
-	background-color: #ff544f;
+	color: #acca00;
+	/* background-color: #ff544f; */
 }
 
 section .image-block {
