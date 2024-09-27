@@ -461,11 +461,11 @@ footer.main-footer.fixed {
 	/* white-space: nowrap; */
 	/* display: flex; */
 	/* float: left; */
-	/* flex-wrap: nowrap; */
+	flex-wrap: nowrap;
 }
 
 .ScholarDiv ul{
-	width: 40%;
+	width: 35%;
 	display: inline-block;
 }
 
