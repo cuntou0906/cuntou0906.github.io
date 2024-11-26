@@ -347,23 +347,6 @@ ul.nav{
     overflow: hidden;
   }
 
-
- /* 爱心飘落 */
-  .snowfall-flakes:before,.snowfall-flakes:after{
-		content: '';
-		position: absolute;
-		width: 10px;
-		height: 16px;
-		border-radius: 10px 10px 0 0;
-		background-color: red;
-	}
-	.snowfall-flakes:before{
-		transform: rotate(-45deg);
-	}
-	.snowfall-flakes:after{
-		transform: translateX(4.3px) rotate(45deg);
-	}
-
   
 /* Tab标签动画 */
   .navLi>* {
