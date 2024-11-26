@@ -296,7 +296,7 @@ nav ul a:hover
 	border-top: 2px solid #728f6d;
 	margin-right: 0em;
 	margin-left: 0em;
-
+	text-decoration: none;
 }
 
 nav ul a:active
