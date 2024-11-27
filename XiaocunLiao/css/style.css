@@ -488,3 +488,17 @@ footer.main-footer.fixed {
 .ResearchPicPresention{
 	image-rendering: auto;
 }
+
+
+.current-year:before {
+	content: attr(data-year);
+  }
+
+
+/* 底部超链接设置  */
+.footer-inner >p >a:hover{
+	text-decoration: underline;
+}
+.footer-inner >p >a{
+	text-decoration: none;
+}

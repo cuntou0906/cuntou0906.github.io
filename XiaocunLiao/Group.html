@@ -5,9 +5,9 @@
     <meta charset="utf-8">
     <title> IACAS: Underwater Robot Team</title>
 
-    <link rel="stylesheet" href="https://cdn.staticfile.net/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+    <!-- <link rel="stylesheet" href="https://cdn.staticfile.net/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://cdn.staticfile.net/jquery/2.1.1/jquery.min.js"></script>
-    <script src="https://cdn.staticfile.net/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://cdn.staticfile.net/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
   
     <link rel="stylesheet" type="text/css" href="./css/style.css" />
     <link rel="shortcut icon" href="./images/Fishlogo.ico">
@@ -483,17 +483,18 @@
 </footer> -->
 
 <footer class="footerDef main-footer sticky footer-type-1" style="background-color: rgb(241, 240, 238); text-align: center; margin-top:0px; padding: 0px 0px; height: 60px;">
+
   <div class="footer-inner">
     <!-- Add your copyright text here -->
     <p style="padding: 10px 10px; font-size: 16px;">
       
-      &copy; Last updated in September 2024 |<span id="busuanzi_container_site_pv" style="color: #262626; font-weight: normal;">
+      &copy; <span class="current-year"></span> <a href="./index.html" style="color: #262626; text-decoration: none; font-weight: normal;">cuntou0906</a> |<span id="busuanzi_container_site_pv" style="color: #262626; font-weight: normal;">
         <img src="./images/TitleImg/Visitor.png" style="height: 13.6px; vertical-align: baseline;">
         Visitor: <span id="busuanzi_value_site_pv"></span>
       </span>
       <br>
       Design by <a href="./index.html"><strong>cuntou0906</strong></a> 
-      | Power by <a href="https://hexo.io/" target="_blank"><strong>Hexo</strong></a> 
+      | Power by <a href="https://hexo.io/" target="_blank"><strong>Hexo</strong></a>
       and <a href="https://github.com/" target="_blank"><strong>Github</strong></a>
     </p>
     
@@ -504,6 +505,15 @@
     </div>
   </div>
 </footer>
+
+<!-- /* 在样式表加载后通过JavaScript设置年份 */ -->
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    var currentYear = new Date().getFullYear();
+    var currentYearElement = document.querySelector('.current-year');
+    currentYearElement.setAttribute('data-year', currentYear);
+  });
+</script>
 
 <script>
   // 座右铭 动态适应窗口大小

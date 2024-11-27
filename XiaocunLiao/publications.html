@@ -45,7 +45,7 @@
             <h1 class="LibSpanHead"> <b>Xiaocun Liao</b> </h1>
             <h4>Assistant Professor, PhD</h4>
             <img src="./images/TitleImg/Address.png" margin=0px; alt="" height="20px" class=""> Institute of Automation, Chinese Academy of Sciences<br>
-            <img src="./images/TitleImg/email.png" margin=0px; alt="" height="16px" class=""> <a href="mailto:liaoxiaocun2019@ia.ac.cn" style="text-decoration: none; color: #262626;">liaoxiaocun2019@ia.ac.cn</a>
+            <img src="./images/TitleImg/email.png" margin=0px; alt="" height="16px" class=""> <a href="mailto:liaoxiaocun2019@ia.ac.cn" style="text-decoration: none; color: #262626;">liaoxiaocun2019@ia.ac.cn</a> | <a href="mailto:xiaocun.liao@ia.ac.cn" style="text-decoration: none; color: #262626;">xiaocun.liao@ia.ac.cn</a>
           </div>
       </div>
       <!-- <div style="background-image: url('./images/NaBG.jpg'); position: fixed; top: 0px; left: 0px; width: 100%; width: 100%; background-size: auto;">
@@ -305,18 +305,13 @@
 
 </div>
 
-<!-- <footer>
-  <div class="footercontainer";>
-     <code> Last updated in September 2024. </code>
-  </div>
-</footer> -->
-
 <footer class="footerDef main-footer sticky footer-type-1" style="background-color: rgb(241, 240, 238); text-align: center; margin-top:0px; padding: 0px 0px; height: 60px;">
+
   <div class="footer-inner">
     <!-- Add your copyright text here -->
     <p style="padding: 10px 10px; font-size: 16px;">
       
-      &copy; Last updated in September 2024 |<span id="busuanzi_container_site_pv" style="color: #262626; font-weight: normal;">
+      &copy; <span class="current-year"></span> <a href="./index.html" style="color: #262626; text-decoration: none; font-weight: normal;">cuntou0906</a> |<span id="busuanzi_container_site_pv" style="color: #262626; font-weight: normal;">
         <img src="./images/TitleImg/Visitor.png" style="height: 13.6px; vertical-align: baseline;">
         Visitor: <span id="busuanzi_value_site_pv"></span>
       </span>
@@ -333,6 +328,15 @@
     </div>
   </div>
 </footer>
+
+<!-- /* 在样式表加载后通过JavaScript设置年份 */ -->
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    var currentYear = new Date().getFullYear();
+    var currentYearElement = document.querySelector('.current-year');
+    currentYearElement.setAttribute('data-year', currentYear);
+  });
+</script>
 
 <script>
   // 座右铭 动态适应窗口大小
