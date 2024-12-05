@@ -71,7 +71,15 @@ a:active { color: #ff544f; }
 {
 	max-width: 70em;
 	margin: 30px;
-	padding-top: 230px;
+	padding-top: 205px;
+}
+
+html{
+	scroll-padding-top:  238px;  /* 这里设置了滚动内边距 防止链接跳转被导航栏遮盖 */
+}
+
+.container > *
+{
 }
 
 .motto{
@@ -107,7 +115,7 @@ text-align: center;
 .container ul{
 	line-height: 1.5;
 }
-.container p{
+.container>p{
 	line-height: 1.5;
 }
 .ResearchPicPresention{
@@ -230,22 +238,30 @@ nav .container
 	justify-content: center;
 }
 
-nav ul
+nav>ul
 {
 	margin: 0;
 	padding: 0;
 	list-style: none;
+	height: 48.39px;
+	vertical-align: top;
+	padding-left: 6px;
 }
 
-nav ul li
+nav>ul>li
 {
 	display: inline;
 	margin: 0 0 0 0;
 	border: none;
 	margin-left: -4px;
+	display: inline-block;
+	vertical-align: top;
+	height: 100%;
+
+
 }
 
-nav ul a
+nav ul > li > a
 {
 	display: inline-block;
 	padding: .5em 1.25em;
@@ -254,12 +270,10 @@ nav ul a
 	font-size: 22px;
 	border-radius: 0px;
 	transition: border-radius 0.3s ease;
-	border-top: 2px solid rgb(230, 242, 245);
+	/* border-top: 2px solid rgb(230, 242, 245); */
 	border-left: 0px;
 	border-right: 3px solid #ffffff;
 	margin: 0em 0em 0em 0em;
-
-
 }
 
 nav ul a:link { color: rgb(0, 0, 0); }
@@ -285,7 +299,7 @@ nav ul a.selected
 	background-color: #ff544f;
 } */
 
-nav ul a:hover
+nav>ul > li > a:hover
 {
 	color: #262626;
 	border-radius: 3px;
@@ -298,6 +312,53 @@ nav ul a:hover
 	margin-left: 0em;
 	text-decoration: none;
 }
+
+nav>ul>li>ol
+{
+	/* 让盒子先沿着y轴缩放到0，也就是隐藏了 */
+	transform: scaleY(0);
+		/* 我们需要将盒子从上面滑动下来 设置一下缩放中心点即可 */
+	transform-origin: 50% 0;
+	background-color: rgb(236, 245, 247);
+	list-style:none;
+	padding-left: 0px;
+	border-left: 1px solid #eee;
+	border-bottom: 1px solid #eee;
+	border-right: 1px solid #eee;
+	/* width: 100%; */
+}
+nav>ul>li>ol>li
+{
+	vertical-align: center;
+	height: 45px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 17px;
+	border-bottom: 1px solid #d4d4d4;
+}
+
+nav>ul>li>ol>li:hover
+{
+	background-color: #e0e0e0;
+}
+
+
+nav>ul>li>ol>li>a
+{
+
+	text-decoration: none;
+}
+
+nav>ul > li:hover >ol
+{
+	/* 让盒子先沿着y轴缩放到0，也就是隐藏了 */
+	transform: scaleY(1);
+	/* list-style:none; */
+	/* background-color: black; */
+
+}
+
 
 nav ul a:active
 {
@@ -418,7 +479,7 @@ section figure {
 	margin-bottom:10px;
 
 	padding: 2px 2px;
-	/* height: 50px; */
+	height: 50px; 
   } */
 
 
@@ -502,3 +563,4 @@ footer.main-footer.fixed {
 .footer-inner >p >a{
 	text-decoration: none;
 }
+
