@@ -418,3 +418,6 @@ ul.entertamentMenuUL>li>a>img{
 
 }
 
+.sidebar-menu .main-menu li.has-sub>a:before{
+  transform: translateY(40%) rotate(-90deg);
+}
