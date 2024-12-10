@@ -365,7 +365,22 @@ nav>ul > li:hover >ol
 	/* list-style:none; */
 	/* background-color: black; */
 
+	animation-name: NavTransframes;
+  	animation-duration: 0.3s;
+
 }
+
+
+@keyframes NavTransframes{
+	0%{
+		opacity: 0;
+		transform: scaleY(0);
+	}
+	100%{
+		opacity: 1;
+		transform: scaleY(1);
+	}
+  }
 
 
 nav ul a:active

@@ -31,9 +31,21 @@
 .icon :hover {
   font-size: 50px;
 }
-.LibSpan:hover{
-  font-size: 25px;
+/* .LibSpan:hover{
+  font-size: 28px;
+} */
+
+h3.text-gray:hover >span{
+  font-size: 30px;
 }
+h3.text-gray:hover >img{
+  height: 35px;
+}
+
+div>div>h3.text-gray{
+  height: 40px;
+}
+
 .IsMenuFoldLi :hover
 { 
 background-color:rgb(58, 58, 51);
@@ -421,3 +433,32 @@ ul.entertamentMenuUL>li>a>img{
 .sidebar-menu .main-menu li.has-sub>a:before{
   transform: translateY(40%) rotate(-90deg);
 }
+
+
+.open>.dropdown-menu
+{
+	/* 让盒子先沿着y轴缩放到0，也就是隐藏了 */
+	transform: scaleY(1);
+  opacity: 1;
+  top: 100%;
+	/* list-style:none; */
+	/* background-color: black; */
+
+	animation-name: IndexNavTransframes;
+  animation-duration: 0.2s;
+
+}
+
+
+@keyframes IndexNavTransframes{
+	0%{
+		opacity: 0;
+    top: 70%;
+		/* transform: scaleY(0); */
+	}
+	100%{
+		opacity: 1;
+    top: 100%;
+		/* transform: scaleY(1); */
+	}
+  }
