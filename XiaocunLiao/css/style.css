@@ -97,6 +97,7 @@ html{
 	top: 30px;
 	left: 10px;
 	z-index: 3;
+	transform: scaleX(-1);
 }
 
 /* 成果展示页面的单独css */
