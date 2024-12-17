@@ -672,7 +672,28 @@
   <img src="./images/ResearchPic/Group/Zouqianqian1.png" margin=20px; width="60%"  class="ResearchPicPresention">  
   </div>
 
-  
+  <p class="p4" id="Location"> <b class="LibSpan" style="margin-right:5px;">Location</b><b>&#10024 &#10024 &#10024</b></p>
+
+  <div id="map" style="height: 300px; width: 60%; text-align: center;"></div>
+
+  <script type="text/javascript" src="https://webapi.amap.com/maps?v=1.4.15&key=bfc49568a1e2adfbb60bdd4cfa03c648"></script>
+
+
+  <script>
+    var map = new AMap.Map('map', {
+        resizeEnable: true,
+        center: [116.332995, 39.979118], // 设置地图中心点
+        zoom: 15 // 设置缩放级别
+    });
+
+    // 创建标记
+    var marker = new AMap.Marker({
+        position: new AMap.LngLat(116.332995, 39.979118)
+    });
+    marker.setMap(map);
+</script>
+
+
 <!-- 各个页面的替换内容分割线 -->
 
 <br>
