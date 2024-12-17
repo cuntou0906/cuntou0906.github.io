@@ -587,3 +587,10 @@ footer.main-footer.fixed {
 	text-decoration: none;
 }
 
+#LocationMap {
+	height: 300px; 
+	width: 90%; 
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+}
