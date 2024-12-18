@@ -169,6 +169,13 @@
               <img src="./images/TitleImg/RightArr.png" alt="" height="15px" style="position: absolute; right: 8px;">
             </a>
           </li>
+          <li style="border: none;">
+            <a href="./Group.html#Location">
+              <img src="./images/TitleImg/Addresslogo.png" alt=""  width="20px"  height="19px" style="position: absolute; left: 20px;">
+              Location
+              <img src="./images/TitleImg/RightArr.png" alt="" height="15px" style="position: absolute; right: 8px;">
+            </a>
+          </li>
         </ol>
     </li>
 
@@ -674,21 +681,37 @@
 
   <p class="p4" id="Location"> <b class="LibSpan" style="margin-right:5px;">Location</b><b>&#10024 &#10024 &#10024</b></p>
 
-  <div id="map" style="height: 300px; width: 60%; text-align: center;"></div>
+  <div id="LocationMap" style=""></div>
 
   <script type="text/javascript" src="https://webapi.amap.com/maps?v=1.4.15&key=bfc49568a1e2adfbb60bdd4cfa03c648"></script>
 
 
   <script>
-    var map = new AMap.Map('map', {
+    var locationXY = [116.3330545, 39.979038];
+    var map = new AMap.Map('LocationMap', {
         resizeEnable: true,
-        center: [116.332995, 39.979118], // 设置地图中心点
-        zoom: 15 // 设置缩放级别
+        center: locationXY, // 设置地图中心点
+        zoom: 15, // 设置缩放级别
+        // zoomEnable: true, // 是否显示缩放按钮
+        // viewMode:'3D'//使用3D视图
     });
 
+
+    AMap.plugin('AMap.ToolBar',function(){  //缩放按钮
+    var toolbar = new AMap.ToolBar();
+    map.addControl(toolbar);
+    });
+    AMap.plugin('AMap.Scale',function(){  //比例尺
+    var toolbar = new AMap.Scale();
+    map.addControl(toolbar);
+    });
+    AMap.plugin('AMap.MapType',function(){  //图层切换
+    var toolbar = new AMap.MapType();
+    map.addControl(toolbar);
+    });
     // 创建标记
     var marker = new AMap.Marker({
-        position: new AMap.LngLat(116.332995, 39.979118)
+        position: new AMap.LngLat(locationXY[0],locationXY[1])
     });
     marker.setMap(map);
 </script>
