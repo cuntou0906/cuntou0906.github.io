@@ -2,6 +2,7 @@
 <html lang="en">
  <head>
     <meta name="google-site-verification" content="4JXs3dbX4OyCt-VOBg8pmZ75Ktl4_fY8YGGyME8ow_8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="utf-8">
     <title> IACAS: Underwater Robot Team</title>
 
@@ -20,6 +21,7 @@
     <link rel="stylesheet" href="./css/nav.min.css">
     <!-- <link rel="stylesheet" href="./css/fontawesome/css/fontawesome.min.css"> -->
     <link rel="stylesheet" href="./css/iconfont/iconfont.css">
+    <link rel="stylesheet" href="./css/Emoj.css">
 
 
   </head>
@@ -28,6 +30,7 @@
   <!-- <script src="./js/busuanzi.pure.mini.js"></script> -->
   <script src="./js/jquery.min.js"></script>
   <script src="./js/snowfall.jquery.min.js"></script>
+  <script src="./js/Emoj.js"></script>
 
   <script>
     //调用飘落函数 实现飘落效果
@@ -40,6 +43,9 @@
       
     });
   </script>
+  
+<!-- Emoj 移动点击表情容器 -->
+<div id="EmojContainer"></div>
 
 <header style="	z-index: 1;">
   <!-- "Bright blue" background -->
@@ -357,62 +363,68 @@
 
 <p class="p4" id="Cooperation"> <b class="LibSpan" style="margin-right:5px;">Cooperation</b><b>&#10024 &#10024 &#10024</b></p>
 
-<p>
+<p style="text-align: justify;">
   &emsp;&emsp; The underwater robot team has formed long-term and close cooperative relations 
   with domestic and foreign universities and research institutions, including:
   <ul>
     <li>
       <a href="https://www.utoronto.ca/" target="_blank" style="text-decoration: none;">
-        <img src="./images/University/UToronto.jpg" height="15px">
+        <img src="./images/CoopUnit/UToronto.jpg" height="15px">
         University of Toronto
       </a>
     </li>
     <li>
       <a href="https://www.pku.edu.cn/" target="_blank" style="text-decoration: none;">
-        <img src="./images/University/PKU.jpg" height="15px">
+        <img src="./images/CoopUnit/PKU.jpg" height="15px">
         Peking University
       </a>
     </li>
     <li>
       <a href="https://www.nwpu.edu.cn/" target="_blank" style="text-decoration: none;">
-        <img src="./images/University/NWPU.jpg" height="15px">
+        <img src="./images/CoopUnit/NWPU.jpg" height="15px">
         Northwestern Polytechnical University
       </a>
     </li>
     <li>
       <a href="https://www.scut.edu.cn/new/" target="_blank" style="text-decoration: none;">
-        <img src="./images/University/SCUT.jpg" height="15px">
+        <img src="./images/CoopUnit/SCUT.jpg" height="15px">
         South China University of Technology
       </a>
     </li>
     <li>
       <a href="https://www.siat.ac.cn/" target="_blank" style="text-decoration: none;">
-        <img src="./images/University/SIAT.jpg" height="15px">
+        <img src="./images/CoopUnit/SIAT.jpg" height="15px">
         Shenzhen Institute of Advanced Technology, Chinese Academy of Sciences
       </a>
     </li>
     <li>
       <a href="http://www.sia.cas.cn/" target="_blank" style="text-decoration: none;">
-        <img src="./images/University/SIACAS.jpg" height="15px">
+        <img src="./images/CoopUnit/SIACAS.jpg" height="15px">
         Shenyang Institute of Automation, Chinese Academy of Sciences
       </a>
     </li>
     <li>
       <a href="http://www.ioa.ac.cn" target="_blank" style="text-decoration: none;">
-        <img src="./images/University/IOACAS.jpg" height="15px">
+        <img src="./images/CoopUnit/IOACAS.jpg" height="15px">
         Institute of Acoustics, Chinese Academy of Sciences
       </a>
     </li>
     <li>
       <a href="https://www.gdut.edu.cn/" target="_blank" style="text-decoration: none;">
-        <img src="./images/University/GDUT.jpg" height="15px">
+        <img src="./images/CoopUnit/GDUT.jpg" height="15px">
         Guangdong University of Technology
       </a>
     </li>
     <li>
       <a href="https://www.boyagongdao.com/" target="_blank" style="text-decoration: none;">
-        <img src="./images/University/Boya.jpg" height="15px">
+        <img src="./images/CoopUnit/Boya.jpg" height="15px">
         Boya Gongdao(Beijing)Robot Technology Co.,Ltd.
+      </a>
+    </li>
+    <li>
+      <a href="https://www.cnooc.com.cn/" target="_blank" style="text-decoration: none;">
+        <img src="./images/CoopUnit/CNOOC.png" height="15px">
+        Shenzhen Ocean Engineering Technology Service Co., Ltd, CNOOC 
       </a>
     </li>
     <li><em>...</em></li>
@@ -457,10 +469,10 @@
 
 <h4>
   <img src="./images/ResearchPic/Group/MU-zhixiang.png" margin=0px; height="25px"  class="" style=" vertical-align: text-bottom;">  
-  <b style="line-height: 1.6"> Real-time velocity vector resolving of artificial lateral line array with fishlike motion noise suppression</b>
+  <b style="line-height: 1.6; text-align: justify;"> Real-time velocity vector resolving of artificial lateral line array with fishlike motion noise suppression</b>
 </h4>
 <div class="researchDiV">
-  <p>
+  <p style="text-align: justify;">
     &emsp;&emsp;The past decade has seen the rapid development of the robotic fish in many aspects. 
     However, the velocity measurement problem has not been fully addressed, which limits the autonomy 
     of the robotic fish. To this end, an artificial lateral line (ALL) sensor, inspired by the sensory 
@@ -484,10 +496,10 @@
 
 <h4>
   <img src="./images/ResearchPic/Group/MU-zhixiang.png" margin=0px; height="25px"  class="" style=" vertical-align: text-bottom;">  
-  <b style="line-height: 1.6">Toward Propulsive Performance Evaluation of a Robotic Tuna Based on the Damping-Elastic Composite Mechanism</b>
+  <b style="line-height: 1.6; text-align: justify;">Toward Propulsive Performance Evaluation of a Robotic Tuna Based on the Damping-Elastic Composite Mechanism</b>
 </h4>
 <div class="researchDiV">
-  <p>
+  <p style="text-align: justify;">
     &emsp;&emsp;Motivated by the high maneuverability and low power consumption requirements, 
     using elastic components in the joints of robotic fish can improve thrust production and 
     efficiency. However, the propulsive performance of the elastic mechanism cannot be satisfied 
@@ -512,11 +524,11 @@
 
   <h4>
     <img src="./images/ResearchPic/Group/MU-zhixiang.png" margin=0px; height="25px"  class="" style=" vertical-align: text-bottom;">  
-    <b style="line-height: 1.6">Structured Light-Based Underwater Collision-Free Navigation and Dense Mapping System for Refined Exploration in Unknown Dark Environments
+    <b style="line-height: 1.6; text-align: justify;">Structured Light-Based Underwater Collision-Free Navigation and Dense Mapping System for Refined Exploration in Unknown Dark Environments
     </b>
   </h4>
 <div class="researchDiV">
-  <p>
+  <p style="text-align: justify;">
     &emsp;&emsp;Underwater collision-free navigation and dense reconstruction are essential for marine 
     refined exploration. However, existing passive vision-based methods are difficult to apply in 
     low-light and weak-feature underwater environments. In this article, a more adaptable 
@@ -543,10 +555,10 @@
 
   <h4>
     <img src="./images/ResearchPic/Group/MU-zhixiang.png" margin=0px; height="25px"  class="" style=" vertical-align: text-bottom;">  
-    <b style="line-height: 1.6">CMBUV: A Composite-Mechanism Bioinspired Underwater Vehicle Integrated With Elasticity and Shear Damping Possesses High-Performance Capability</b>
+    <b style="line-height: 1.6; text-align: justify;">CMBUV: A Composite-Mechanism Bioinspired Underwater Vehicle Integrated With Elasticity and Shear Damping Possesses High-Performance Capability</b>
   </h4>
 <div class="researchDiV">
-  <p>
+  <p style="text-align: justify;">
     &emsp;&emsp;Benefiting from the potential advantages of low noise, high efficiency and little disturbance, 
     bionic propulsion has attracted wide attentions. Compared with the rigid structure, the performance of 
     the elastic propulsion structure such as flexible caudal fin and passive compliant joint has been 
@@ -573,11 +585,11 @@
 
   <h4>
     <img src="./images/ResearchPic/Group/MU-zhixiang.png" margin=0px; height="25px"  class="" style=" vertical-align: text-bottom;">  
-    <b style="line-height: 1.6">Toward Swimming Speed Optimization of a Multi-Flexible Robotic Fish With Low Cost of Transport
+    <b style="line-height: 1.6; text-align: justify;">Toward Swimming Speed Optimization of a Multi-Flexible Robotic Fish With Low Cost of Transport
     </b>
   </h4>
 <div class="researchDiV">
-  <p>
+  <p style="text-align: justify;">
     &emsp;&emsp;Due to the complex mechanism and fabrication process of flexible materials, 
     it remains extremely challenging for a flexible robotic fish to achieve fast and efficient 
     locomotion. In this article, taking advantage of the passive bending and energy storage 
@@ -621,11 +633,11 @@
 
   <h4>
     <img src="./images/ResearchPic/Group/MU-zhixiang.png" margin=0px; height="25px"  class="" style=" vertical-align: text-bottom;">  
-    <b style="line-height: 1.6">Design and Modeling of a Sperm-Inspired Helical Propulsion Robot
+    <b style="line-height: 1.6; text-align: justify;">Design and Modeling of a Sperm-Inspired Helical Propulsion Robot
     </b>
   </h4>
-<div class="researchDiV">
-  <p>
+<div class="researchDiV" >
+  <p style="text-align: justify;">
     &emsp;&emsp;The development of biomimetics and the demand for higher propulsion efficiency 
     lead to more research in helical propulsion robots. This letter presents a novel sperm-inspired 
     robot that utilizes flexible tail as propulsion and analyzes the motion performance. Firstly, 
@@ -649,11 +661,11 @@
 
   <h4>
     <img src="./images/ResearchPic/Group/MU-zhixiang.png" margin=0px; height="25px"  class="" style=" vertical-align: text-bottom;">  
-    <b style="line-height: 1.6">Discrete Vortex Method-Based Fish-Like Locomotion Modeling
+    <b style="line-height: 1.6; text-align: justify;">Discrete Vortex Method-Based Fish-Like Locomotion Modeling
     </b>
   </h4>
 <div class="researchDiV">
-  <p>
+  <p style="text-align: justify;">
     &emsp;&emsp;In nature, fish can achieve efficient swimming through vortex control, 
     which is also a crucial factor in the propulsion of biomimetic robotic fish. 
     Existing analytical models of robotic fish generally do not consider vortices. 
