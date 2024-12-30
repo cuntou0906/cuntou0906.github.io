@@ -91,7 +91,7 @@ a:active { color: #ff544f; }
 
 .container
 {
-	max-width: 70em;
+	max-width: 80em;
 	margin: 30px;
 	padding-top: 205px;
 	/* font-size: 16px; */
@@ -457,22 +457,20 @@ section figure {
  .snowfall-flakes:before,.snowfall-flakes:after{
 	content: '';
 	position: absolute;
-	width: 6px;
-	height: 9px;
-	border-radius: 4px 4px 0 0;
+	width: 5.5px;
+	height: 8.5px;
+	border-radius: 5px 5px 0 0;
 	background-color: red;
 }
 .snowfall-flakes:before{
 	transform: rotate(-45deg);
 }
 .snowfall-flakes:after{
-	transform: translateX(4.3px) rotate(45deg);
+	transform: translateX(4px) rotate(45deg);
 }
 
 /* 标题字体样式 */
 .LibSpan{
-
-
 	width: auto;
 	height: auto;
 	/* position: absolute;
