@@ -78,6 +78,16 @@ a:focus { color: green; }
 a:hover { color: green; }
 a:active { color: #ff544f; }
 
+.footerClass{
+	background-color: rgb(241, 240, 238); 
+	text-align: center; 
+	margin-top:0px; 
+	padding: 0px 0px; 
+	height: 60px; 
+	width: 100vw; 
+	/* position: absolute;  */
+	margin: -30px -30px;
+}
 
 .container
 {
