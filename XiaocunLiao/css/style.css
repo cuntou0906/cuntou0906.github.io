@@ -84,7 +84,8 @@ a:active { color: #ff544f; }
 	max-width: 70em;
 	margin: 30px;
 	padding-top: 205px;
-	font-size: 16px;
+	/* font-size: 16px; */
+	position: absolute;
 }
 
 html{
