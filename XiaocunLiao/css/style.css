@@ -8,9 +8,20 @@ body
 	padding: 0;
 	color: #262626;
 	/* background: #f3f2f2; */
-	font: 1em/1.2 "Helvetica Neue", Helvetica, Arial, Geneva, sans-serif;
-	font-size: 17px;
+	font: 1em "Helvetica Neue", Helvetica, Arial, Geneva, sans-serif;
+	/* font-size: 1em; */
 }
+
+@media(max-width:540px){ body { font-size: 0.6em; } } /*Android常用宽度*/
+@media(max-width:480px){ body { font-size: 0.55em; } }/*Android常用宽度*/
+
+@media(max-width:414px){ body { font-size: 0.52em; } } /*i6Plus,i7Plus宽度*/
+
+@media(max-width:375px){ body { font-size: 0.51em; } }/*i6,i7宽度*/
+
+@media(max-width:360px){ body { font-size: 0.5e; } }/*Android常用宽度*/
+
+@media(max-width:320px){ body { font-size: 0.49em; } }/*i5宽度*/
 
 h1,h2,h3,h4,h5,h6
 {
@@ -72,10 +83,12 @@ a:active { color: #ff544f; }
 	max-width: 70em;
 	margin: 30px;
 	padding-top: 205px;
+	/* font-size: 17px; */
 }
 
 html{
 	scroll-padding-top:  238px;  /* 这里设置了滚动内边距 防止链接跳转被导航栏遮盖 */
+	/* font-size: 62.5%; */
 }
 
 .container > *
@@ -102,7 +115,7 @@ html{
 
 /* 成果展示页面的单独css */
 .researchDiV p{
-	font-size: 17px;
+	/* font-size: 17px; */
 	line-height: 1.5;
 	text-align: left;
 }
