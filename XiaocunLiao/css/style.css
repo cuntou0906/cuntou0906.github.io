@@ -8,9 +8,21 @@ body
 	padding: 0;
 	color: #262626;
 	/* background: #f3f2f2; */
-	font: 1em/1.2 "Helvetica Neue", Helvetica, Arial, Geneva, sans-serif;
-	font-size: 17px;
+	font: 1em "Helvetica Neue", Helvetica, Arial, Geneva, sans-serif;
+	/* font-size: 1em; */
+	/* line-height: 1.25; */
 }
+
+@media(max-width:540px){ body * { font-size: 0.6em !important; } } /*Android常用宽度*/
+@media(max-width:480px){ body * { font-size: 0.55em !important; } }/*Android常用宽度*/
+
+@media(max-width:414px){ body * { font-size: 0.52em !important; } } /*i6Plus,i7Plus宽度*/
+
+@media(max-width:375px){ body * { font-size: 0.51em !important; } }/*i6,i7宽度*/
+
+@media(max-width:360px){ body * { font-size: 0.5e !important; } }/*Android常用宽度*/
+
+@media(max-width:320px){ body * { font-size: 0.49em !important; } }/*i5宽度*/
 
 h1,h2,h3,h4,h5,h6
 {
@@ -66,20 +78,34 @@ a:focus { color: green; }
 a:hover { color: green; }
 a:active { color: #ff544f; }
 
+.footerClass{
+	background-color: rgb(241, 240, 238); 
+	text-align: center; 
+	margin-top:0px; 
+	padding: 0px 0px; 
+	height: 60px; 
+	width: 100vw; 
+	/* position: absolute;  */
+	margin: -30px -30px;
+}
 
 .container
 {
-	max-width: 70em;
+	max-width: 80em;
 	margin: 30px;
 	padding-top: 205px;
+	/* font-size: 16px; */
+	position: absolute;
 }
 
 html{
 	scroll-padding-top:  238px;  /* 这里设置了滚动内边距 防止链接跳转被导航栏遮盖 */
+	/* font-size: 62.5%; */
 }
 
-.container > *
+.container > P
 {
+	/* font-size: 1.0em; */
 }
 
 .motto{
@@ -102,7 +128,7 @@ html{
 
 /* 成果展示页面的单独css */
 .researchDiV p{
-	font-size: 17px;
+	/* font-size: 17px; */
 	line-height: 1.5;
 	text-align: left;
 }
@@ -120,6 +146,7 @@ text-align: center;
 	line-height: 1.5;
 }
 .ResearchPicPresention{
+
 }
 
 
@@ -258,7 +285,7 @@ nav>ul>li
 	display: inline-block;
 	vertical-align: top;
 	height: 100%;
-	width: 180px;
+	width: 160px;
 	text-align: center;
 
 }
@@ -430,22 +457,21 @@ section figure {
  .snowfall-flakes:before,.snowfall-flakes:after{
 	content: '';
 	position: absolute;
-	width: 6px;
-	height: 9px;
-	border-radius: 4px 4px 0 0;
+	width: 5.5px;
+	height: 8.5px;
+	border-radius: 5px 5px 0 0;
 	background-color: red;
 }
 .snowfall-flakes:before{
 	transform: rotate(-45deg);
 }
 .snowfall-flakes:after{
-	transform: translateX(4.3px) rotate(45deg);
+	transform: translateX(4px) rotate(45deg);
 }
+
 
 /* 标题字体样式 */
 .LibSpan{
-
-
 	width: auto;
 	height: auto;
 	/* position: absolute;
