@@ -117,14 +117,6 @@ html{
 	z-index: 2;
 }
 
-.LogoLeft{
-	text-align: center;
-	position: fixed;
-	top: 30px;
-	left: 10px;
-	z-index: 3;
-	transform: scaleX(-1);
-}
 
 /* 成果展示页面的单独css */
 .researchDiV p{
@@ -620,4 +612,80 @@ footer.main-footer.fixed {
 	text-align: center;
 	margin-left: auto;
 	margin-right: auto;
+}
+
+
+/* 图片扫光效果  */
+.LXCImg {
+	display: block;
+	position: relative;
+	margin: 0 auto;
+	overflow: hidden;
+	height: 250px;
+	width: 166.63px;
+}
+
+.LXCImg:before {
+	content: "";
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: -323px;
+	/* overflow: hidden; */
+	/* background-color: red; */
+	/* border-right: 3px solid rgb(228, 228, 228,0.8); */
+	/* border-left: none; */
+	background: -webkit-gradient(linear, left top, right top, color-stop(0%, rgba(255, 255, 255, 0.00)), color-stop(50%, rgba(255, 255, 255, 0.1)), color-stop(100%, rgba(255, 255, 255, 0.6)));
+	-webkit-transform: skewX(-45deg);
+}
+
+.LXCImg:hover:before {
+	left: 160px;
+	transition: all 1s;
+}
+
+/* Logo图片扫光效果  */
+/* .LogoImgLight{
+	display: block;
+	position: fixed;
+	margin: 0 auto;
+	top: 30px;
+	left: 10px;
+	overflow: hidden;
+	height: 100px;
+	width: 100px;
+	z-index: 4;
+
+} */
+
+/* .LogoImgLight:before {
+	content: "";
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: -200px;
+	background: -webkit-gradient(linear, left top, right top, color-stop(0%, rgba(255, 255, 255, 0.00)), color-stop(50%, rgba(255, 255, 255, 0.1)), color-stop(100%, rgba(255, 255, 255, 0.6)));
+	-webkit-transform: skewX(-45deg);
+}
+
+.LogoImgLight:hover:before {
+	left: 100px;
+	transition: all 0.8s;
+}
+
+.LogoLeft{
+	text-align: center;
+	z-index: 4;
+	transform: scaleX(-1);
+} */
+
+.LogoLeft{
+	text-align: center;
+	position: fixed;
+	top: 30px;
+	left: 10px;
+	z-index: 3;
+	transform: scaleX(-1);
 }
