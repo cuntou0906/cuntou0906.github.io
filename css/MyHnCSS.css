@@ -463,11 +463,15 @@ ul.entertamentMenuUL>li>a>img{
 	}
   }
 
+
   /* 每列数量调整 */
   @media (min-width: 768px) {
     .col-sm-3 {
         width: 20%;
     }
+    .page_box {
+      margin-right: 30px;
+  }
   }
 
   /* 分页按钮 */
@@ -500,7 +504,7 @@ ul.entertamentMenuUL>li>a>img{
   display: flex;
   align-items: center;
   gap: 8px;
-  margin-right: 30px;
+  /* margin-right: 0px; */
 }
 
 .PageNum {
