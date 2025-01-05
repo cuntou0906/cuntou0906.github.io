@@ -462,3 +462,102 @@ ul.entertamentMenuUL>li>a>img{
 		/* transform: scaleY(1); */
 	}
   }
+
+  /* 每列数量调整 */
+  @media (min-width: 768px) {
+    .col-sm-3 {
+        width: 20%;
+    }
+  }
+
+  /* 分页按钮 */
+.banner {
+    width: 500px;
+    margin: 0 auto;
+}
+
+.page_btn {
+  padding-top: 20px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+.page_btn a {
+  cursor: pointer;
+  padding: 7px 12px;
+  border: 1px solid #cdd2d8;
+  font-size: 14px;
+  color: #2c3e50;
+  background: white;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  border-radius: 4px;
+  font-weight: 500;
+  margin: 0 0px;
+}
+
+.page_box {
+  float: right;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-right: 30px;
+}
+
+.PageNum {
+  padding: 0 12px;
+  font-size: 14px;
+  color: #2c3e50;
+  font-weight: 500;
+}
+
+.current_page {
+  color: #2c3e50;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.total_Page {
+  color: #7f8c8d;
+  font-size: 14px;
+}
+
+/* 当按钮被禁用时的样式 */
+.page_btn a.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.page_btn a:hover {
+  background: #8799ac;
+  color: white;
+  transition: all 0.5s;
+}
+.PageInput{
+  /* height: 90%; */
+  width: 60px;
+  padding: 7px 12px;
+  font-size: 14px;
+  color: #2c3e50;
+  font-weight: 500;
+  margin: 0 4px;
+  font-weight: bold;
+  text-align: center;
+  border: 1px solid #cdd2d8;
+  border-radius: 4px;
+
+
+}
+.PageLable{
+  cursor: pointer;
+  padding: 7px 1px;
+  /* border: 1px solid #cdd2d8; */
+  font-size: 14px;
+  color: #2c3e50;
+  /* background: white; */
+  text-decoration: none;
+  /* transition: all 0.3s ease; */
+  /* border-radius: 4px; */
+  font-weight: 500;
+  margin: 0 4px;
+}
