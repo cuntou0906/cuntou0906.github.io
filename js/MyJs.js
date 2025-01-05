@@ -133,7 +133,7 @@ function Get_PageNum_Max() {
       } else {
         // console.log("Desktop device detected");
         // PC端处理
-        return 25; // 每页显示的数据
+        return 20; // 每页显示的数据
       }
 
 }
