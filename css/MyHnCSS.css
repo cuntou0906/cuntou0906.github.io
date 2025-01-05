@@ -171,10 +171,19 @@ div.row{
   float: left;
 }
 
+.nav.nav-tabs>li>a{
+  height: 100%; 
+  background-color: #EDEDED;
+  transition: all 0.2s ease-in;
+  border-radius: 20px;
+
+ }
+
 .nav.nav-tabs>li>a:hover{
  height: 100%; 
  border-radius: 20px;
  background-color: #f7b889;
+ transition: all 0.2s ease-in;
 
 }
 
