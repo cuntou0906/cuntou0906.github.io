@@ -1,0 +1,850 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+    <meta name="google-site-verification" content="4JXs3dbX4OyCt-VOBg8pmZ75Ktl4_fY8YGGyME8ow_8" />
+    <meta name="viewport" content="width=device-width, initial-scale=0.55, maximum-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <title> IACAS: Underwater Robot Team</title>
+
+    <!-- <link rel="stylesheet" href="https://cdn.staticfile.net/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://cdn.staticfile.net/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdn.staticfile.net/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
+  
+    <link rel="stylesheet" type="text/css" href="./css/style.css" />
+    <link rel="shortcut icon" href="./images/Fishlogo.ico">
+
+    <link rel="stylesheet" href="./css/fonts/fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="./css/hclonely.css">
+    <link rel="stylesheet" href="./css/xenon-components.min.css">
+    <link rel="stylesheet" href="./css/xenon-skins.min.css">
+    <link rel="stylesheet" href="./css/xenon-forms.min.css">
+    <link rel="stylesheet" href="./css/nav.min.css">
+    <!-- <link rel="stylesheet" href="./css/fontawesome/css/fontawesome.min.css"> -->
+    <link rel="stylesheet" href="./css/iconfont/iconfont.css">
+    <link rel="stylesheet" href="./css/Emoj.css">
+
+
+  </head>
+
+<body>
+  <!-- <script src="./js/busuanzi.pure.mini.js"></script> -->
+  <script src="./js/jquery.min.js"></script>
+  <script src="./js/snowfall.jquery.min.js"></script>
+  <script src="./js/Emoj.js"></script>
+
+  <script>
+    //调用飘落函数 实现飘落效果
+    $(document).snowfall({
+      flakeCount: 3,// 数量
+      round:true, //圆形
+      shadow:true, //阴影
+      minSpeed:0.3, //最小速度
+      maxSpeed:2 //最大速度
+      
+    });
+  </script>
+  
+<!-- Emoj 移动点击表情容器 -->
+<div id="EmojContainer"></div>
+
+<header style="	z-index: 1;">
+  <!-- "Bright blue" background -->
+  <div class="fixedTopHeader" style="rgba(255,255,255,0.1); background-image: url('./images/ia_BG.png'); z-index: 2; background-repeat: no-repeat; background-size: 100% 100%;">
+    <div style="opacity:1;">
+        <!-- <img src="./images/NaBG.jpg" alt="" style="width: 100%; height:100%"> -->
+
+          <div style=" padding-left: 120px; padding-top: 20px; float:left; opacity:1;">
+            <h1 class="LibSpanHead"> <b>Underwater Robot Team</b> </h1>
+            <h4>Institute of Automation</h4>
+            <h4>Chinese Academy of Sciences</h4>
+            <img src="./images/TitleImg/sub_marine.png" margin=0px; alt="" height="23px" class=""  style=" vertical-align: text-bottom;"><span style="font-size: 18px;"> A team focusing on underwater robots！</span>
+          </div>
+      </div>
+      <!-- <div style="background-image: url('./images/NaBG.jpg'); position: fixed; top: 0px; left: 0px; width: 100%; width: 100%; background-size: auto;">
+      <div></div>
+      </div> -->
+    </div>
+    <div class="motto">
+      <p style="font-size: 20px;">
+        <b>
+          练就过硬本事！
+        </b>
+        <br>
+        <br>
+        <b>
+          &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;服务国家重大战略需求！
+        </b>
+      </p>
+    </div>
+    <img src="./images/Fishlogo.png" margin=20px; height="120px"  class="LogoLeft" style="margin-top: -10px;">  
+
+    <a target="_blank" rel="noopener" href="https://github.com/cuntou0906" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewBox="0 0 250 250" style="z-index: 3; fill:#151513; color:#fff; position: fixed; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+
+</header>
+
+<nav class="fixedTopnav">
+  <ul>
+    <li>
+        <a class="" href="index.html">
+          <img src="./images/Pic/HomeLogo.png" alt="" height="20px">
+          <b>Home</b> 
+        </a>
+          <ol>
+            <li>
+              <a href="./index.html#Biography">
+                <img src="./images/TitleImg/Business_Biography.png" alt="" width="20px"   height="20px" style="position: absolute; left: 20px;">
+                Biography
+                <img src="./images/TitleImg/RightArr.png" alt="" height="15px" style="position: absolute; right: 8px;">
+              </a>
+              </li>
+            <li>
+              <a href="./index.html#News">
+                <img src="./images/TitleImg/News.png" alt="" width="20px"   height="20px" style="position: absolute; left: 20px;">
+                News
+                <img src="./images/TitleImg/RightArr.png" alt="" height="15px" style="position: absolute; right: 8px;">
+              </a>
+            </li>
+            <li style="border: none;">
+              <a href="./index.html#Funding">
+                <img src="./images/TitleImg/Funding.png" alt="" width="20px"   height="20px" style="position: absolute; left: 20px;">
+                Funding
+                <img src="./images/TitleImg/RightArr.png" alt="" height="15px" style="position: absolute; right: 8px;">
+              </a>
+            </li>
+          </ol>
+    </li>
+    <li>
+        <a class="" href="publications.html">
+          <img src="./images/Pic/PaperPub.png" alt="" height="20px">
+        <b>Publication</b>
+        </a>
+        <ol>
+          <li>
+            <a href="./publications.html#Overview">
+              <img src="./images/TitleImg/szpxT.png" alt="" width="20px"   height="20px" style="position: absolute; left: 20px;">
+              Overview
+              <img src="./images/TitleImg/RightArr.png" alt="" height="15px" style="position: absolute; right: 8px;">
+            </a>
+            </li>
+          <li>
+            <a href="./publications.html#Papers">
+              <img src="./images/TitleImg/PapersT.png" alt="" width="20px"   height="20px" style="position: absolute; left: 20px;">
+              Papers
+              <img src="./images/TitleImg/RightArr.png" alt="" height="15px" style="position: absolute; right: 8px;">
+            </a>
+            </li>
+          <li style="border: none;">
+            <a href="./publications.html#Patents">
+              <img src="./images/TitleImg/PatentsT.png" alt="" width="20px"   height="20px" style="position: absolute; left: 20px;">
+              Patents
+              <img src="./images/TitleImg/RightArr.png" alt="" height="15px" style="position: absolute; right: 8px;">
+            </a>
+          </li>
+        </ol>
+    </li>
+      
+    <li >
+        <a class="" href="research.html"><img src="./images/Pic/Research.png" alt="" height="20px"> 
+          <b>Research</b>
+        </a>
+    </li>
+
+    <li>
+        <a class="selected" href="Group.html"><img src="./images/Pic/Team.png" alt="" height="20px"> 
+          <b>Group</b>
+        </a>
+        <ol>
+          <li>
+            <a href="./Group.html#Introduction">
+              <img src="./images/TitleImg/IntroductionTeam.png" alt=""  width="20px"  height="19px" style="position: absolute; left: 20px;">
+              Introduction
+              <img src="./images/TitleImg/RightArr.png" alt="" height="15px" style="position: absolute; right: 8px;">
+            </a>
+          </li>
+          <li>
+            <a href="./Group.html#Cooperation">
+              <img src="./images/TitleImg/Cooperation.png" alt="" width="20px" height="19px" style="position: absolute; left: 20px;">
+              Cooperation
+              <img src="./images/TitleImg/RightArr.png" alt=""  height="15px" style="position: absolute; right: 8px;">
+            </a>
+          </li>
+          <li style="border: none;">
+            <a href="./Group.html#Research">
+              <img src="./images/TitleImg/ResearchT.png" alt=""  width="20px"  height="19px" style="position: absolute; left: 20px;">
+              Research
+              <img src="./images/TitleImg/RightArr.png" alt="" height="15px" style="position: absolute; right: 8px;">
+            </a>
+          </li>
+          <li style="border: none;">
+            <a href="./Group.html#Location">
+              <img src="./images/TitleImg/Addresslogo.png" alt=""  width="20px"  height="19px" style="position: absolute; left: 20px;">
+              Location
+              <img src="./images/TitleImg/RightArr.png" alt="" height="15px" style="position: absolute; right: 8px;">
+            </a>
+          </li>
+        </ol>
+    </li>
+
+  </ul>
+</nav>
+
+
+
+<div class="container" style="text-align: left;">
+
+  <div style = "padding-top:60px; padding-right:20px; padding-left:20px; padding-bottom:20px; float: right;">
+    <img src="./images/iacas_logo1.png" margin=20px; alt="IACAS" height="120px" >
+  </div>
+  <div style = "padding-top:60px; padding-right:20px; padding-left:20px; padding-bottom:20px; float: right;">
+    <img src="./images/CASLogo.png" margin=20px; alt="IACAS" height="120px" >
+  </div>
+<!-- 各个页面的替换内容分割线 --> 
+ <!-- 还需修改标签页的选中属性 -->
+
+<p class="p4" id="Introduction"> <b class="LibSpan" style="margin-right:5px;">Introduction</b><b>&#10024 &#10024 &#10024</b></p>
+
+<h4>
+  <img src="./images/TitleImg/Brif.png" margin=0px; alt="" height="30px"  class="" style=" vertical-align: text-bottom;">  
+  <b>Brief</b>
+</h4>
+<!-- <div style="font-size: 16px;"> -->
+  <p>
+    &emsp;&emsp; <b>The Underwater Robot Team of Institute of Automation, Chinese Academy of Sciences (IACAS)</b> is led by 
+    <b><a href="https://people.ucas.ac.cn/~tanmin" target="_blank">Min Tan</a></b> 
+    and <b><a href="https://ia.cas.cn/rcdw/yjy/202406/t20240621_7194305.html" target="_blank">Chao Zhou</a></b>,
+    and focuses on the underwater robot field including the design,control and perception of the underwater robot, especially bionic robots(like robotic fish).
+    <br>  
+    &emsp;&emsp; Our team has developed a variety of fish-like swimming robots, including robotic dolphins, rays, eels, etc., 
+    and achieved high-maneuverability motion control of fish-like swimming.
+    Our team has also achieved the rolling and continuous water-jumping motion of robot dolphins.
+  </p>
+<!-- </div> -->
+<h4>
+  <img src="./images/TitleImg/Scholar.png" margin=0px; height="30px"  class="" style=" vertical-align: text-bottom;">  
+  <b>Scholar</b>
+</h4>
+
+<div class="ScholarDiv">
+<ul>
+  <li>
+    <b>
+      <a href="https://people.ucas.ac.cn/~tanmin" target="_blank" style="text-decoration:none">Min Tan</a>
+      <a href="https://www.researchgate.net/profile/M-Tan" target="_blank" style="text-decoration:none">
+        <img src="./images/ReasechLOGO/Researchgate.png" margin=0px; alt="Min Tan" height="25px"  class="">  
+      </a>
+      <a href="https://orcid.org/0000-0002-1986-8438" target="_blank" style="text-decoration:none">
+        <img src="./images/ReasechLOGO/ORCID.png" margin=0px; alt="Min Tan" height="25px"  class="">  
+      </a>
+    </b>
+  </li>
+  <li>
+    <b>
+      <a href="https://people.ucas.ac.cn/~wuzhengxing" target="_blank"  style="text-decoration:none">Zhengxing Wu</a>
+        <a href="https://www.researchgate.net/profile/Zhengxing-Wu" target="_blank" style="text-decoration:none">
+        <img src="./images/ReasechLOGO/Researchgate.png" margin=0px; alt="Zhengxing Wu" height="25px"  class="">  
+        </a>
+    </b>
+  </li>
+  <li>
+    <b>
+      <a href="https://people.ucas.edu.cn/~haipengLee" target="_blank"  style="text-decoration:none">Haipeng Li</a>
+      <img src="./images/ReasechLOGO/Researchgate.png" margin=0px; alt="Haipeng Li" height="25px"  class="" style="visibility: hidden;">   <!-- 放置这个保持间距 -->
+    </b>
+  </li>
+  <li>
+    <b>
+      <a href="https://people.ucas.edu.cn/~dengsai" target="_blank" style="text-decoration:none">Sai Deng</a>
+      <a href="https://scholar.google.com/citations?user=PtjCJosAAAAJ&hl=zh-CN&oi=ao" target="_blank" style="text-decoration:none">
+        <img src="./images/ReasechLOGO/GoogleScholor.png" margin=0px; alt="Sai Deng" height="25px"  class="">  
+      </a>
+    </b>
+  </li>
+  <li>
+    <b>
+      <a href="https://ia.cas.cn/rcdw/fyjy/202404/t20240422_7129786.html" target="_blank" style="text-decoration:none">Wenkai Chang</a>
+      <a href="https://scholar.google.com/citations?user=MHAmmrIAAAAJ&hl=zh-CN&oi=ao" target="_blank" style="text-decoration:none">
+        <img src="./images/ReasechLOGO/GoogleScholor.png" margin=0px; alt="Wenkai Chang" height="25px"  class="">  
+      </a>
+      <a href="https://www.researchgate.net/profile/Wenkai-Chang-2" target="_blank" style="text-decoration:none">
+        <img src="./images/ReasechLOGO/Researchgate.png" margin=0px; alt="Wenkai Chang" height="25px"  class="">  
+      </a>
+    </b>
+  </li>
+  <li>
+    <b>
+      <a href="https://ia.cas.cn/rcdw/fyjy/202409/t20240918_7364337.html" target="_blank"  style="text-decoration:none">Jian Wang</a>
+    </b>
+    <a href="https://scholar.google.com/citations?user=GR36JsoAAAAJ&hl=zh-CN" target="_blank" style="text-decoration:none">
+        <img src="./images/ReasechLOGO/GoogleScholor.png" margin=0px; alt="Jian Wang" height="25px"  class="">  
+      </a>
+      <a href="https://www.researchgate.net/profile/Jian-Wang-109" target="_blank" style="text-decoration:none">
+        <img src="./images/ReasechLOGO/Researchgate.png" margin=0px; alt="Jian Wang" height="25px"  class="">  
+      </a>
+      <a href="https://orcid.org/0000-0003-3742-9671" target="_blank" style="text-decoration:none">
+        <img src="./images/ReasechLOGO/ORCID.png" margin=0px; alt="Jian Wang" height="25px"  class="">  
+      </a>
+  </li>
+  <li>
+    <b>Junhang Wei
+      <a href="https://scholar.google.com/citations?user=WIxqWDIAAAAJ&hl=zh-CN&oi=ao" target="_blank" style="text-decoration:none">
+        <img src="./images/ReasechLOGO/GoogleScholor.png" margin=0px; alt="Junhang Wei" height="25px"  class="">  
+      </a>
+    </b>
+  </li>
+
+</ul>
+
+<ul>
+  <li>
+    <b>
+      <a href="https://ia.cas.cn/rcdw/yjy/202406/t20240621_7194305.html" target="_blank"  style="text-decoration:none">Chao Zhou</a>
+      <a href="https://scholar.google.com/citations?user=dz2_FsoAAAAJ&hl=zh-CN" target="_blank" style="text-decoration:none">
+        <img src="./images/ReasechLOGO/GoogleScholor.png" margin=0px; alt="Chao Zhou" height="25px"  class="">  
+      </a>
+      <a href="https://www.researchgate.net/profile/Chao-Zhou-55" target="_blank" style="text-decoration:none">
+        <img src="./images/ReasechLOGO/Researchgate.png" margin=0px; alt="Chao Zhou" height="25px"  class="">  
+      </a>
+      <a href="https://orcid.org/0000-0003-4461-8075" target="_blank" style="text-decoration:none">
+        <img src="./images/ReasechLOGO/ORCID.png" margin=0px; alt="Chao Zhou" height="25px"  class="">  
+      </a>
+    </b>
+  </li>
+  <li>
+    <b>
+      Xiangjiang Li
+      <img src="./images/ReasechLOGO/Researchgate.png" margin=0px; alt="Xiangjiang Li" height="25px"  class="" style="visibility: hidden;">    <!-- 放置这个保持间距 -->
+    </b>
+  </li>
+  <li>
+    <b>
+      <a href="https://ia.cas.cn/rcdw/fyjy/202404/t20240422_7129788.html" target="_blank"  style="text-decoration:none">Jun Zheng</a>
+      <img src="./images/ReasechLOGO/Researchgate.png" margin=0px; alt="Jun Zheng" height="25px"  class="" style="visibility: hidden;"> <!-- 放置这个保持间距 -->
+    </b>
+  </li>
+  <li>
+    <b>
+      <a href="https://people.ucas.edu.cn/~fanjunfeng" target="_blank"  style="text-decoration:none">Junfeng Fan</a>
+      <a href="https://scholar.google.com/citations?user=jxxktc4AAAAJ&hl=zh-CN" target="_blank" style="text-decoration:none">
+        <img src="./images/ReasechLOGO/GoogleScholor.png" margin=0px; alt="Junfeng Fan" height="25px"  class="">  
+      </a>
+      <a href="https://www.researchgate.net/profile/Junfeng-Fan-3" target="_blank" style="text-decoration:none">
+      <img src="./images/ReasechLOGO/Researchgate.png" margin=0px; alt="Junfeng Fan" height="25px"  class="">  
+      </a>
+      <a href="https://orcid.org/0000-0003-4922-7946" target="_blank" style="text-decoration:none">
+        <img src="./images/ReasechLOGO/ORCID.png" margin=0px; alt="Junfeng Fan" height="25px"  class="">  
+      </a>
+    </b>
+  </li>
+  <li>
+    <b>
+      <a href="https://ia.cas.cn/rcdw/fyjy/202404/t20240422_7129787.html" target="_blank" style="text-decoration:none">Peng Li</a>
+      <a href="https://www.researchgate.net/profile/Peng-Li-145" target="_blank" style="text-decoration:none">
+        <img src="./images/ReasechLOGO/Researchgate.png" margin=0px; alt="Peng Li" height="25px"  class="">  
+      </a>    </b>
+  </li>
+  <li>
+    <b>Zhuoliang Zhang
+      <a href="https://scholar.google.com/citations?user=hh_U5cUAAAAJ&hl=zh-CN&oi=ao" target="_blank" style="text-decoration:none">
+        <img src="./images/ReasechLOGO/GoogleScholor.png" margin=0px; alt="Zhuoliang Zhang" height="25px"  class="">  
+      </a>
+      <a href="https://orcid.org/0000-0002-5991-2392" target="_blank" style="text-decoration:none">
+        <img src="./images/ReasechLOGO/ORCID.png" margin=0px; alt="Zhuoliang Zhang" height="25px"  class="">  
+      </a>
+    </b>
+  </li>
+  <li>
+    <b>
+      ...
+      <img src="./images/ReasechLOGO/Researchgate.png" margin=0px; alt="Xiangjiang Li" height="25px"  class="" style="visibility: hidden;">    <!-- 放置这个保持间距 -->
+    </b>
+  </li>
+</ul>
+</div>
+
+<p class="p4" id="Cooperation"> <b class="LibSpan" style="margin-right:5px;">Cooperation</b><b>&#10024 &#10024 &#10024</b></p>
+
+<p style="text-align: justify;">
+  &emsp;&emsp; The underwater robot team has formed long-term and close cooperative relations 
+  with domestic and foreign universities and research institutions, including:
+  <ul>
+    <li>
+      <a href="https://www.utoronto.ca/" target="_blank" style="text-decoration: none;">
+        <img src="./images/CoopUnit/UToronto.jpg" height="15px">
+        University of Toronto
+      </a>
+    </li>
+    <li>
+      <a href="https://www.pku.edu.cn/" target="_blank" style="text-decoration: none;">
+        <img src="./images/CoopUnit/PKU.jpg" height="15px">
+        Peking University
+      </a>
+    </li>
+    <li>
+      <a href="https://www.nwpu.edu.cn/" target="_blank" style="text-decoration: none;">
+        <img src="./images/CoopUnit/NWPU.jpg" height="15px">
+        Northwestern Polytechnical University
+      </a>
+    </li>
+    <li>
+      <a href="https://www.scut.edu.cn/new/" target="_blank" style="text-decoration: none;">
+        <img src="./images/CoopUnit/SCUT.jpg" height="15px">
+        South China University of Technology
+      </a>
+    </li>
+    <li>
+      <a href="https://www.siat.ac.cn/" target="_blank" style="text-decoration: none;">
+        <img src="./images/CoopUnit/SIAT.jpg" height="15px">
+        Shenzhen Institute of Advanced Technology, Chinese Academy of Sciences
+      </a>
+    </li>
+    <li>
+      <a href="http://www.sia.cas.cn/" target="_blank" style="text-decoration: none;">
+        <img src="./images/CoopUnit/SIACAS.jpg" height="15px">
+        Shenyang Institute of Automation, Chinese Academy of Sciences
+      </a>
+    </li>
+    <li>
+      <a href="http://www.ioa.ac.cn" target="_blank" style="text-decoration: none;">
+        <img src="./images/CoopUnit/IOACAS.jpg" height="15px">
+        Institute of Acoustics, Chinese Academy of Sciences
+      </a>
+    </li>
+    <li>
+      <a href="https://www.gdut.edu.cn/" target="_blank" style="text-decoration: none;">
+        <img src="./images/CoopUnit/GDUT.jpg" height="15px">
+        Guangdong University of Technology
+      </a>
+    </li>
+    <li>
+      <a href="https://www.boyagongdao.com/" target="_blank" style="text-decoration: none;">
+        <img src="./images/CoopUnit/Boya.jpg" height="15px">
+        Boya Gongdao(Beijing)Robot Technology Co.,Ltd.
+      </a>
+    </li>
+    <li>
+      <a href="https://www.cnooc.com.cn/" target="_blank" style="text-decoration: none;">
+        <img src="./images/CoopUnit/CNOOC.png" height="15px">
+        Shenzhen Ocean Engineering Technology Service Co., Ltd, CNOOC 
+      </a>
+    </li>
+    <li><em>...</em></li>
+  </ul>
+</p>
+
+<!-- HTML emoji "sparkles" at the end,  use the decimal code. -->
+<p class="p4" id="Research"> <b class="LibSpan" style="margin-right:5px;">Research</b><b>&#10024 &#10024 &#10024</b></p>
+
+<!-- 轮播 -->
+<!-- <div style="justify-content: center; align-items: center; display: flex;">
+  <div id="myCarousel" class="carousel slide" style="width: 60%; text-align: center; ">
+    
+    <ol class="carousel-indicators"  style="	z-index: 1;">
+      <li data-target="#myCarousel" data-slide-to="0" class="active" ></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+    </ol>   
+    
+    <div class="carousel-inner">
+      <div class="item active">
+        <img src="./images/NaBG.jpg" alt="First slide">
+        <div class="carousel-caption">标题 1</div>
+      </div>
+      <div class="item">
+        <img src="./images/NaBG.jpg" alt="Second slide">
+        <div class="carousel-caption">标题 2</div>
+      </div>
+    </div>
+    
+    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev" style="	z-index: 1;">
+        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next" style="	z-index: 1;">
+        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+    </a>
+  </div> 
+</div> -->
+
+<!-- <br> -->
+
+<h4>
+  <img src="./images/ResearchPic/Group/MU-zhixiang.png" margin=0px; height="25px"  class="" style=" vertical-align: text-bottom;">  
+  <b style="line-height: 1.6; text-align: justify;"> Real-time velocity vector resolving of artificial lateral line array with fishlike motion noise suppression</b>
+</h4>
+<div class="researchDiV">
+  <p style="text-align: justify;">
+    &emsp;&emsp;The past decade has seen the rapid development of the robotic fish in many aspects. 
+    However, the velocity measurement problem has not been fully addressed, which limits the autonomy 
+    of the robotic fish. To this end, an artificial lateral line (ALL) sensor, inspired by the sensory 
+    organs of fish, is developed in this article. By measuring the deformation of the sensitive element, 
+    the local flow field around the robotic fish is sensed. According to the characteristics of fishlike 
+    motions, a fairing structure is proposed to suppress the turbulence noise and yaw motion noise caused 
+    by fishlike oscillation of the tail. This structure ensure that the flow measured by the ALL sensor is 
+    closer to laminar flow under viscous effects. Furthermore, to measure the magnitude and direction of the 
+    robotic fish velocity, an ALL sensor array is assembled by mounting multiple sensors on the robot's surface 
+    to sense the flow field distribution. Next, a kinematic-based fusion method is proposed for the array system, 
+    which obtained the real-time velocity vector of the robotic fish by solving overdetermined motion equations. 
+    The proposed ALL array system is tested on a freely swimming robotic fish, and our method achieves a mean 
+    absolute error of 0.018 m/s, a linearity of 0.951, and a position tracking error of 0.085 m. 
+    Additionally, the fairing structure is found to improve the signal-to-noise ratio by 116%.
+    The research has published in <em>IEEE/ASME Transactions on Robotics</em> <b> (SCI, Q1, IF: 7.8)</b>, DOI: <a target="_blank" rel="noopener" href="https://doi.org/10.1109/TRO.2023.3297050" >10.1109/TRO.2023.3297050</a>。
+  </p>
+  <img src="./images/ResearchPic/Group/Zhangzhuoliang1.png" margin=20px; width="60%"  class="ResearchPicPresention" >  
+  </div>
+  
+  <br>
+
+<h4>
+  <img src="./images/ResearchPic/Group/MU-zhixiang.png" margin=0px; height="25px"  class="" style=" vertical-align: text-bottom;">  
+  <b style="line-height: 1.6; text-align: justify;">Toward Propulsive Performance Evaluation of a Robotic Tuna Based on the Damping-Elastic Composite Mechanism</b>
+</h4>
+<div class="researchDiV">
+  <p style="text-align: justify;">
+    &emsp;&emsp;Motivated by the high maneuverability and low power consumption requirements, 
+    using elastic components in the joints of robotic fish can improve thrust production and 
+    efficiency. However, the propulsive performance of the elastic mechanism cannot be satisfied 
+    over a wide range of frequencies. First, this article develops a robotic tuna with a novel 
+    passive flexible joint structure, which combines with the compliance features of the elastic 
+    component and the damper, so as to maintain an ideal amplitude and phase difference of the 
+    caudal fin, resulting in better swimming performance over multifrequency ranges. Moreover, 
+    a dynamic model for the robotic tuna is established based on Kane method. 
+    Thrust characteristic calculation and computational fluid dynamics method are applied to 
+    analyze the propulsion and vorticity characteristics. Simulated results show that the 
+    composite mechanism generates higher thrust production and stronger vortex structures. 
+    Finally, simulations and experiments validate the effectiveness of the proposed method. 
+    Experimental results demonstrate that the robotic tuna can achieve a maximum speed of 
+    1.21 m/s (equivalent to 2.24 body lengths per second) and minimum cost of transport of 
+    45.67 J/(m ⋅ kg).
+    The research has published in <em>IEEE/ASME Transactions on Mechatronics</em> <b> (SCI, Q1, IF: 6.4)</b>, DOI: <a target="_blank" rel="noopener" href="https://doi.org/10.1109/TMECH.2023.3315681" >10.1109/TMECH.2023.3315681</a>。
+  </p>
+  <img src="./images/ResearchPic/Group/Xiaofei1.png" margin=20px; width="60%"  class="ResearchPicPresention">  
+  </div>
+  
+  <br>
+
+  <h4>
+    <img src="./images/ResearchPic/Group/MU-zhixiang.png" margin=0px; height="25px"  class="" style=" vertical-align: text-bottom;">  
+    <b style="line-height: 1.6; text-align: justify;">Structured Light-Based Underwater Collision-Free Navigation and Dense Mapping System for Refined Exploration in Unknown Dark Environments
+    </b>
+  </h4>
+<div class="researchDiV">
+  <p style="text-align: justify;">
+    &emsp;&emsp;Underwater collision-free navigation and dense reconstruction are essential for marine 
+    refined exploration. However, existing passive vision-based methods are difficult to apply in 
+    low-light and weak-feature underwater environments. In this article, a more adaptable 
+    three-dimensional (3-D) dense mapping robotic system based on self-designed scanning 
+    binocular structured light (BSL), named ROV-Scanner, is developed to address this challenge. 
+    First, the measurement principle based on the refraction model ensures its high accuracy. 
+    Second, an underwater 3-D dense mapping algorithm fusing the Doppler velocity log (DVL), 
+    inertial measurement unit (IMU), and pressure sensor multifrequency information is proposed 
+    to realize dense mapping during robot motion. Then, an air–water two-stage extrinsic calibration 
+    algorithm is proposed. In particular, the extrinsic parameters between DVL and camera 
+    are innovatively calibrated using BSL, enhancing robustness. Furthermore, for the first time, 
+    a framework of BSL-based collision-free navigation is presented to guarantee the safe movement 
+    of the system in unknown environments. Experimental results show that our system can simultaneously 
+    achieve autonomous collision-free navigation and dense mapping in dark underwater environments, 
+    which has great potential for application in marine refined exploration.
+    The research has published in <em>IEEE Transactions on Systems, Man, and Cybernetics: Systems
+    </em> <b> (SCI, Q1, IF: 8.6)</b>, DOI: <a target="_blank" rel="noopener" href="https://doi.org/10.1109/TSMC.2024.3370917">10.1109/TSMC.2024.3370917</a>。
+  </p>
+  <img src="./images/ResearchPic/Group/Ouyaming1.png" margin=20px; width="60%"  class="ResearchPicPresention">  
+  </div>
+
+
+  <br>
+
+  <h4>
+    <img src="./images/ResearchPic/Group/MU-zhixiang.png" margin=0px; height="25px"  class="" style=" vertical-align: text-bottom;">  
+    <b style="line-height: 1.6; text-align: justify;">CMBUV: A Composite-Mechanism Bioinspired Underwater Vehicle Integrated With Elasticity and Shear Damping Possesses High-Performance Capability</b>
+  </h4>
+<div class="researchDiV">
+  <p style="text-align: justify;">
+    &emsp;&emsp;Benefiting from the potential advantages of low noise, high efficiency and little disturbance, 
+    bionic propulsion has attracted wide attentions. Compared with the rigid structure, the performance of 
+    the elastic propulsion structure such as flexible caudal fin and passive compliant joint has been 
+    improved, yet the effective frequency range is limited due to the single mechanism. The optimal 
+    propulsion can only be produced in a certain frequency range. In this article, a biological passive 
+    peduncle joint integrated with the composite mechanism of elasticity and shear damping is proposed, 
+    solving the problem of the narrow frequency range of effective propulsive capacity. Through the optimal 
+    regulation of the elastic function at a certain frequency range and characterization of the damping 
+    function which increases with frequency, the response features of the passive joint are optimized over 
+    a wide range of frequencies, thereby improving the propulsive performance of the composite-mechanism 
+    bioinspired underwater vehicle (CMBUV). A dynamic model is built and the deformation analysis of the 
+    compliant caudal fin is carried out. The propulsive efficiency is characterized, and the results 
+    indicate that the compliant caudal fin modulates the power transmission for enhancing thrust production. 
+    Extensive simulations and experiments reveal that the CMBUV achieves both high swimming speed with 4.42 
+    body length per second and low cost of transport with 90.33 J/kg/m. 
+    Bioinspired propulsion from this study takes advantage of undulating propulsion of natural fish, 
+    offering valuable insights into performing marine tasks in ocean environments.
+    The research has published in <em>IEEE Transactions on Intelligent Vehicles</em> <b> (SCI, Q1, IF: 14)</b>, DOI: <a target="_blank" rel="noopener" href="https://doi.org/10.1109/TIV.2023.3286820" >10.1109/TIV.2023.3286820</a>。
+  </p>
+  <img src="./images/ResearchPic/Group/Xiaofei2.png" margin=20px; width="60%"  class="ResearchPicPresention">  
+  </div>
+
+  <br>
+
+  <h4>
+    <img src="./images/ResearchPic/Group/MU-zhixiang.png" margin=0px; height="25px"  class="" style=" vertical-align: text-bottom;">  
+    <b style="line-height: 1.6; text-align: justify;">Toward Swimming Speed Optimization of a Multi-Flexible Robotic Fish With Low Cost of Transport
+    </b>
+  </h4>
+<div class="researchDiV">
+  <p style="text-align: justify;">
+    &emsp;&emsp;Due to the complex mechanism and fabrication process of flexible materials, 
+    it remains extremely challenging for a flexible robotic fish to achieve fast and efficient 
+    locomotion. In this article, taking advantage of the passive bending and energy storage 
+    properties of flexible materials, we propose an untethered robotic fish with multiple 
+    flexible joints to achieve high performance and low Cost of Transport (COT). First, 
+    combining rigid links and flexible materials, a compact flexible tail with a simple 
+    and efficient structure is proposed. Next, the pseudo-rigid body theory is applied 
+    to analyze the deformation of passive joints, and a full-state dynamic model is established. 
+    More importantly, an optimization method by adjusting the phase differences of 
+    the passive joints is used to obtain high aquatic performance. Finally, extensive 
+    simulations and experiments validate the effectiveness of the proposed method, and 
+    the robotic fish can achieve a maximum speed of 1.63 body length (BL) per second 
+    and a minimum COT of 4.8 J/m (2.87 J/m/kg). Compared with the multi-joint 
+    robotic fish with a similar design, the COT is reduced by up to 81.05% with the 
+    basically same aquatic ability. Excitingly, the flexible robotic fish can achieve 
+    a COT of 7.36 J/m at 1.23 BL/s, which is 15.72%–36.34% lower than that of the bluefin 
+    tuna and is within the range of yellowfin tuna, offering valuable insight into high 
+    speed and long endurance applications for underwater robots. 
+    <br>
+    &emsp;&emsp;Note to Practitioners–This paper is motivated by the design and optimization of an 
+    efficient bionic flexible underwater robot with high aquatic abilities, which is 
+    conducive to aquatic tasks that require long-time and long-distance sailing, 
+    such as underwater topographic exploration, submarine archaeology, and underwater 
+    search and rescue. Existing studies of free-swimming bionic underwater robots 
+    usually focus on the improvement of swimming speed and rarely consider achieving 
+    both high swimming performance and low energy cost. Thus, this paper proposes a 
+    bionic underwater robot design with two joints made of flexible materials on the 
+    tail to address the problem. Based on detailed analyses of the hydrodynamic force 
+    and flexible joint deformation, we propose an effective optimization method for 
+    swimming performance. A series of simulations and experiments suggest that the 
+    mechatronic design and optimization method are practical and valid. Hopefully, 
+    our design and method can provide theoretical guidance for engineers to design 
+    and optimize robots with flexible joints.
+    The research has published in <em>IEEE Transactions on Automation Science and Engineering</em> 
+    <b> (SCI, Q1, IF: 5.9)</b>, DOI: <a target="_blank" rel="noopener" href="https://doi.org/10.1109/TASE.2023.3269775" >10.1109/TASE.2023.3269775</a>。
+  </p>
+  <img src="./images/ResearchPic/Group/luben1.png" margin=20px; width="60%"  class="ResearchPicPresention">  
+  </div>
+
+  <br>
+
+  <h4>
+    <img src="./images/ResearchPic/Group/MU-zhixiang.png" margin=0px; height="25px"  class="" style=" vertical-align: text-bottom;">  
+    <b style="line-height: 1.6; text-align: justify;">Design and Modeling of a Sperm-Inspired Helical Propulsion Robot
+    </b>
+  </h4>
+<div class="researchDiV" >
+  <p style="text-align: justify;">
+    &emsp;&emsp;The development of biomimetics and the demand for higher propulsion efficiency 
+    lead to more research in helical propulsion robots. This letter presents a novel sperm-inspired 
+    robot that utilizes flexible tail as propulsion and analyzes the motion performance. Firstly, 
+    the robot's propulsion system is a center-fixed rotation mechanism that can accurately mimic 
+    the motion of the sperm tail. Secondly, based on resistance theory and Kirchhoff's rod theory,
+    the dynamic model is established to analyse the propulsive performance. More importantly, 
+    it is found that the motion of helical propulsion can be divided into two models: roll and 
+    spin, and the allocation ratio of these two motions affects the propulsive performance. 
+    Thirdly, we introduce spoilers to alter the resistance of the head, thereby changing 
+    the allocation ratio of the roll and spin motion. Based on the proposed model, 
+    we conduct simulations and achieve optimization of spoiler size parameters. 
+    Finally, through experiments, the effectiveness of the robot is verified. 
+    Based on the optimization results of the spoilers, this robot can achieve 
+    propulsion with a maximum forward velocity of 12.78 cm/s.
+    The research has published in <em>IEEE Robotics and Automation Letters </em> <b> (SCI, Q2, IF: 4.6)</b>, DOI: <a target="_blank" rel="noopener" href="https://doi.org/10.1109/LRA.2023.3324876" >10.1109/LRA.2023.3324876</a>。
+  </p>
+  <img src="./images/ResearchPic/Group/Dengliangwei1.png" margin=20px; width="60%"  class="ResearchPicPresention">  
+  </div>
+
+  <br>
+
+  <h4>
+    <img src="./images/ResearchPic/Group/MU-zhixiang.png" margin=0px; height="25px"  class="" style=" vertical-align: text-bottom;">  
+    <b style="line-height: 1.6; text-align: justify;">Discrete Vortex Method-Based Fish-Like Locomotion Modeling
+    </b>
+  </h4>
+<div class="researchDiV">
+  <p style="text-align: justify;">
+    &emsp;&emsp;In nature, fish can achieve efficient swimming through vortex control, 
+    which is also a crucial factor in the propulsion of biomimetic robotic fish. 
+    Existing analytical models of robotic fish generally do not consider vortices. 
+    In addition, numerical methods for solving fluid dynamics are complex and 
+    computationally intensive. In this article, based on the discrete vortex method (DVM), 
+    the point vortex circulation caused by tail oscillation is calculated and an accurate 
+    and efficient dynamic model for robotic fish is established. Specifically, for a 
+    single-joint robotic fish, the hydrodynamic forces on the tail are analyzed using 
+    the DVM and calculated using the unsteady Bernoulli equation. And for the fish head, 
+    the simplified Morison equation is adopted to analyze the inertial forces and drag 
+    forces. Then, the dynamics of the entire robotic fish are derived using the Newton-Euler 
+    method, allowing for the calculation of position, velocity, forces, and wake circulation 
+    at each moment. As a result, the vortex structure obtained from the proposed method exhibits 
+    characteristics of a reverse Karman vortex street, similar to previous DPIV results and 
+    computational fluid dynamics (CFD) simulations. Furthermore, the simulated speeds closely 
+    match the experimental results with an average absolute error of 16.73%, which reduces 
+    the error by 2.95% compared to the conventional quasi-steady lift and drag model. 
+    Meanwhile, our method requires much less time consumption compared to the CFD method, 
+    making it convenient for application in the control and optimization of robotic fish.
+    The research has published in <em>IEEE Journal of Oceanic Engineering
+    </em> <b> (SCI, Q2, IF: 3.8)</b>, DOI: <a target="_blank" rel="noopener" href="https://doi.org/10.1109/JOE.2023.3338926" >10.1109/JOE.2023.3338926</a>。
+  </p>
+  <img src="./images/ResearchPic/Group/Zouqianqian1.png" margin=20px; width="60%"  class="ResearchPicPresention">  
+  </div>
+
+  <p class="p4" id="Location"> <b class="LibSpan" style="margin-right:5px;">Location</b><b>&#10024 &#10024 &#10024</b></p>
+
+  <div id="LocationMap" style=""></div>
+
+  <script type="text/javascript" src="https://webapi.amap.com/maps?v=1.4.15&key=bfc49568a1e2adfbb60bdd4cfa03c648"></script>
+
+
+  <script>
+    var locationXY = [116.3330545, 39.979038];
+    var map = new AMap.Map('LocationMap', {
+        resizeEnable: true,
+        center: locationXY, // 设置地图中心点
+        zoom: 15, // 设置缩放级别
+        // zoomEnable: true, // 是否显示缩放按钮
+        // viewMode:'3D'//使用3D视图
+    });
+
+
+    AMap.plugin('AMap.ToolBar',function(){  //缩放按钮
+    var toolbar = new AMap.ToolBar();
+    map.addControl(toolbar);
+    });
+    AMap.plugin('AMap.Scale',function(){  //比例尺
+    var toolbar = new AMap.Scale();
+    map.addControl(toolbar);
+    });
+    AMap.plugin('AMap.MapType',function(){  //图层切换
+    var toolbar = new AMap.MapType();
+    map.addControl(toolbar);
+    });
+    // 创建标记
+    var marker = new AMap.Marker({
+        position: new AMap.LngLat(locationXY[0],locationXY[1])
+    });
+    marker.setMap(map);
+</script>
+
+
+<!-- 各个页面的替换内容分割线 -->
+
+<br>
+<br>
+
+<!-- 聊天机器人 -->
+
+<!-- <footer>
+  <div class="footercontainer";>
+     <code> Last updated in September 2024. </code>
+  </div>
+</footer> -->
+
+<footer class="footerDef main-footer sticky footer-type-1 footerClass" style="">
+
+  <div class="footer-inner">
+    <!-- Add your copyright text here -->
+    <p style="padding: 10px 10px; font-size: 16px;  margin: 0 0 0;">
+      
+      &copy; <span class="current-year"></span> <a href="./index.html" style="color: #262626; text-decoration: none; font-weight: normal;">cuntou0906</a> 
+      | <img src="./images/TitleImg/Addresslogo.png" style="height: 15px; vertical-align: baseline;"> IACAS Haidian Beijing
+      <!-- |<span id="busuanzi_container_site_pv" style="color: #262626; font-weight: normal;">
+        <img src="./images/TitleImg/Visitor.png" style="height: 13.6px; vertical-align: baseline;">
+        Visitor: <span id="busuanzi_value_site_pv"></span> -->
+      </span>
+      <br>
+      Design by <a href="./index.html"><strong>cuntou0906</strong></a> 
+      | Power by <a href="https://hexo.io/" target="_blank"><strong>Hexo</strong></a>
+      and <a href="https://github.com/" target="_blank"><strong>Github</strong></a>
+    </p>
+    
+    <div class="go-up">
+      <a href="#" rel="go-top">
+        <i class="fas fa-angle-up"></i>
+      </a>
+    </div>
+  </div>
+</footer>
+
+</div>
+
+<!-- /* 在样式表加载后通过JavaScript设置年份 */ -->
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    var currentYear = new Date().getFullYear();
+    var currentYearElement = document.querySelector('.current-year');
+    currentYearElement.setAttribute('data-year', currentYear);
+  });
+</script>
+
+<script>
+  // 座右铭 动态适应窗口大小
+  function reportSindowSize(){     
+    var mottoDiv = document.getElementsByClassName('motto')
+
+    if (isMobileDevice()) {
+      // console.log("Mobile device detected");
+      // 手机端处理
+    } else {
+      // console.log("Desktop device detected");
+      // PC端处理
+      if(window.innerWidth<1000)
+      {
+        mottoDiv[0].style.opacity = '0'
+        
+      }else{
+        mottoDiv[0].style.opacity = '0.6'
+      }
+    }
+  }
+    // 判断网页打开的设备
+  function isMobileDevice() {  
+        let userAgent = navigator.userAgent || navigator.vendor || window.opera;
+        return /android|webos|iphone|ipad|ipod|blackberry|iemobile|opera mini/i.test(userAgent);
+    }   
+ 
+  window.addEventListener("resize", reportSindowSize)
+  window.onload = reportSindowSize()
+</script>
+
+
+<!-- 小猫咪 -->
+<script src="https://cdn.jsdelivr.net/npm/live2d-widget@3.x/lib/L2Dwidget.min.js"></script>
+<script>
+    L2Dwidget.init({
+        "model": {
+            // "jsonPath": "https://unpkg.com/live2d-widget-model-miku@1.0.5/assets/miku.model.json",
+            // "jsonPath": "https://unpkg.com/live2d-widget-model-chitose@1.0.5/assets/chitose.model.json",
+            // "jsonPath": "https://unpkg.com/live2d-widget-model-shizuku@1.0.5/assets/shizuku.model.json",
+            // "jsonPath": "https://unpkg.com/live2d-widget-model-koharu@1.0.5/assets/koharu.model.json",
+            // "jsonPath": "https://unpkg.com/live2d-widget-model-haruto@1.0.5/assets/haruto.model.json",
+            "jsonPath": "https://unpkg.com/live2d-widget-model-hijiki@1.0.5/assets/hijiki.model.json",
+            // "jsonPath": "https://unpkg.com/live2d-widget-model-tororo@1.0.5/assets/tororo.model.json",
+            // "jsonPath": "https://unpkg.com/live2d-widget-model-wanko@1.0.5/assets/wanko.model.json",
+            // "jsonPath": "https://unpkg.com/live2d-widget-model-z16@1.0.5/assets/z16.model.json",
+            "scale": 1
+        },
+        "display": {
+            "position":"right",
+            "width": 100,
+            "height": 100,
+            "hOffset": -15,
+            "vOffset": 70
+        },
+        "mobile": {
+            "show": true,
+            "scale": 1
+        },
+        "react": {
+            "opacityDefault": 0.8,
+            "opacityOnHover": 0.1
+        }
+    });
+</script>
+
+
+
+ </body>
+</html>

@@ -1,0 +1,61 @@
+
+#background1{
+overflow: hidden;
+position: fixed;
+z-index: -1;
+}
+
+/* Bird */
+.bird {
+height: 40px;
+width:  40px;
+transform:rotate(20deg);
+overflow: hidden;
+background: url('../img/bird1.png');
+background-repeat:no-repeat;
+position: absolute;
+bottom: 50%;
+left: 130px;
+z-index: 3;
+animation: birdanimation 0.2s steps(3, end) infinite alternate;
+transition: transform 0.3s;
+}
+
+@keyframes birdanimation {  
+0% { 
+  background: url('../img/bird1.png');
+background-repeat:no-repeat;}
+66% { 
+  background: url('../img/bird2.png');
+background-repeat:no-repeat;}
+100% { 
+  background: url('../img/bird3.png');
+background-repeat:no-repeat;
+}
+}
+.enemy{
+width: 60px;
+position: absolute;
+}
+.score{
+
+margin-top: 20px;
+width: 150px;
+height: 50px;
+border-radius: 10px;
+background: yellowgreen;
+line-height: 50px;
+text-align: center;
+color: #fff;
+position: absolute;
+top: 10px;
+left:10px;
+cursor: pointer;
+
+}
+.audio{
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  z-index: 4;
+}

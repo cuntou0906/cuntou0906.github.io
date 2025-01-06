@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+    <meta name="google-site-verification" content="4JXs3dbX4OyCt-VOBg8pmZ75Ktl4_fY8YGGyME8ow_8" />
+    <meta name="viewport" content="width=device-width, initial-scale=0.55, maximum-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <title> IACAS: Xiaocun Liao</title>
+    <link rel="stylesheet" type="text/css" href="./css/style.css" />
+    <link rel="shortcut icon" href="./images/Logo.ico">
+
+    <link rel="stylesheet" href="./css/fonts/fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="./css/hclonely.css">
+    <link rel="stylesheet" href="./css/xenon-components.min.css">
+    <link rel="stylesheet" href="./css/xenon-skins.min.css">
+    <link rel="stylesheet" href="./css/xenon-forms.min.css">
+    <link rel="stylesheet" href="./css/nav.min.css">
+    <!-- <link rel="stylesheet" href="./css/fontawesome/css/fontawesome.min.css"> -->
+    <link rel="stylesheet" href="./css/iconfont/iconfont.css">
+    <link rel="stylesheet" href="./css/Emoj.css">
+
+  </head>
+
+<body>
+  <!-- <script src="./js/busuanzi.pure.mini.js"></script> -->
+  <script src="./js/jquery.min.js"></script>
+  <script src="./js/snowfall.jquery.min.js"></script>
+  <script src="./js/Emoj.js"></script>
+
+  <script>
+    //调用飘落函数 实现飘落效果
+    $(document).snowfall({
+      flakeCount: 3,// 数量
+      round:true, //圆形
+      shadow:true, //阴影
+      minSpeed:0.3, //最小速度
+      maxSpeed:2 //最大速度
+      
+    });
+  </script>
+
+<!-- Emoj 移动点击表情容器 -->
+<div id="EmojContainer"></div>
+
+<header style="	z-index: 1;">
+  <!-- "Bright blue" background -->
+  <div class="fixedTopHeader" style="rgba(255,255,255,0.1); background-image: url('./images/IACAS_BG.jpg'); z-index: 2; background-repeat: no-repeat; background-size: 100% 100%;">
+    <div style="opacity:1;">
+        <!-- <img src="./images/NaBG.jpg" alt="" style="width: 100%; height:100%"> -->
+
+          <div style=" padding-left: 120px; padding-top: 20px; float:left; opacity:1;">
+            <h1 class="LibSpanHead"> <b>Xiaocun Liao</b> </h1>
+            <h4>Assistant Professor, PhD</h4>
+            <img src="./images/TitleImg/Address.png" margin=0px; alt="" height="20px" width="20px" class=""> Institute of Automation, Chinese Academy of Sciences<br>
+            <img src="./images/TitleImg/email.png" margin=0px; alt="" height="15px" width="20px" class=""> <a href="mailto:liaoxiaocun2019@ia.ac.cn" style="text-decoration: none; color: #262626;">liaoxiaocun2019@ia.ac.cn</a> | <a href="mailto:xiaocun.liao@ia.ac.cn" style="text-decoration: none; color: #262626;">xiaocun.liao@ia.ac.cn</a>
+          </div>
+      </div>
+      <!-- <div style="background-image: url('./images/NaBG.jpg'); position: fixed; top: 0px; left: 0px; width: 100%; width: 100%; background-size: auto;">
+      <div></div>
+      </div> -->
+    </div>
+    <div class="motto">
+      <p style="font-size: 20px;">
+        <b>
+          多一点知识，少问他人一次！
+        </b>
+        <br>
+        <br>
+        <b>
+        &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;多一项技能，少求他人一次！
+        </b>
+      </p>
+    </div>
+
+    <img src="./images/Logo.png" margin=20px; alt="XiaocunLiao" height="100px"  class="LogoLeft">
+   
+    <a target="_blank" rel="noopener" href="https://github.com/cuntou0906" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewBox="0 0 250 250" style="z-index: 3; fill:#151513; color:#fff; position: fixed; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+
+</header>
+
+<nav class="fixedTopnav">
+  <ul>
+    <li>
+        <a class="" href="index.html">
+          <img src="./images/Pic/HomeLogo.png" alt="" height="20px">
+          <b>Home</b> 
+        </a>
+          <ol>
+            <li>
+              <a href="./index.html#Biography">
+                <img src="./images/TitleImg/Business_Biography.png" alt="" width="20px"   height="20px" style="position: absolute; left: 20px;">
+                Biography
+                <img src="./images/TitleImg/RightArr.png" alt="" height="15px" style="position: absolute; right: 8px;">
+              </a>
+              </li>
+            <li>
+              <a href="./index.html#News">
+                <img src="./images/TitleImg/News.png" alt="" width="20px"   height="20px" style="position: absolute; left: 20px;">
+                News
+                <img src="./images/TitleImg/RightArr.png" alt="" height="15px" style="position: absolute; right: 8px;">
+              </a>
+            </li>
+            <li style="border: none;">
+              <a href="./index.html#Funding">
+                <img src="./images/TitleImg/Funding.png" alt="" width="20px"   height="20px" style="position: absolute; left: 20px;">
+                Funding
+                <img src="./images/TitleImg/RightArr.png" alt="" height="15px" style="position: absolute; right: 8px;">
+              </a>
+            </li>
+          </ol>
+    </li>
+    <li>
+        <a class="selected" href="publications.html">
+          <img src="./images/Pic/PaperPub.png" alt="" height="20px">
+        <b>Publication</b>
+        </a>
+        <ol>
+          <li>
+            <a href="./publications.html#Overview">
+              <img src="./images/TitleImg/szpxT.png" alt="" width="20px"   height="20px" style="position: absolute; left: 20px;">
+              Overview
+              <img src="./images/TitleImg/RightArr.png" alt="" height="15px" style="position: absolute; right: 8px;">
+            </a>
+            </li>
+          <li>
+            <a href="./publications.html#Papers">
+              <img src="./images/TitleImg/PapersT.png" alt="" width="20px"   height="20px" style="position: absolute; left: 20px;">
+              Papers
+              <img src="./images/TitleImg/RightArr.png" alt="" height="15px" style="position: absolute; right: 8px;">
+            </a>
+            </li>
+          <li style="border: none;">
+            <a href="./publications.html#Patents">
+              <img src="./images/TitleImg/PatentsT.png" alt="" width="20px"   height="20px" style="position: absolute; left: 20px;">
+              Patents
+              <img src="./images/TitleImg/RightArr.png" alt="" height="15px" style="position: absolute; right: 8px;">
+            </a>
+          </li>
+        </ol>
+    </li>
+      
+    <li >
+        <a class="" href="research.html"><img src="./images/Pic/Research.png" alt="" height="20px"> 
+          <b>Research</b>
+        </a>
+    </li>
+
+    <li>
+        <a class="" href="Group.html"><img src="./images/Pic/Team.png" alt="" height="20px"> 
+          <b>Group</b>
+        </a>
+        <ol>
+          <li>
+            <a href="./Group.html#Introduction">
+              <img src="./images/TitleImg/IntroductionTeam.png" alt=""  width="20px"  height="19px" style="position: absolute; left: 20px;">
+              Introduction
+              <img src="./images/TitleImg/RightArr.png" alt="" height="15px" style="position: absolute; right: 8px;">
+            </a>
+          </li>
+          <li>
+            <a href="./Group.html#Cooperation">
+              <img src="./images/TitleImg/Cooperation.png" alt="" width="20px" height="19px" style="position: absolute; left: 20px;">
+              Cooperation
+              <img src="./images/TitleImg/RightArr.png" alt=""  height="15px" style="position: absolute; right: 8px;">
+            </a>
+          </li>
+          <li style="border: none;">
+            <a href="./Group.html#Research">
+              <img src="./images/TitleImg/ResearchT.png" alt=""  width="20px"  height="19px" style="position: absolute; left: 20px;">
+              Research
+              <img src="./images/TitleImg/RightArr.png" alt="" height="15px" style="position: absolute; right: 8px;">
+            </a>
+          </li>
+          <li style="border: none;">
+            <a href="./Group.html#Location">
+              <img src="./images/TitleImg/Addresslogo.png" alt=""  width="20px"  height="19px" style="position: absolute; left: 20px;">
+              Location
+              <img src="./images/TitleImg/RightArr.png" alt="" height="15px" style="position: absolute; right: 8px;">
+            </a>
+          </li>
+        </ol>
+    </li>
+
+  </ul>
+</nav>
+
+<div class="container" style="text-align: left;">
+
+  <div style = "padding-top:20px; padding-right:20px; padding-left:20px; padding-bottom:20px; float: right;">
+    <div class="LXCImg">
+      <img  margin=20px; alt="XiaocunLiao" height="250px"  width="166.63px" src="XiaocunLiao.JPG">
+    </div>
+    <div style="text-align: center;">
+      <img src="./images/OriBG/LineImage.png" width="100%" height="3px">
+     </div>
+   <p style="text-align: center;">
+     <a href = "https://orcid.org/0000-0002-9455-7015" target="_blank">
+     <img src="./images/ReasechLOGO/ORCID.png" margin=0px; alt="Cuntou0906" height="25px"  class="" style=" vertical-align: text-bottom;">  
+     ORCID
+     </a>
+     <br>
+     <a href="https://scholar.google.com/citations?user=m9BB2AYAAAAJ&hl=zh-CN&oi=sra" target="_blank"> 
+     <img src="./images/ReasechLOGO/GoogleScholor.png" margin=0px; alt="Cuntou0906" height="25px"  class="" style=" vertical-align: text-bottom;">
+     Google Scholar
+     </a>
+     <br>
+     <a href="https://www.researchgate.net/profile/Xiaocun-Liao" target="_blank"> 
+     <img src="./images/ReasechLOGO/Researchgate.png" margin=0px; alt="Cuntou0906" height="25px"  class="" style=" vertical-align: text-bottom;">
+     ResearchGate
+     </a>
+     <br>
+   </p>
+  </div>
+
+
+<!-- 各个页面的替换内容分割线 --> 
+ <!-- 还需修改标签页的选中属性 -->
+
+ <p class="p4"> <b class="LibSpan" style="margin-right:5px;"> Publications </b><b>&#10024 &#10024 &#10024</b></p>
+
+ <h2 id="Overview">
+  <img src="./images/TitleImg/szpx.png" margin=0px; alt="" height="28px"  class="" style="vertical-align: text-bottom;">  
+  <b> Overview </b>
+</h2>
+
+ <!-- main content from here -->
+  
+ <p>
+ 
+	<p style="text-align: justify;">
+		&emsp;&emsp;Currently, I have published 4 SCI index journal papers and 1 EI index conference paper as the first author, and apply for 5 invention patents. 
+	A more complete list of my publications can be found:
+	</p>
+ 
+	 <ul style="font-size: 17px; font-weight: bold;">
+		 <li><a href="https://scholar.google.com/citations?user=m9BB2AYAAAAJ&hl=zh-CN&oi=sra" target="_blank">Google
+			 Scholar Profile
+       <img src="./images/ReasechLOGO/GoogleScholor.png" margin=0px; alt="Cuntou0906" height="25px"  class="" style=" vertical-align: text-bottom;">
+      </a>
+    </li>
+		 <li>
+      <a href="https://orcid.org/0000-0002-9455-7015" target="_blank">ORCID Profile
+        <img src="./images/ReasechLOGO/ORCID.png" margin=0px; alt="Cuntou0906" height="25px"  class="" style="vertical-align: text-bottom;">
+      </a>
+    </li>
+		 <li>
+      <a href="https://www.researchgate.net/profile/Xiaocun-Liao" target="_blank">ResearchGate Profile
+        <img src="./images/ReasechLOGO/Researchgate.png" margin=0px; alt="Cuntou0906" height="25px"  class="" style="vertical-align: text-bottom;">
+      </a>
+    </li>
+    <li>
+      <a href="https://www.webofscience.com/wos/author/record/GVS-3269-2022" target="_blank">Web of Science Profile
+        <img src="./images/ReasechLOGO/WebofScience.jpg" margin=0px; alt="Cuntou0906" height="25px"  class="" style="vertical-align: text-bottom;">
+      </a>
+    </li>
+		 <li>
+      <a href="https://sciprofiles.com/profile/cuntou0906" target="_blank">SciProfiles
+        <img src="./images/ReasechLOGO/SCIProfile.png" margin=0px; alt="Cuntou0906" height="23px"  class="" style="vertical-align: text-bottom;">
+      </a>
+    </li>
+	 </ul>
+ 
+ </p>
+ 
+	 <!-- Edit start from after HERE -->
+ 
+	 <h2 id="Papers">
+    <img src="./images/TitleImg/Paper.png" margin=0px; alt="" height="30px"  class="" style="vertical-align: text-bottom;">  
+    <b> Papers </b>
+  </h2>
+ 
+	 <h3> <b> 2024 </b></h3>
+ 
+	 <h4>
+      <b>
+        &emsp;
+        <img src="./images/TitleImg/Journal.png" margin=0px; alt="" height="20px"  class="" style="vertical-align: text-bottom;">
+        <u>Journal</u>
+      </b>
+    </h4>
+ 
+	 <p style="text-align: justify;">
+		&emsp;&emsp;1. <b>Xiaocun Liao</b>, Chao Zhou, Long Cheng, Jian Wang, Junfeng Fan, and Zhuoliang Zhang. "A Fast Online Elastic-Spine-Based Stiffness Adjusting Mechanism for Fishlike Swimming." <em>Soft Robotics</em> (2024).
+	 </p>
+
+	 <p style="text-align: justify;">
+		&emsp;&emsp;2. <b>Xiaocun Liao</b>, Chao Zhou, Junfeng Fan, Zhuoliang Zhang, Zhaoran Yin, and Liangwei Deng. "Energy-storing analysis and fishtail stiffness optimization for a wire-driven elastic robotic fish." <em>arXiv preprint</em> arXiv:2406.03875 (2024).
+	 </p>
+ 
+	 <h3> <b> 2023 </b></h3>
+ 
+	 <h4>
+    <b>
+      &emsp;
+      <img src="./images/TitleImg/Journal.png" margin=0px; alt="" height="20px"  class="" style="vertical-align: text-bottom;">
+      <u>Journal</u>
+    </b>
+  </h4>
+ 
+	 <p style="text-align: justify;">
+		&emsp;&emsp;1. <b>Xiaocun Liao</b>, Chao Zhou, Jian Wang, and Min Tan. "A Wire-Driven Dual Elastic Fishtail With Energy Storing and Passive Flexibility." <em>IEEE/ASME Transactions on Mechatronics</em> (2023).
+	 </p>
+ 
+	 <p style="text-align: justify;">
+		&emsp;&emsp;2. <b>Xiaocun Liao</b>, Chao Zhou, Jian Wang, Junfeng Fan, and Zhuoliang Zhang. "A wire-driven elastic robotic fish and its design and cpg-based control." <em>Journal of Intelligent & Robotic Systems</em> 107, no. 1 (2023): 4.
+	 </p>
+ 
+	 <p style="text-align: justify;">
+		&emsp;&emsp;3. Deng, Liangwei, Chao Zhou, Jian Wang, Junfeng Fan, <b>Xiaocun Liao</b>, and Chuhui Zhu. "Design and Modeling of a Sperm-inspired Helical Propulsion Robot." <em>IEEE Robotics and Automation Letters</em> (2023).
+	 </p style="text-align: justify;">
+ 
+	 <h4>
+    <b>
+      &emsp;
+      <img src="./images/TitleImg/Conf.png" margin=0px; alt="" height="18px"  class="" style="vertical-align: text-bottom;">
+      <u>Conference</u>
+    </b>
+  </h4>
+ 
+	 <p style="text-align: justify;">
+		&emsp;&emsp;1. Ben Lu, Jian Wang, <b>Xiaocun Liao</b>, Qianqian Zou, Min Tan, and Chao Zhou. "A Performance Optimization Strategy Based on Improved NSGA-II for a Flexible Robotic Fish." <em>In 2023 IEEE International Conference on Robotics and Automation (ICRA)</em>, pp. 1120-1126. IEEE, 2023.
+	 </p>
+ 
+	 <h3> <b> 2022 </b></h3>
+ 
+ 
+	 <h4>
+    <b>
+      &emsp;
+      <img src="./images/TitleImg/Journal.png" margin=0px; alt="" height="20px"  class="" style="vertical-align: text-bottom;">
+      <u>Journal</u>
+    </b>
+  </h4>
+ 
+	 <p style="text-align: justify;">
+		&emsp;&emsp;1. <b>Xiaocun Liao</b>, Chao Zhou, Qianqian Zou, Jian Wang, and Ben Lu. "Dynamic modeling and performance analysis for a wire-driven elastic robotic fish." <em>IEEE Robotics and Automation Letters</em> 7, no. 4 (2022): 11174-11181.
+  </p>
+ 
+	 <p style="text-align: justify;">
+		&emsp;&emsp;2. Qianqian Zou, Chao Zhou, Ben Lu, <b>Xiaocun Liao</b>, and Zhuoliang Zhang. "Tail-stiffness optimization for a flexible robotic fish." <em>Bioinspiration & Biomimetics</em> 17, no. 6 (2022): 066003.
+	 </p>
+ 
+	 <h3> <b> 2021 </b></h3>
+ 
+	 <h4>
+    <b>
+      &emsp;
+      <img src="./images/TitleImg/Conf.png" margin=0px; alt="" height="18px"  class="" style="vertical-align: text-bottom;">
+      <u>Conference</u>
+    </b>
+  </h4>
+ 
+	 <p style="text-align: justify;">
+		&emsp;&emsp;1. <b>Xiaocun Liao</b>, Yuzhuo Fu, Ben Lu, Qianqian Zou, Zhuoliang Zhang, and Chao Zhou. "An elastic biomimetic fish tail and its undulation fitting method of body wave." <em>In 2021 IEEE International Conference on Mechatronics and Automation (ICMA)</em>, pp. 1219-1225. IEEE, 2021.	
+	 </p>
+ 
+	 <p style="text-align: justify;">
+		&emsp;&emsp;2. Yuzhuo Fu, <b>Xiaocun Liao</b>, Ben Lu, Qianqian Zou, Zhuoliang Zhang, Yaming Ou, and Chao Zhou. "Adaptive Fusional Localization for Robot Fish Based on Dynamic-weight Fuzzy Inference." <em>In 2021 China Automation Congress (CAC)</em>, pp. 2357-2362. IEEE, 2021.	
+	 </p>
+ 
+	 <p style="text-align: justify;">
+		&emsp;&emsp;3. Yuzhuo Fu, Ben Lu, <b>Xiaocun Liao</b>, Qianqian Zou, Zhuoliang Zhang, and Chao Zhou. "A Combined Indoor Self-positioning Method for Robotic Fish Based on Multi-sensor Fusion." <em>In 2021 IEEE International Conference on Mechatronics and Automation (ICMA)</em>, pp. 1226-1231. IEEE, 2021.
+	 </p>
+ 
+	 <p style="text-align: justify;">
+		&emsp;&emsp;4. Qianqian Zou, Ben Lu, Yuzhuo Fu, <b>Xiaocun Liao</b>, Zhuoliang Zhang, and Chao Zhou. "Dynamic modeling and optimization of robotic fish based on passive flexible mechanism." <em>In 2021 IEEE International Conference on Mechatronics and Automation (ICMA)</em>, pp. 622-627. IEEE, 2021.
+	 </p>
+
+	 <h2 id="Patents">
+  <img src="./images/TitleImg/Patent.png" margin=0px; alt="" height="30px"  class="" style="vertical-align: text-bottom;">  
+  <b> Patents </b>
+</h2>
+
+ <h3> <b> 2023 </b></h3>
+
+<p style="text-align: justify;">
+	&emsp;&emsp;1. 周超，<b>廖晓村</b>，范俊峰，王健，张灼亮，邹茜茜，卢奔，尹昭然，邓良伟. 基于阻尼力的被动式鱼尾结构及仿生机器鱼. 发明专利, 申请号：CN202311656249.3.
+</p>
+
+<p style="text-align: justify;">
+	&emsp;&emsp;2. 张灼亮，周超，范俊峰，王健，<b>廖晓村</b>，王霄飞，朱春晖，欧亚明. 标定模型训练方法,装置,系统,电子设备及存储介质. 发明专利, 申请号：CN202311307223.8.
+</p>
+
+<p style="text-align: justify;">
+	&emsp;&emsp;3. 周超，邓良伟，范俊峰，王健，朱春晖，王霄飞，<b>廖晓村</b>，尹昭然. 一种水下螺旋推进机构. 发明专利, 专利号：CN202310068351.5.
+</p>
+
+<p style="text-align: justify;">
+	&emsp;&emsp;4.  周超，邓良伟，范俊峰，王健，朱春晖，王霄飞，<b>廖晓村</b>，尹昭然. 一种仿精子推进水下机器人. 发明专利, 专利号：CN202310069352.1.
+</p>
+
+ <h3> <b> 2022 </b></h3>
+
+ <p style="text-align: justify;">
+	&emsp;&emsp;1. 周超，<b>廖晓村</b>，范俊峰，王健，张灼亮，邹茜茜，卢奔，尹昭然，邓良伟. 一种仿生机器鱼. 发明专利, 申请号：CN202211651860.2.
+ </p>
+
+ <p style="text-align: justify;">
+	&emsp;&emsp;2. 周超，<b>廖晓村</b>，范俊峰，王健，张灼亮，尹昭然，邓良伟，卢奔，邹茜茜. 一种在线变刚度的仿生机器鱼. 发明专利, 申请号：CN202211408334.3.
+</p>
+
+<p style="text-align: justify;">
+	&emsp;&emsp;3. 周超，卢奔，范俊峰，王健，邹茜茜，<b>廖晓村</b>，付玉卓. 仿生机器鱼柔性关节配置方法和装置. 发明专利, 申请号：CN202210798155.9
+</p>
+
+<p style="text-align: justify;">
+	&emsp;&emsp;4. 周超，卢奔，范俊峰，王健，邹茜茜，<b>廖晓村</b>，付玉卓. 仿生机器鱼. 发明专利, 申请号：CN202210761610.8.
+</p>
+
+ <h3> <b> 2021 </b></h3>
+ <p style="text-align: justify;">
+	&emsp;&emsp;1. 周超，<b>廖晓村</b>，范俊峰，邹茜茜，卢奔，付玉卓. 基于仿生机器鱼的仿生波动控制方法及系统. 发明专利, 专利号：ZL202110949208.8.
+</p>
+
+<p style="text-align: justify;">
+	&emsp;&emsp;2. 周超，<b>廖晓村</b>，范俊峰，卢奔，邹茜茜，付玉卓. 一种仿生鱼尾水下推进器. 发明专利, 专利号：ZL202110680206.3.
+</p>
+<!-- 各个页面的替换内容分割线 -->
+
+<br>
+
+
+<!-- 聊天机器人 -->
+
+<footer class="footerDef main-footer sticky footer-type-1 footerClass" style="">
+
+  <div class="footer-inner">
+    <!-- Add your copyright text here -->
+    <p style="padding: 10px 10px; font-size: 16px;  margin: 0 0 0;">
+      
+      &copy; <span class="current-year"></span> <a href="./index.html" style="color: #262626; text-decoration: none; font-weight: normal;">cuntou0906</a> 
+      | <img src="./images/TitleImg/Addresslogo.png" style="height: 15px; vertical-align: baseline;"> IACAS Haidian Beijing
+      <!-- |<span id="busuanzi_container_site_pv" style="color: #262626; font-weight: normal;">
+        <img src="./images/TitleImg/Visitor.png" style="height: 13.6px; vertical-align: baseline;">
+        Visitor: <span id="busuanzi_value_site_pv"></span>
+      </span> -->
+      <br>
+      Design by <a href="./index.html"><strong>cuntou0906</strong></a> 
+      | Power by <a href="https://hexo.io/" target="_blank"><strong>Hexo</strong></a>
+      and <a href="https://github.com/" target="_blank"><strong>Github</strong></a>
+    </p>
+    
+    <div class="go-up">
+      <a href="#" rel="go-top">
+        <i class="fas fa-angle-up"></i>
+      </a>
+    </div>
+  </div>
+</footer>
+
+</div>
+
+
+<!-- /* 在样式表加载后通过JavaScript设置年份 */ -->
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    var currentYear = new Date().getFullYear();
+    var currentYearElement = document.querySelector('.current-year');
+    currentYearElement.setAttribute('data-year', currentYear);
+  });
+</script>
+
+<script>
+  // 座右铭 动态适应窗口大小
+  function reportSindowSize(){     
+    var mottoDiv = document.getElementsByClassName('motto')
+
+    if (isMobileDevice()) {
+      // console.log("Mobile device detected");
+      // 手机端处理
+    } else {
+      // console.log("Desktop device detected");
+      // PC端处理
+      if(window.innerWidth<1000)
+      {
+        mottoDiv[0].style.opacity = '0'
+        
+      }else{
+        mottoDiv[0].style.opacity = '0.6'
+      }
+    }
+  }
+    // 判断网页打开的设备
+  function isMobileDevice() {  
+        let userAgent = navigator.userAgent || navigator.vendor || window.opera;
+        return /android|webos|iphone|ipad|ipod|blackberry|iemobile|opera mini/i.test(userAgent);
+    }
+ 
+  window.addEventListener("resize", reportSindowSize)
+  window.onload = reportSindowSize()
+</script>
+
+<!-- 小猫咪 -->
+<script src="https://cdn.jsdelivr.net/npm/live2d-widget@3.x/lib/L2Dwidget.min.js"></script>
+<script>
+    L2Dwidget.init({
+        "model": {
+            // "jsonPath": "https://unpkg.com/live2d-widget-model-miku@1.0.5/assets/miku.model.json",
+            // "jsonPath": "https://unpkg.com/live2d-widget-model-chitose@1.0.5/assets/chitose.model.json",
+            // "jsonPath": "https://unpkg.com/live2d-widget-model-shizuku@1.0.5/assets/shizuku.model.json",
+            // "jsonPath": "https://unpkg.com/live2d-widget-model-koharu@1.0.5/assets/koharu.model.json",
+            // "jsonPath": "https://unpkg.com/live2d-widget-model-haruto@1.0.5/assets/haruto.model.json",
+            "jsonPath": "https://unpkg.com/live2d-widget-model-hijiki@1.0.5/assets/hijiki.model.json",
+            // "jsonPath": "https://unpkg.com/live2d-widget-model-tororo@1.0.5/assets/tororo.model.json",
+            // "jsonPath": "https://unpkg.com/live2d-widget-model-wanko@1.0.5/assets/wanko.model.json",
+            // "jsonPath": "https://unpkg.com/live2d-widget-model-z16@1.0.5/assets/z16.model.json",
+            "scale": 1
+        },
+        "display": {
+            "position":"right",
+            "width": 100,
+            "height": 100,
+            "hOffset": -15,
+            "vOffset": 70
+        },
+        "mobile": {
+            "show": true,
+            "scale": 1
+        },
+        "react": {
+            "opacityDefault": 0.8,
+            "opacityOnHover": 0.1
+        }
+    });
+</script>
+
+
+ </body>
+</html>
