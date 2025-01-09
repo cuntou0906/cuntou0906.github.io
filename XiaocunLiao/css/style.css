@@ -689,3 +689,166 @@ footer.main-footer.fixed {
 	z-index: 3;
 	transform: scaleX(-1);
 }
+
+
+/* 课题组合作页 滚动特效 */
+.Cooperation-section {
+	padding: 20px 0;
+	margin-left: auto;
+	margin-right: auto;
+	background-color: #ffffff;
+	width: 100%;
+}
+
+.Cooperation-slider-container {
+	margin: 20px 0;
+	overflow: hidden;
+	position: relative;
+}
+
+.Cooperation-slider-track {
+	display: flex;
+	width: fit-content;
+	gap: 20px;
+	animation: Cooperation-scroll 8s linear infinite;
+}
+
+.Cooperation-slider-track > div {
+	animation: none;
+}
+
+.Cooperation-slider-track:hover {
+	animation-play-state: paused;
+}
+
+.Cooperation-slider-track.reverse {
+	animation-direction: reverse;
+}
+
+.Cooperation-feature-card {
+	text-decoration: none;
+	flex: 0 0 310px;
+	height: 70px;
+	padding: 1.3rem;
+	background-color: #f9fafb;
+	border-radius: 0.5rem;
+	transition: transform 0.3s ease;
+	display: flex;
+	flex-direction: column;
+	gap: 0.75rem;
+	justify-content: space-between;
+	cursor: pointer;
+	width: 30px;
+}
+
+.Cooperation-feature-card:hover {
+	transform: translateY(-5px);
+	box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.Cooperation-feature-title {
+	font-size: 1.25rem;
+	font-weight: 600;
+	margin-bottom: 0.5rem;
+	color: #111827;
+}
+
+.Cooperation-feature-description {
+	font-size: 0.875rem;
+	color: #6b7280;
+	line-height: 1.4;
+	margin-top: 0;
+	display: -webkit-box;
+	-webkit-line-clamp: 3;
+	-webkit-box-orient: vertical;
+	overflow: hidden;
+	margin: 0 0 0.5em;
+}
+
+@keyframes Cooperation-scroll {
+	0% {
+		transform: translateX(0);
+	}
+	100% {
+		transform: translateX(calc(-50%));
+	}
+}
+
+.Cooperation-slider-container::before,
+        .Cooperation-slider-container::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            width: 100px;
+            height: 100%;
+            z-index: 1;
+        }
+
+        .Cooperation-slider-container::before {
+            left: 0;
+            background: linear-gradient(to right, 
+                rgba(255, 255, 255, 1) 0%,
+                rgba(255, 255, 255, 0.9) 20%,
+                rgba(255, 255, 255, 0) 100%);
+        }
+
+        .Cooperation-slider-container::after {
+            right: 0;
+            background: linear-gradient(to left,
+                rgba(255, 255, 255, 1) 0%,
+                rgba(255, 255, 255, 0.9) 20%,
+                rgba(255, 255, 255, 0) 100%);
+        }
+
+.Cooperation-user-info {
+	display: flex;
+	align-items: center;
+	gap: 0.75rem;
+	flex-shrink: 0;
+}
+
+.Cooperation-user-avatar {
+	width: 45px;
+	height: 45px;
+	border-radius: 50%;
+	/* overflow: hidden; */
+}
+
+.Cooperation-user-avatar img {
+	width: 45px;
+	height: 45px;
+	object-fit: cover;
+}
+
+.Cooperation-user-des{
+
+}
+
+.Cooperation-user-name {
+	font-size: 1rem;
+	font-weight: 600;
+	color: #111827;
+}
+
+.Cooperation-user-handle {
+	font-size: 0.875rem;
+	color: #6b7280;
+}
+
+.Cooperation-emoji-hearts {
+	color: #ef4444;
+	font-size: 1.25rem;
+}
+
+@media(max-width:780px){
+
+
+.Cooperation-feature-card {
+	flex: 0 0 200px;
+	height: 80px;
+}
+
+	
+	
+	} /*Android常用宽度*/
+Cooperation-user-des
