@@ -1225,6 +1225,40 @@
     <!-- 可设置多行 -->
 
 
+  <!-- 通知栏 -->
+    <div class="notification-wrapper">
+      <div class="notification-bar">
+          <div class="notification-content">
+              <span>欢迎各位小伙伴推荐网站！联系方式：liaoxiaocun2019@ia.ac.cn</span>
+          </div>
+      </div>
+      <div class="notification-icon">📢</div>
+  </div>
+
+  <script>
+    // 检查文本是否需要滚动
+    window.addEventListener('load', function() {
+        const content = document.querySelector('.notification-content');
+        const text = content.querySelector('span');
+        
+        if (text.offsetWidth <= content.offsetWidth) {
+            text.style.animation = 'none';
+            text.style.paddingLeft = '0';
+        }
+    });
+
+    // // 自动隐藏通知
+    // setTimeout(() => {
+    //     const notificationBar = document.querySelector('.notification-bar');
+    //     notificationBar.style.animation = 'slideOut 0.5s ease-out forwards';
+    // }, 5000);
+
+    // 点击关闭通知
+    document.querySelector('.notification-bar').addEventListener('click', function() {
+        this.style.display = 'none';
+    });
+</script>
+
     <!-- 广告位招租 -->
     <!-- <br>
     <div style="display: flex; justify-content: center; align-items: center; height: 100%;">
@@ -1236,7 +1270,8 @@
       <h4>有意者请联系邓良伟：dengliangwei2021@ia.ac.cn</h4>
     </div> -->
     <!-- 广告位招租 -->
-
+  <br>
+  <br>
    
     <section class="sousuo">
       <div class="search">
@@ -22931,10 +22966,13 @@
       <span class="LibSpan MainContentTitleID">区块链</span>
     </h3>
     
-      <div style="background-color: #f7d4d4; border: #e27272 2px solid; border-radius: 10px; height: auto;display: flex; justify-content: center; align-items: center;">
-        <img src="images/flags/attention.png" alt="Attention!" width="26" height="26" style="float: left;">
+      <div class="BlockLineWrapper" style="">
+        <img src="images/flags/attention.png" alt="Attention!" height="40px" style="float: left;">
         &nbsp;&nbsp;&nbsp;
-        <h4>请注意：此区块链相关链接的所有内容仅作技术学习参考！均不构成任何投资数字货币的意见和建议，也不赞成个人炒作任何数字货币！</h4>
+        <div>
+          <div>请注意：此区块链相关链接的所有内容仅作技术学习参考！</div>
+        <div>均不构成任何投资数字货币的意见和建议，也不赞成个人炒作任何数字货币！</div>
+        </div>
       </div>
       <br>
       
