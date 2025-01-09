@@ -712,8 +712,6 @@ footer.main-footer.fixed {
 	gap: 20px;
 	animation: Cooperation-scroll 20s linear infinite;
 	/* transform: translateX(calc(-0% - 1458px)); */
-
-
 }
 
 .Cooperation-slider-track > div {
@@ -777,7 +775,15 @@ footer.main-footer.fixed {
 	}
 }
 
-.Cooperation-slider-container::before,
+		.Cooperation-slider-container::before{
+			content: "";
+			position: absolute;
+			top: 0;
+			width: 100px;
+			height: 100%;
+			z-index: 1;
+			border: none;
+		}
         .Cooperation-slider-container::after {
             content: "";
             position: absolute;
@@ -790,9 +796,9 @@ footer.main-footer.fixed {
 
         .Cooperation-slider-container::before {
             left: 0;
-            background: linear-gradient(to right, 
+            background: linear-gradient(to right,
                 rgba(255, 255, 255, 1) 0%,
-                rgba(255, 255, 255, 0.9) 20%,
+                rgba(255, 255, 255, 0.8) 50%,
                 rgba(255, 255, 255, 0) 100%);
         }
 
@@ -800,7 +806,7 @@ footer.main-footer.fixed {
             right: 0;
             background: linear-gradient(to left,
                 rgba(255, 255, 255, 1) 0%,
-                rgba(255, 255, 255, 0.9) 20%,
+                rgba(255, 255, 255, 0.8) 50%,
                 rgba(255, 255, 255, 0) 100%);
         }
 
@@ -860,5 +866,19 @@ footer.main-footer.fixed {
 		}
 	}
 
+	.container
+	{
+		max-width: calc( 100% - 35px);
+	}
 
-	} 
+	.Cooperation-section {
+		
+	}
+
+	.Cooperation-slider-track
+	{
+		overflow: hidden; /* 确保蒙版溢出的部分不显示 */
+	}
+	
+
+} 
