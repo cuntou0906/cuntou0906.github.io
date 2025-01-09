@@ -192,10 +192,20 @@
 
 <div class="container" style="text-align: left;">
 
-  <div style = "padding-top:60px; padding-right:20px; padding-left:20px; padding-bottom:20px; float: right;">
+    <!-- 通知栏 -->
+    <div class="notification-wrapper">
+      <div class="notification-bar">
+          <div class="notification-content">
+              <span>Welcome to join Underwater Robot Team and make progress together💪!</span>
+          </div>
+      </div>
+      <div class="notification-icon">📢</div>
+    </div>
+
+  <div style = "padding-top:100px; padding-right:20px; padding-left:20px; padding-bottom:20px; float: right;">
     <img src="./images/iacas_logo1.png" margin=20px; alt="IACAS" height="120px" >
   </div>
-  <div style = "padding-top:60px; padding-right:20px; padding-left:20px; padding-bottom:20px; float: right;">
+  <div style = "padding-top:100px; padding-right:20px; padding-left:20px; padding-bottom:20px; float: right;">
     <img src="./images/CASLogo.png" margin=20px; alt="IACAS" height="120px" >
   </div>
 <!-- 各个页面的替换内容分割线 --> 
@@ -224,7 +234,34 @@
   <b>Scholar</b>
 </h4>
 
+
+<!-- 通知栏 -->
+<script>
+  // 检查文本是否需要滚动
+  window.addEventListener('load', function() {
+      const content = document.querySelector('.notification-content');
+      const text = content.querySelector('span');
+      
+      if (text.offsetWidth <= content.offsetWidth) {
+          text.style.animation = 'none';
+          text.style.paddingLeft = '0';
+      }
+  });
+
+  // // 自动隐藏通知
+  // setTimeout(() => {
+  //     const notificationBar = document.querySelector('.notification-bar');
+  //     notificationBar.style.animation = 'slideOut 0.5s ease-out forwards';
+  // }, 5000);
+
+  // 点击关闭通知
+  document.querySelector('.notification-bar').addEventListener('click', function() {
+      this.style.display = 'none';
+  });
+</script>
+
 <div class="ScholarDiv">
+
 <ul>
   <li>
     <b>

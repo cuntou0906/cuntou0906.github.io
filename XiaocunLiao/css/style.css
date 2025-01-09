@@ -587,6 +587,7 @@ footer.main-footer.fixed {
 	/* display: flex; */
 	/* float: left; */
 	flex-wrap: nowrap;
+	/* position: relative; */
 }
 
 .ScholarDiv >ul{
@@ -695,6 +696,36 @@ footer.main-footer.fixed {
 	z-index: 3;
 	transform: scaleX(-1);
 }
+
+
+/* 首页新闻自定义项目符号列表 */
+ul.Index_New {
+    list-style-type: none; /* 移除默认项目符号 */
+    padding-left: 0; /* 移除默认的内边距 */
+  }
+ 
+  ul.Index_New li {
+    padding-left: 20px; /* 添加内边距以保持文本对齐 */
+	margin-left: 30px;
+	position: relative;
+
+  }
+  ul.Index_New li span{
+	margin-left: 5px;
+
+  }
+ 
+  ul.Index_New li::before {
+    content: "📢"; /* 自定义项目符号 */
+    color: blue; /* 设置项目符号颜色 */
+    font-weight: bold; /* 设置项目符号字体粗细 */
+    display: inline-block; /* 使项目符号作为行内块显示 */
+    width: 1em; /* 设置项目符号宽度 */
+    margin-left: -1em; /* 设置项目符号左边距以对齐文本 */
+	justify-content: center;
+	position: absolute; /* 绝对定位 */
+	left: -1px;
+  }
 
 
 /* 课题组合作页 滚动特效 */
@@ -889,3 +920,122 @@ footer.main-footer.fixed {
 	
 
 } 
+
+/* 通知栏 */
+
+.notification-bar {
+	position: absolute;
+	/* top: 20px; */
+	right: 70px;
+	width: 360px;
+	height: 50px;
+	background-color: #fff;
+	border-radius: 8px;
+	box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+	display: flex;
+	align-items: center;
+	padding: 0 10px;
+	z-index: 1000;
+	animation: slideIn 0.5s ease-out;
+  }
+  
+  .notification-wrapper {
+	position: absolute;
+	top: 230px;
+	right: 20px;
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	z-index: 1;
+  }
+  
+  .notification-content {
+	flex: 1;
+	white-space: nowrap;
+	overflow: hidden;
+	font-size: 16px;
+	color: #333;
+	transition: all 0.3s ease;
+  }
+  
+  .notification-icon:hover {
+	  transform: scale(1.1) scaleX(-1);
+	  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+	  background-color: #f5f5f5;
+  }
+  
+  .notification-content span {
+	display: inline-block;
+	padding-left: 100%;
+	animation: scroll-text 15s linear infinite;
+  }
+  
+  @keyframes scroll-text {
+	0% {
+		transform: translateX(0);
+	}
+	100% {
+		transform: translateX(-100%);
+	}
+  }
+  
+  .notification-icon {
+	width: 40px;
+	height: 40px;
+	background-size: cover;
+	flex-shrink: 0;
+	border-radius: 50%;
+	box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+	background-color: #fff;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 24px;
+	cursor: pointer;
+	z-index: 1001;
+	position: relative;
+	transform: scaleX(-1);
+  }
+  
+  @keyframes slideIn {
+	from {
+		transform: translateX(100%);
+		opacity: 0;
+	}
+	to {
+		transform: translateX(0);
+		opacity: 1;
+	}
+  }
+  
+  @keyframes slideOut {
+	from {
+		transform: translateX(0);
+		opacity: 1;
+	}
+	to {
+		transform: translateX(100%);
+		opacity: 0;
+	}
+  }
+  
+  /* 悬停效果 */
+  .notification-bar:hover {
+	box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+	transform: translateY(-2px);
+	transition: all 0.3s ease;
+  }
+  
+  /* 响应式设计 */
+  @media (max-width: 768px) {
+	.notification-bar {
+		width: calc(600% - 0px);
+		bottom: auto;
+	}
+	.notification-wrapper {
+		top: 20px;
+		bottom: auto;
+		position: relative;
+		display: none;
+	}
+  }
