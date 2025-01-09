@@ -614,7 +614,7 @@ ul.entertamentMenuUL>li>a>img{
 }
 
 .notification-icon:hover {
-    transform: scale(1.1);
+    transform: scale(1.1) scaleX(-1);
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
     background-color: #f5f5f5;
 }
@@ -649,6 +649,7 @@ ul.entertamentMenuUL>li>a>img{
   cursor: pointer;
   z-index: 1001;
   position: relative;
+  transform: scaleX(-1);
 }
 
 @keyframes slideIn {
