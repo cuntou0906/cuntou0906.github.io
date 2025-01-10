@@ -29,23 +29,28 @@
 <body>
   <!-- <script src="./js/busuanzi.pure.mini.js"></script> -->
   <script src="./js/jquery.min.js"></script>
-  <script src="./js/snowfall.jquery.min.js"></script>
-  <script src="./js/Emoj.js"></script>
-
-  <script>
-    //调用飘落函数 实现飘落效果
-    $(document).snowfall({
-      flakeCount: 3,// 数量
-      round:true, //圆形
-      shadow:true, //阴影
-      minSpeed:0.3, //最小速度
-      maxSpeed:2 //最大速度
-      
-    });
-  </script>
   
+  <!-- <script src="./js/snowfall.jquery.min.js"></script> -->
+<!-- <script>
+  //调用飘落函数 实现飘落效果
+  $(document).snowfall({
+    flakeCount: 3,// 数量
+    round:true, //圆形
+    shadow:true, //阴影
+    minSpeed:0.3, //最小速度
+    maxSpeed:2 //最大速度
+    
+  });
+</script> -->
+
+<!-- //调用飘落函数 实现飘落效果 -->
+  <script src="./js/MySnowFall.js"></script>
+
+
 <!-- Emoj 移动点击表情容器 -->
+<script src="./js/Emoj.js"></script>
 <div id="EmojContainer"></div>
+
 
 <header style="	z-index: 1;">
   <!-- "Bright blue" background -->
@@ -192,10 +197,20 @@
 
 <div class="container" style="text-align: left;">
 
-  <div style = "padding-top:60px; padding-right:20px; padding-left:20px; padding-bottom:20px; float: right;">
+    <!-- 通知栏 -->
+    <div class="notification-wrapper">
+      <div class="notification-bar">
+          <div class="notification-content">
+              <span>Welcome to join Underwater Robot Team and make progress together💪!</span>
+          </div>
+      </div>
+      <div class="notification-icon">📢</div>
+    </div>
+
+  <div style = "padding-top:100px; padding-right:20px; padding-left:20px; padding-bottom:20px; float: right;">
     <img src="./images/iacas_logo1.png" margin=20px; alt="IACAS" height="120px" >
   </div>
-  <div style = "padding-top:60px; padding-right:20px; padding-left:20px; padding-bottom:20px; float: right;">
+  <div style = "padding-top:100px; padding-right:20px; padding-left:20px; padding-bottom:20px; float: right;">
     <img src="./images/CASLogo.png" margin=20px; alt="IACAS" height="120px" >
   </div>
 <!-- 各个页面的替换内容分割线 --> 
@@ -224,7 +239,34 @@
   <b>Scholar</b>
 </h4>
 
+
+<!-- 通知栏 -->
+<script>
+  // 检查文本是否需要滚动
+  window.addEventListener('load', function() {
+      const content = document.querySelector('.notification-content');
+      const text = content.querySelector('span');
+      
+      if (text.offsetWidth <= content.offsetWidth) {
+          text.style.animation = 'none';
+          text.style.paddingLeft = '0';
+      }
+  });
+
+  // // 自动隐藏通知
+  // setTimeout(() => {
+  //     const notificationBar = document.querySelector('.notification-bar');
+  //     notificationBar.style.animation = 'slideOut 0.5s ease-out forwards';
+  // }, 5000);
+
+  // 点击关闭通知
+  document.querySelector('.notification-bar').addEventListener('click', function() {
+      this.style.display = 'none';
+  });
+</script>
+
 <div class="ScholarDiv">
+
 <ul>
   <li>
     <b>
@@ -397,7 +439,7 @@
           </a>
           <a href="https://www.nwpu.edu.cn/" target="_blank" class="Cooperation-feature-card">
               <div class="Cooperation-user-info">
-                  <div class="Cooperation-user-avatar">
+                  <div class="Cooperation-user-avatar" >
                       <img src="./images/CoopUnit/NWPU.jpg" loading="lazy" >
                   </div>
                   <div class="Cooperation-user-des">

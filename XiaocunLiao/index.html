@@ -23,10 +23,9 @@
 <body>
   <!-- <script src="./js/busuanzi.pure.mini.js"></script> -->
   <script src="./js/jquery.min.js"></script>
-  <script src="./js/snowfall.jquery.min.js"></script>
-  <script src="./js/Emoj.js"></script>
   
-<script>
+  <!-- <script src="./js/snowfall.jquery.min.js"></script> -->
+<!-- <script>
   //调用飘落函数 实现飘落效果
   $(document).snowfall({
     flakeCount: 3,// 数量
@@ -36,9 +35,14 @@
     maxSpeed:2 //最大速度
     
   });
-</script>
+</script> -->
+
+<!-- //调用飘落函数 实现飘落效果 -->
+  <script src="./js/MySnowFall.js"></script>
+
 
 <!-- Emoj 移动点击表情容器 -->
+<script src="./js/Emoj.js"></script>
 <div id="EmojContainer"></div>
 
 
@@ -313,22 +317,22 @@
 <!-- HTML emoji "sparkles" at the end,  use the decimal code. -->
 <p class="p4" id="News"> <b class="LibSpan" style="margin-right:5px;"> News</b><b>&#10024 &#10024 &#10024</b></p>
 
-<ul >
+<ul class="Index_New">
   <li> 
-    <p style="margin: 0 0 0.6em; text-align: justify;">
+    <span style="margin: 0 0 0.7em; text-align: justify;">
       2024-09-1. 
       <u>
         Our group is open to doctoral students and master's students, and the research fields include biomimetic underwater robotic design, robotic control, and underwater vision, etc.
       </u>
-      </p>
+    </span>
   </li>
   <li> 
-    <p style="margin: 0 0 0.6em; text-align: justify;">
+    <span style="margin: 0 0 0.7em; text-align: justify;">
     2024-09-1. 
     <u>
       Our group recruits interns all year round. Please contact me by e-mail at any time.
     </u>
-  </p>
+  </span>
   </li>  
 </ul>
 
