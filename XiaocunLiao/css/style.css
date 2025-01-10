@@ -114,7 +114,7 @@ html{
 	top: 40px;
 	left: 50%;
 	opacity: 0.6;
-	z-index: 2;
+	z-index: 5;
 }
 
 @media(max-width:780px){
@@ -123,15 +123,40 @@ html{
 	}
 }
 
+.Publication-paper-wrapper h3,.Publication-Patents-wrapper,h3{
+	padding: 10px;
+	padding-left: 0px;
+}
+
+.Publication-paper-wrapper p{
+	background: #f8f9fa;
+	padding: 10px;
+	margin-bottom: 5px;
+	border-radius: 10px;
+	line-height: 1.5;
+}
+
+.Publication-Patents-wrapper p{
+	background: #f8f9fa;
+	padding: 10px;
+	margin-bottom: 5px;
+	border-radius: 10px;
+}
+
 
 /* 成果展示页面的单独css */
 .researchDiV p{
 	/* font-size: 17px; */
 	line-height: 1.5;
 	text-align: left;
+	margin: 0;
 }
 .researchDiV{
-text-align: center;
+	text-align: center;
+	background: #f8f9fa;
+	padding: 10px;
+	margin-bottom: 20px;
+	border-radius: 30px;
 }
 
 .container ul li{
@@ -444,7 +469,7 @@ section figure {
 	top: 180px;
 	left: 0;
 	width: 100%;
-	z-index: 2;
+	z-index: 5;
 
   }
 
@@ -1044,3 +1069,120 @@ ul.Index_New {
 	top: -50px;
 	z-index: 1000;
 }
+
+
+/* 段落展开与折叠 */
+.ExpandText-container {
+	width: 100%;
+	margin: 10px auto;
+	padding: 2px;
+}
+
+.ExpandText-wrapper {
+	position: relative;
+	margin-bottom: 20px;
+	background: #f8f9fa;
+	padding: 20px;
+	border-radius: 8px;
+}
+
+.ExpandText-content {
+	margin: 0;
+	line-height: 1.6;
+	color: #333;
+	display: block;
+	position: relative;
+}
+
+/* 展开状态时移除高度限制 */
+.ExpandText-content.ExpandText-expanded {
+	max-height: none;
+	padding-bottom: 50px;
+}
+
+.ExpandText-image {
+	width: 60%;
+	object-fit: cover;
+	border-radius: 8px;
+	box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+	display: block;
+	margin: 20px auto;
+}
+
+.ExpandText-text {
+	margin: 0;
+	line-height: 1.5;
+	text-align: justify;
+}
+
+.ExpandText-content.ExpandText-collapsed {
+	max-height: 1.6em;
+	overflow: hidden;
+	padding-bottom: 50px;
+}
+
+.ExpandText-btn {
+	position: absolute;
+	left: 50%;
+	bottom: 0;
+	transform: translateX(-50%);
+	display: inline-block;
+	padding: 8px 20px;
+	margin: 0;
+	background-color: #fff;
+	color: #1280f7;
+	border: 1px solid #1280f7;
+	border-radius: 4px;
+	cursor: pointer;
+	transition: all 0.3s ease;
+	font-size: 14px;
+	z-index: 2;
+}
+
+.ExpandText-btn:hover {
+	background-color: #3789e0;
+	color: #fff;
+}
+
+/* 渐变遮罩 */
+.ExpandText-content.ExpandText-collapsed::after {
+	content: '';
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 40px;
+	background: linear-gradient(transparent, #f8f9fa);
+	pointer-events: none;
+	z-index: 1;
+}
+
+/* 分隔线 */
+.Divider {
+	display: flex;
+	align-items: center;
+	text-align: center;
+	margin: 10px auto;
+	width: 80%;
+	color: #666;
+}
+
+.Divider::before,
+.Divider::after {
+	content: '';
+	flex: 1;
+	border-bottom: 1px dashed #ccc;
+}
+
+.Divider-icon {
+	padding: 0 15px;
+	font-size: 20px;
+	color: #999;
+}
+
+.Divider:hover .Divider-icon {
+	transform: rotate(360deg);
+	transition: transform 0.5s ease;
+}
+
+
