@@ -1186,3 +1186,149 @@ ul.Index_New {
 }
 
 
+/* 标题悬浮特效 */
+
+.PaperTitle-hover {
+	display: block;
+	position: relative;
+	overflow: hidden;
+	padding: 15px;
+	cursor: pointer;
+	height: 1.2em;
+	width: 100%;
+	perspective: 1000px;
+}
+
+.PaperTitle-text {
+	font-size: 1.25em;
+	font-weight: bold;
+	color: #333;
+	margin: 0;
+	line-height: 1.6;
+	transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+	position: absolute;
+	top: -10px;
+	left: 0;
+	display: block;
+	backface-visibility: hidden;
+	transform: translateY(20px);
+	transform-origin: 50% 100%;
+	text-align: justify;
+}
+
+.PaperTitle-clone {
+	position: absolute;
+	top: -10px;
+	left: 0;
+	width: 100%;
+	padding: 0px;
+	transform: translateY(60px) rotateX(90deg);
+	transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+	color: #333;
+	font-size: 1.25em;
+	font-weight: bold;
+	line-height: 1.6;
+	backface-visibility: hidden;
+	margin: 0;
+	transform-origin: 50% 0%;
+	text-align: justify;
+}
+
+/* 悬浮效果 */
+.PaperTitle-hover:hover .PaperTitle-text {
+	transform: translateY(-20px) rotateX(-90deg);
+}
+
+.PaperTitle-hover:hover .PaperTitle-clone {
+	transform: translateY(20px) rotateX(0deg);
+}
+
+
+/* 标题悬浮 */
+
+.GlowTitle {
+	position: relative;
+	font-size:1em;
+	font-weight: bold;
+	color: #000000;
+	cursor: pointer;
+	/* padding: 10px 20px; */
+	transition: all 0.3s ease;
+	display: block;
+	text-align: left;
+	width: 100%;
+	display: inline;
+	width: auto;
+	line-height: 1.6; 
+	text-align: justify;
+	margin-left: 5px;
+}
+
+.GlowTitle::before {
+	content: attr(data-text);
+	position: absolute;
+	top: -4px;
+	left: 0;
+	width: 100%;
+	/* height: 100%; */
+	color: #fff;
+	filter: blur(2px);
+	background: linear-gradient(45deg, 
+		#1976d2 0%,     /* 深蓝色 */
+		#2196f3 30%,    /* 标准蓝 */
+		#03a9f4 70%,    /* 浅蓝色 */
+		#4fc3f7 100%    /* 天蓝色 */
+	);
+	background-size: 200%;
+	-webkit-background-clip: text;
+	background-clip: text;
+	-webkit-text-fill-color: transparent;
+	animation: backgroundMove 10s linear infinite;
+	opacity: 0;
+	transition: opacity 0.3s ease;
+	text-align: left;
+	padding: 10px 20px;
+}
+
+.GlowTitle:hover {
+	text-shadow: 0 -2px 2px rgba(102, 194, 236, 0.15);
+	/* letter-spacing: 0.1px; */
+}
+
+.GlowTitle:hover::before {
+	opacity: 0.5;
+	filter: blur(3px);
+}
+
+@keyframes backgroundMove {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+/* 添加底部发光线条 */
+.GlowTitle::after {
+	content: '';
+	position: absolute;
+	bottom: 0;
+	left: 20px;
+	width: 0;
+	height: 2px;
+	background: linear-gradient(45deg,
+		#1976d2 0%,
+		#2196f3 30%,
+		#03a9f4 70%,
+		#4fc3f7 100%
+	);
+	transition: width 0.3s ease;
+}
+
+.GlowTitle:hover::after {
+	width: calc(100% - 40px);
+}
