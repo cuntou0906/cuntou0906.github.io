@@ -158,7 +158,7 @@ html{
 	text-align: center;
 	background: #f8f9fa;
 	padding: 10px;
-	margin-bottom: 20px;
+	margin-bottom: 10px;
 	border-radius: 30px;
 }
 
@@ -1083,7 +1083,7 @@ ul.Index_New {
 
 .ExpandText-wrapper {
 	position: relative;
-	margin-bottom: 20px;
+	margin-bottom: 10px;
 	background: #f8f9fa;
 	padding: 20px;
 	border-radius: 8px;
@@ -1168,19 +1168,60 @@ ul.Index_New {
 	margin: 10px auto;
 	width: 80%;
 	color: #666;
+	position: relative;
+	margin-bottom: 20px;
 }
 
 .Divider::before,
 .Divider::after {
 	content: '';
 	flex: 1;
-	border-bottom: 1px dashed #ccc;
+	border-bottom: 1.5px dashed #ccc;
+	transition: transform 1s ease-in-out;
+	transform-origin: right;
+}
+
+.Divider::after {
+	transform-origin: left;
 }
 
 .Divider-icon {
 	padding: 0 15px;
 	font-size: 20px;
 	color: #999;
+	z-index: 1;
+}
+
+@keyframes lineStretchLeft {
+	0% {
+		transform: scaleX(1);
+	}
+	50% {
+		transform: scaleX(0.0);
+	}
+	100% {
+		transform: scaleX(1);
+	}
+}
+
+@keyframes lineStretchRight {
+	0% {
+		transform: scaleX(1);
+	}
+	50% {
+		transform: scaleX(0.0);
+	}
+	100% {
+		transform: scaleX(1);
+	}
+}
+
+.Divider:hover::before {
+	animation: lineStretchLeft 2s ease-in-out infinite;
+}
+
+.Divider:hover::after {
+	animation: lineStretchRight 2s ease-in-out infinite;
 }
 
 .Divider:hover .Divider-icon {
