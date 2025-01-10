@@ -721,3 +721,16 @@ ul.entertamentMenuUL>li>a>img{
     text-align: center;
     padding: 3px;
   }
+
+
+  /* 爱心飘落 */
+
+  .heartFall {
+    position: fixed;
+    font-size: 20px;
+    color: #ff4d4d;
+    opacity: 1;
+    user-select: none;
+    top: -50px;
+    z-index: 1000;
+  }

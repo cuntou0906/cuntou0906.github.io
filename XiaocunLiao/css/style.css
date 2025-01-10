@@ -114,7 +114,7 @@ html{
 	top: 40px;
 	left: 50%;
 	opacity: 0.6;
-	z-index: 2;
+	z-index: 5;
 }
 
 @media(max-width:780px){
@@ -123,15 +123,43 @@ html{
 	}
 }
 
+.Publication-paper-wrapper h3,.Publication-Patents-wrapper,h3{
+	padding: 10px;
+	padding-left: 0px;
+}
+
+.Publication-paper-wrapper p{
+	background: #f8f9fa;
+	padding: 10px;
+	margin-bottom: 5px;
+	border-radius: 10px;
+	line-height: 1.5;
+}
+
+.Publication-Patents-wrapper p{
+	background: #f8f9fa;
+	padding: 10px;
+	margin-bottom: 5px;
+	border-radius: 10px;
+}
+
 
 /* 成果展示页面的单独css */
 .researchDiV p{
 	/* font-size: 17px; */
 	line-height: 1.5;
 	text-align: left;
+	margin-bottom: 10px;
+	padding-left: 10px;
+	padding-right: 10px;
+
 }
 .researchDiV{
-text-align: center;
+	text-align: center;
+	background: #f8f9fa;
+	padding: 10px;
+	margin-bottom: 20px;
+	border-radius: 30px;
 }
 
 .container ul li{
@@ -444,7 +472,7 @@ section figure {
 	top: 180px;
 	left: 0;
 	width: 100%;
-	z-index: 2;
+	z-index: 5;
 
   }
 
@@ -813,40 +841,34 @@ ul.Index_New {
 	}
 }
 
-		.Cooperation-slider-container::before{
-			content: "";
-			position: absolute;
-			top: 0;
-			width: 100px;
-			height: 100%;
-			z-index: 1;
-			border: none;
-		}
-        .Cooperation-slider-container::after {
-            content: "";
-            position: absolute;
-            top: 0;
-            width: 100px;
-            height: 100%;
-            z-index: 1;
-			border: none;
-        }
-
-        .Cooperation-slider-container::before {
-            left: 0;
-            background: linear-gradient(to right,
-                rgba(255, 255, 255, 1) 0%,
-                rgba(255, 255, 255, 0.8) 50%,
-                rgba(255, 255, 255, 0) 100%);
-        }
-
-        .Cooperation-slider-container::after {
-            right: 0;
-            background: linear-gradient(to left,
-                rgba(255, 255, 255, 1) 0%,
-                rgba(255, 255, 255, 0.8) 50%,
-                rgba(255, 255, 255, 0) 100%);
-        }
+.Cooperation-mask-left {
+	height: 100%; 
+	background-color: black;
+	position: absolute; 
+	width: 120px; 
+	left: -3px; 
+	top: 0%; 
+	z-index: 0;
+	border: none;
+	background: linear-gradient(to right,
+		rgba(255, 255, 255, 1) 0%,
+		rgba(255, 255, 255, 0.85) 50%,
+		rgba(255, 255, 255, 0) 100%);
+}
+.Cooperation-mask-right {
+	height: 100%; 
+	background-color: black;
+	position: absolute; 
+	width: 120px; 
+	right: -3px; 
+	top: 0%; 
+	z-index: 0;
+	border: none;
+	background: linear-gradient(to left,
+		rgba(255, 255, 255, 1) 0%,
+		rgba(255, 255, 255, 0.85) 50%,
+		rgba(255, 255, 255, 0) 100%);
+}
 
 .Cooperation-user-info {
 	display: flex;
@@ -859,7 +881,6 @@ ul.Index_New {
 	width: 45px;
 	height: 45px;
 	border-radius: 50%;
-	/* overflow: hidden; */
 }
 
 .Cooperation-user-avatar img {
@@ -906,7 +927,7 @@ ul.Index_New {
 
 	.container
 	{
-		max-width: calc( 100% - 35px);
+		max-width: calc(100% - 50px);
 	}
 
 	.Cooperation-section {
@@ -1039,3 +1060,192 @@ ul.Index_New {
 		display: none;
 	}
   }
+
+/* 爱心飘落 */
+
+  .heartFall {
+	position: fixed;
+	font-size: 20px;
+	color: #ff4d4d;
+	opacity: 1;
+	user-select: none;
+	top: -50px;
+	z-index: 1000;
+}
+
+
+/* 段落展开与折叠 */
+.ExpandText-container {
+	width: 100%;
+	margin: 10px auto;
+	padding: 2px;
+}
+
+.ExpandText-wrapper {
+	position: relative;
+	margin-bottom: 20px;
+	background: #f8f9fa;
+	padding: 20px;
+	border-radius: 8px;
+}
+
+.ExpandText-content {
+	margin: 0;
+	line-height: 1.6;
+	color: #333;
+	display: block;
+	position: relative;
+}
+
+/* 展开状态时移除高度限制 */
+.ExpandText-content.ExpandText-expanded {
+	max-height: none;
+	padding-bottom: 50px;
+}
+
+.ExpandText-image {
+	width: 60%;
+	object-fit: cover;
+	border-radius: 8px;
+	box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+	display: block;
+	margin: 20px auto;
+}
+
+.ExpandText-text {
+	margin: 0;
+	line-height: 1.5;
+	text-align: justify;
+}
+
+.ExpandText-content.ExpandText-collapsed {
+	max-height: 1.6em;
+	overflow: hidden;
+	padding-bottom: 50px;
+}
+
+.ExpandText-btn {
+	position: absolute;
+	left: 50%;
+	bottom: 0;
+	transform: translateX(-50%);
+	display: inline-block;
+	padding: 8px 20px;
+	margin: 0;
+	background-color: #fff;
+	color: #1280f7;
+	border: 1px solid #1280f7;
+	border-radius: 4px;
+	cursor: pointer;
+	transition: all 0.3s ease;
+	font-size: 14px;
+	z-index: 2;
+}
+
+.ExpandText-btn:hover {
+	background-color: #3789e0;
+	color: #fff;
+}
+
+/* 渐变遮罩 */
+.ExpandText-content.ExpandText-collapsed::after {
+	content: '';
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 40px;
+	background: linear-gradient(transparent, #f8f9fa);
+	pointer-events: none;
+	z-index: 1;
+}
+
+/* 分隔线 */
+.Divider {
+	display: flex;
+	align-items: center;
+	text-align: center;
+	margin: 10px auto;
+	width: 80%;
+	color: #666;
+}
+
+.Divider::before,
+.Divider::after {
+	content: '';
+	flex: 1;
+	border-bottom: 1px dashed #ccc;
+}
+
+.Divider-icon {
+	padding: 0 15px;
+	font-size: 20px;
+	color: #999;
+}
+
+.Divider:hover .Divider-icon {
+	transform: rotate(360deg);
+	transition: transform 0.5s ease;
+}
+
+
+
+
+/* 标题悬浮特效 */
+.PaperTitle-hover-underline {
+	position: relative;
+	display: contents;
+	padding: 20px;
+	font-size: 17px;
+	cursor: pointer;
+	line-height: 1.5;
+	/* margin: 20px auto; */
+	background-color: #000000;
+	border-radius: 8px;
+}
+
+.PaperTitle-hover-underline:hover {
+	transform: translateY(-1px);
+}
+
+.PaperTitle-hover-underline::after {
+	content: '';
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 0;
+	height: 100%;
+	background: linear-gradient(90deg, #00b4db, #0083b0);
+	transition: width 0.3s ease-in-out;
+	z-index: -1;
+	opacity: 0.05;
+	border-radius: 8px;
+}
+
+.PaperTitle-hover-underline span {
+	/* position: relative; */
+	background: linear-gradient(90deg, #00b4db, #0083b0);
+	background-size: 0 2px;
+	background-position: 0 100%;
+	background-repeat: no-repeat;
+	padding-bottom: 2px;
+	margin-left: 10px;
+	transition: all 0.3s ease-in-out;
+	text-shadow: none;
+	color: #2c3e50;
+	font-weight: bold;
+	font-size: 1.25em;
+	text-align: justify;
+	margin-top: 10px;
+	margin-bottom: 10px;
+
+}
+
+.PaperTitle-hover-underline:hover span {
+	background-size: 100% 2px;
+	text-shadow: 0 0 4px rgba(0, 180, 219, 0.3);
+	color: #0083b0;
+}
+.Paper-Title-Wrapper1{
+	margin: 10px;
+}
