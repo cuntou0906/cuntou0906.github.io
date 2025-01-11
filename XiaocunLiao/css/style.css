@@ -108,13 +108,48 @@ html{
 	/* font-size: 1.0em; */
 }
 
-.motto{
-	text-align: center;
+.motto {
+	text-align: left;
 	position: fixed;
 	top: 40px;
-	left: 50%;
+	left: 57%;
 	opacity: 0.6;
 	z-index: 5;
+	transition: color 0.3s ease;
+}
+
+.motto:hover {
+	color: red;
+	animation: scaleUp 0.5s forwards;
+	/* letter-spacing: 1px; */
+}
+
+@keyframes scaleUp {
+	0% {
+		transform: translateX(0) scale(1);
+		letter-spacing: 0px;
+	}
+	100% {
+		transform: translateX(0) scale(1.01);
+		letter-spacing: 1px;
+	}
+}
+
+.motto b {
+	display: inline-block;
+	transition: transform 0.3s ease;
+}
+
+.motto:hover b {
+	animation: scaleUp 0.5s forwards;
+}
+
+.motto b:nth-child(1):hover {
+	animation-delay: 0s;
+}
+
+.motto b:nth-child(2):hover {
+	animation-delay: 0.1s;
 }
 
 @media(max-width:780px){
@@ -528,21 +563,6 @@ section figure {
 	}
   }
 
-  .LibSpanHead{
-
-	width: auto;
-	height: auto;
-	/* position: absolute;
-	left: 1%; */
-	margin-left: 0px;
-	background-image: -webkit-linear-gradient(left,#FF9656,#DAAE74 10%,#CBB780 20%,  #A1D4A1 30%,#6AF8D3 40%, #64FBD3 50%,#6AF7D0 60%,#66FFFF 70%,#92DEB0 80%,#B6C492 90%,#EE9F60 100%);
-	-webkit-text-fill-color: transparent;/* 将字体设置成透明色 */
-	-webkit-background-clip: text;/* 裁剪背景图，使文字作为裁剪区域向外裁剪 */
-	-webkit-background-size: 200% 100%; 
-	-webkit-animation: masked-animation 4s linear infinite;
-	font-weight: bold;
-	font-size: 28px;
-  }
 
   #footerDef{
 	
@@ -716,14 +736,14 @@ footer.main-footer.fixed {
 	transform: scaleX(-1);
 } */
 
-.LogoLeft{
+/* .LogoLeft{
 	text-align: center;
 	position: fixed;
 	top: 30px;
 	left: 10px;
 	z-index: 3;
 	transform: scaleX(-1);
-}
+} */
 
 
 /* 首页新闻自定义项目符号列表 */
@@ -1289,4 +1309,186 @@ ul.Index_New {
 }
 .Paper-Title-Wrapper1{
 	margin: 10px;
+}
+
+/* 标题悬浮向上移动 */
+.TitleClip-flip-container {
+	position: relative;
+	height: 28px;
+	/* width: 500px; */
+	cursor: pointer;
+	overflow: hidden;
+	line-height: 28px;
+	z-index: 5;
+	margin-bottom: 0.5em;
+}
+
+.TitleClip-flip-text {
+	position: absolute;
+	display: flex;
+	text-align: left;
+	color: #2c3e50;
+	transition: transform 0.5s ease;
+	transform-origin: center;
+	width: 100%;
+	height: 28px;
+	line-height: 28px;
+	margin-left: 0px;
+	background-image: -webkit-linear-gradient(left,#FF9656,#DAAE74 10%,#CBB780 20%,  #A1D4A1 30%,#6AF8D3 40%, #64FBD3 50%,#6AF7D0 60%,#66FFFF 70%,#92DEB0 80%,#B6C492 90%,#EE9F60 100%);
+	-webkit-text-fill-color: transparent;/* 将字体设置成透明色 */
+	-webkit-background-clip: text;/* 裁剪背景图，使文字作为裁剪区域向外裁剪 */
+	-webkit-background-size: 200% 100%; 
+	-webkit-animation: masked-animation 4s linear infinite;
+	font-weight: bold;
+	font-size: 28px;
+}
+
+.TitleClip-flip-text.top {
+	transform: translateY(0);
+	top: 0;
+}
+
+.TitleClip-flip-text.bottom {
+	transform: translateY(100%);
+	top: 0;
+}
+
+.TitleClip-flip-container:hover .TitleClip-flip-text.top {
+	transform: translateY(-100%);
+}
+
+.TitleClip-flip-container:hover .TitleClip-flip-text.bottom {
+	transform: translateY(0);
+}
+
+.LibSpanHead{
+
+	width: auto;
+	height: auto;
+	/* position: absolute;
+	left: 1%; */
+	margin-left: 0px;
+	background-image: -webkit-linear-gradient(left,#FF9656,#DAAE74 10%,#CBB780 20%,  #A1D4A1 30%,#6AF8D3 40%, #64FBD3 50%,#6AF7D0 60%,#66FFFF 70%,#92DEB0 80%,#B6C492 90%,#EE9F60 100%);
+	-webkit-text-fill-color: transparent;/* 将字体设置成透明色 */
+	-webkit-background-clip: text;/* 裁剪背景图，使文字作为裁剪区域向外裁剪 */
+	-webkit-background-size: 200% 100%; 
+	-webkit-animation: masked-animation 4s linear infinite;
+	font-weight: bold;
+	font-size: 28px;
+  }
+
+
+
+/* log图片动画 */
+
+
+/* 添加图片容器样式 */
+.TitleClip-image-container {
+	width: 100px;
+	height: 100px;
+	margin: 0px 0;
+	border-radius: 8px;
+	cursor: pointer;
+	position: relative;
+}
+
+/* 添加图片包装器来处理overflow */
+.TitleClip-image-wrapper {
+	width: 100%;
+	height: 100%;
+	overflow: hidden;  /* 限制图片放大范围 */
+	border-radius: 8px;  /* 保持圆角 */
+}
+
+.TitleClip-image {
+	object-fit: cover;
+	transition: all 0.5s ease;
+	transform: scale(1);
+	filter: brightness(1);
+}
+
+.TitleClip-image-container:hover .TitleClip-image {
+	transform: scale(1.1);  /* 放大效果 */
+	filter: brightness(1.1);  /* 提高亮度 */
+}
+
+/* 添加气泡框样式 */
+.TitleClip-bubble {
+	position: absolute;
+	background: linear-gradient(135deg, #00b4db, #0083b0);  /* 渐变蓝色背景 */
+	padding: 8px 16px;  /* 稍微加大内边距 */
+	border-radius: 20px;  /* 更圆润的边框 */
+	box-shadow: 0 4px 15px rgba(0, 131, 176, 0.3);  /* 蓝色阴影 */
+	font-size: 14px;
+	color: white;  /* 白色文字 */
+	opacity: 0;
+	transform: translateY(10px);
+	transition: all 0.3s ease;
+	pointer-events: none;  /* 防止气泡影响图片悬浮 */
+	z-index: 1;  /* 确保气泡在图片上方 */
+	font-weight: 500;  /* 稍微加粗字体 */
+	letter-spacing: 0.5px;  /* 增加字间距 */
+}
+.TitleClip-bubblePos1{
+	top: -26px;
+	right: -5px;
+}
+.TitleClip-bubblePos2{
+	top: -10px;
+	right: -5px;
+}
+/* 添加气泡小三角 */
+.TitleClip-bubble::after {
+	content: '';
+	position: absolute;
+	bottom: -6px;
+	right: 20px;
+	width: 12px;
+	height: 12px;
+	background: linear-gradient(135deg, #00b4db, #0083b0);  /* 使用渐变蓝色 */
+	transform: rotate(45deg);
+	box-shadow: 4px 4px 5px rgba(0, 131, 176, 0.2);  /* 调整阴影 */
+}
+
+/* 悬浮时显示气泡 */
+.TitleClip-image-container:hover .TitleClip-bubble {
+	opacity: 1;
+	transform: translateY(0);
+	animation: bubblePop 0.3s ease;  /* 添加弹出动画 */
+}
+
+/* 添加弹出动画 */
+@keyframes bubblePop {
+	0% {
+		transform: translateY(10px) scale(0.9);
+	}
+	50% {
+		transform: translateY(-2px) scale(1.05);
+	}
+	100% {
+		transform: translateY(0) scale(1);
+	}
+}
+.LogoLeft{
+	text-align: center;
+	position: fixed;
+	top: 30px;
+	left: 10px;
+	z-index: 3;
+}
+
+.Group_CAS_IA_Img{
+	margin-top:100px; 
+	margin-right:20px; 
+	margin-left:20px; 
+	margin-bottom:20px; 
+	float: right;
+	width: 120px;
+	height: 120px;
+}
+
+.Group_CAS_IA_Img:hover img {
+	transform: scale(1.1);  /* 放大效果 */
+	filter: brightness(1.3);  /* 提高亮度 */
+	transition: all 0.3s ease;
 }

@@ -39,6 +39,8 @@ $(document).ready(function () {
                 var current_num = $(ClickCurrent_RowElements).siblings(".page_btn").find("span.current_page").text(); //当前的页数
                 var total_page = $(ClickCurrent_RowElements).siblings(".page_btn").find("span.total_Page").text(); //当前的页数
                 // console.log(current_num)
+                current_num = parseInt(current_num);
+                total_page = parseInt(total_page);
                 if (current_num == total_page) {
                     return false;
                 } else {
@@ -65,6 +67,8 @@ $(document).ready(function () {
                 var current_num = $(ClickCurrent_RowElements).siblings(".page_btn").find("span.current_page").text(); //当前的页数
                 var total_page = $(ClickCurrent_RowElements).siblings(".page_btn").find("span.total_Page").text(); //当前的页数
                 // console.log(current_num)
+                current_num = parseInt(current_num);
+                total_page = parseInt(total_page);
                 if (current_num == 1) {
                     return false;
                 } else {
@@ -89,9 +93,16 @@ $(document).ready(function () {
                 var ClickCurrent_RowElements = $(this).parents(".page_btn").siblings(".row");
                 // console.log(ClickCurrent_RowElements)
                 var TurnPage_num = $(ClickCurrent_RowElements).siblings(".page_btn").find("input.PageInput")[0].value; //当前的页数
+                TurnPage_num = parseInt(TurnPage_num);
+                // 在控制台输出值
+                // console.log(TurnPage_num)
+                if(!Number.isInteger(TurnPage_num)){
+                    return false;
+                }
                 var current_num = $(ClickCurrent_RowElements).siblings(".page_btn").find("span.current_page").text(); //当前的页数
                 var total_page = $(ClickCurrent_RowElements).siblings(".page_btn").find("span.total_Page").text(); //总页数
-                // console.log(TurnPage_num)
+                current_num = parseInt(current_num);
+                total_page = parseInt(total_page);
                 if (TurnPage_num > total_page) {
                     return false;
                 } else if(TurnPage_num <1) {
@@ -146,15 +157,20 @@ function handleEnter_TurnPage(event, inputElement) {
         event.preventDefault();
         // 获取输入框的值
         var TurnPage_num = inputElement.value;
+        TurnPage_num = parseInt(TurnPage_num);
         // 在控制台输出值
-        
+        // console.log(TurnPage_num)
+        if(!Number.isInteger(TurnPage_num)){
+            return false;
+        }
         var PageNum_Max = Get_PageNum_Max(); // 每页显示的数据
         // console.log("输入框按下回车")
         var ClickCurrent_RowElements = $(inputElement).parents(".page_btn").siblings(".row");
         // console.log(ClickCurrent_RowElements)
         var current_num = $(ClickCurrent_RowElements).siblings(".page_btn").find("span.current_page").text(); //当前的页数
         var total_page = $(ClickCurrent_RowElements).siblings(".page_btn").find("span.total_Page").text(); //总页数
-        // console.log(TurnPage_num)
+        current_num = parseInt(current_num);
+        total_page = parseInt(total_page);
         if (TurnPage_num > total_page) {
             return false;
         } else if(TurnPage_num <1) {
@@ -177,3 +193,20 @@ function handleEnter_TurnPage(event, inputElement) {
 
     }
 }
+
+
+
+function scrollToSubMenu(elementId) {
+    document.getElementById(elementId).scrollIntoView({ behavior: 'smooth' });
+}
+
+// document.getElementById('SideMenu').addEventListener('scroll', function() {
+//     console.log(1111)
+//     document.getElementById('MainContentDiv').style.overflowY = 'hidden'; // 禁用内容区域的滚动
+// });
+
+// // 监听内容区域的滚动事件
+// document.getElementById('MainContentDiv').addEventListener('scroll', function() {
+//     console.log(22222)
+//     document.getElementById('SideMenu').style.overflowY = 'hidden'; // 禁用导航栏的滚动
+// });
