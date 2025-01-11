@@ -169,6 +169,7 @@ html{
 	margin-bottom: 5px;
 	border-radius: 10px;
 	line-height: 1.5;
+	border-left: 3px solid rgb(141, 216, 241); /* 左侧边框 */
 }
 
 .Publication-Patents-wrapper p{
@@ -1249,7 +1250,38 @@ ul.Index_New {
 	transition: transform 0.5s ease;
 }
 
+/* 实线分割线 */
+.DividerSolid {
+	display: flex;
+	align-items: center;
+	text-align: center;
+	margin: 10px auto;
+	width: 50%;
+	color: #666;
+	position: relative;
+	margin-bottom: 20px;
+	margin-top:20px;
+}
 
+.DividerSolid::before,
+.DividerSolid::after {
+	content: '';
+	flex: 1;
+	border-bottom: 1.5px solid #ccc;
+	transition: transform 1s ease-in-out;
+	transform-origin: right;
+}
+
+.DividerSolid::after {
+	transform-origin: left;
+}
+
+.DividerSolid-icon {
+	padding: 0 15px;
+	font-size: 20px;
+	color: #999;
+	z-index: 1;
+}
 
 
 /* 标题悬浮特效 */
@@ -1491,4 +1523,10 @@ ul.Index_New {
 	transform: scale(1.1);  /* 放大效果 */
 	filter: brightness(1.3);  /* 提高亮度 */
 	transition: all 0.3s ease;
+}
+
+h3.PublicationYearTitle{
+	position: relative;
+	margin-left: 15px;
+	margin-bottom: 0px;
 }
