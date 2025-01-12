@@ -157,6 +157,22 @@
         <a class="selected" href="research.html"><img src="./images/Pic/Research.png" alt="" height="20px"> 
           <b>Research</b>
         </a>
+        <ol>
+          <li>
+            <a href="./research.html#VariableStiffnessTitle">
+              <img src="./images/TitleImg/Fish1G.png" alt=""  width="20px"  height="19px" style="position: absolute; left: 8px;">
+              Variable Stiffness
+              <img src="./images/TitleImg/RightArr.png" alt="" height="15px" style="position: absolute; right: 8px;">
+            </a>
+          </li>
+          <li>
+            <a href="./research.html#WiredrivenTitle">
+              <img src="./images/TitleImg/Fish2G.png" alt="" width="20px" height="19px" style="position: absolute; left: 8px;">
+              Wire-driven
+              <img src="./images/TitleImg/RightArr.png" alt=""  height="15px" style="position: absolute; right: 8px;">
+            </a>
+          </li>
+        </ol>
     </li>
 
     <li>
@@ -199,7 +215,7 @@
 </nav>
 
 
-<div class="container" style="text-align: left;">
+<div class="container" id="MaxContainer" style="text-align: left;">
 
   <!-- <div style = "padding-top:20px; padding-right:20px; padding-left:20px; padding-bottom:20px; float: right;">
            <img src="XiaocunLiao.JPG" margin=20px; alt="XiaocunLiao" height="250px" >
@@ -228,7 +244,61 @@
 
 <div class="ChinesePresentaion"  style="display: none;">
 
-  <div class="Paper-Title-Wrapper1">
+  <div class="MyResearchMenuSidebar" id="sidebar-cn">
+    <h2>目录</h2> <!-- 添加目录图标 -->
+    <button class="MyResearchMenuToggleButton" id="toggleButton-cn" title="Show contents！" onclick="MyResearchMenuToggleSidebar(1)">></button> <!-- 将按钮放在导航栏右侧 -->
+    <div class="menu-wrapper">
+        <ul>
+            <!-- <li class="NoSubMenu">
+                <span>
+                    <a href="#Variable-Stiff-Fish1">
+                      🐟 Variable Stiffness
+                    </a>
+                </span>
+            </li> -->
+            <li class="HasSubMenu">
+              <span class="MyResearchMenuSubmenuToggle" onclick="MyResearchMenuToggleSubmenu(event);">
+                🐟 变刚度机器鱼
+                <span class="submenu-indicator">></span>
+              </span>
+              <ul class="MyResearchMenuSubmenu" id="submenu1">
+                  <li>
+                    <a href="#Variable-Stiff-Fish1-cn" style="text-align:justify;">
+                      提出了一种具有大范围且快速尾部刚度调节能力的机器鱼
+                  </a>
+                  </li>
+              </ul>
+          </li>
+            <li class="HasSubMenu">
+                <span class="MyResearchMenuSubmenuToggle" onclick="MyResearchMenuToggleSubmenu(event);">
+                  🐟 线驱动机器鱼
+                  <span class="submenu-indicator">></span>
+                </span>
+                <ul class="MyResearchMenuSubmenu" id="submenu2">
+                    <li>
+                      <a href="#wire-driven-Fish1-cn" style="text-align:justify;">
+                        提出了一种高性能线驱动柔性机器鱼及尾部柔性优化方法
+                    </a>
+                    </li>
+                    <li>
+                      <a href="#wire-driven-Fish2-cn"  style="text-align:justify;">
+                        实现了一种双线驱动柔性仿生机器鱼的结构设计及运动建模
+                      </a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</div>
+
+
+  <h4 style="font-size: 1.6em; font-weight: bold; margin-bottom: 20px;">
+    <img src="./images/TitleImg/Fish1.png" margin=0px; alt="" height="40px"  class="" style=" vertical-align: middle;">  
+    <b>变刚度机器鱼</b>
+  </h4>
+
+
+  <div class="Paper-Title-Wrapper1" id="Variable-Stiff-Fish1-cn">
     <img src="./images/ResearchPic/Group/MU-zhixiang.png" loading="lazy" margin=0px; height="25px"  class="" style=" vertical-align: text-bottom;">
     <!-- <b style="line-height: 1.6; text-align: justify;"> 提出了一种具有大范围且快速尾部刚度调节能力的机器鱼</b> -->
     <div class="PaperTitle-hover-underline">
@@ -252,7 +322,12 @@
     <span class="Divider-icon">🐬</span>
   </div>
 
-  <div class="Paper-Title-Wrapper1">
+  <h4 style="font-size: 1.6em; font-weight: bold; margin-bottom: 20px;">
+    <img src="./images/TitleImg/Fish2.png" margin=0px; alt="" height="50px"  class="" style=" vertical-align: middle;">  
+    <b>线驱动机器鱼</b>
+  </h4>
+
+  <div class="Paper-Title-Wrapper1" id="wire-driven-Fish1-cn">
     <img src="./images/ResearchPic/Group/MU-zhixiang.png" loading="lazy" margin=0px; height="25px"  class="" style=" vertical-align: text-bottom;">
     <!-- <b style="line-height: 1.6; text-align: justify;"> 提出了一种高性能线驱动柔性机器鱼及尾部柔性优化方法</b> -->
     <div class="PaperTitle-hover-underline">
@@ -271,11 +346,7 @@
   </p>
   </div>
 
-  <div class="Divider">
-    <span class="Divider-icon">🐬</span>
-  </div>
-
-  <div class="Paper-Title-Wrapper1">
+  <div class="Paper-Title-Wrapper1" id="wire-driven-Fish2-cn">
     <img src="./images/ResearchPic/Group/MU-zhixiang.png" loading="lazy" margin=0px; height="25px"  class="" style=" vertical-align: text-bottom;">
     <!-- <b style="line-height: 1.6; text-align: justify;"> 实现了一种双线驱动柔性仿生机器鱼的结构设计及运动建模</b> -->
     <div class="PaperTitle-hover-underline">
@@ -297,11 +368,69 @@
     </p>
   </div>
 
+  <div class="Divider">
+    <span class="Divider-icon">🐬</span>
+  </div>
+
 </div>
 
 
 <div class="EnglishPresentaion" style="display: inline-block;">
-  <div class="Paper-Title-Wrapper1">
+
+  <div class="MyResearchMenuSidebar" id="sidebar">
+    <h2>Contents</h2> <!-- 添加目录图标 -->
+    <button class="MyResearchMenuToggleButton" id="toggleButton" title="Show contents！" onclick="MyResearchMenuToggleSidebar(2)">></button> <!-- 将按钮放在导航栏右侧 -->
+    <div class="menu-wrapper">
+        <ul>
+            <!-- <li class="NoSubMenu">
+                <span>
+                    <a href="#Variable-Stiff-Fish1">
+                      🐟 Variable Stiffness
+                    </a>
+                </span>
+            </li> -->
+            <li class="HasSubMenu">
+              <span class="MyResearchMenuSubmenuToggle" onclick="MyResearchMenuToggleSubmenu(event);">
+                🐟 Variable Stiffness
+                <span class="submenu-indicator">></span>
+              </span>
+              <ul class="MyResearchMenuSubmenu" id="submenu1">
+                  <li>
+                    <a href="#Variable-Stiff-Fish1" style="text-align:justify;">
+                      Propose a robotic fish with the ability of the large-scale range and fast fishtail stiffness adjustment
+                  </a>
+                  </li>
+              </ul>
+          </li>
+            <li class="HasSubMenu">
+                <span class="MyResearchMenuSubmenuToggle" onclick="MyResearchMenuToggleSubmenu(event);">
+                  🐟 Wire-driven
+                  <span class="submenu-indicator">></span>
+                </span>
+                <ul class="MyResearchMenuSubmenu" id="submenu2">
+                    <li>
+                      <a href="#wire-driven-Fish1" style="text-align:justify;">
+                      Propose a high-performance wire-driven flexible robotic fish and fishtail flexibility optimization method
+                    </a>
+                    </li>
+                    <li>
+                      <a href="#wire-driven-Fish2"  style="text-align:justify;">
+                        Realize the design and motion modeling of a dual-wire driven elastic robotic fish
+                      </a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+  </div>  
+
+<h4 style="font-size: 1.6em; font-weight: bold; margin-bottom: 20px;" id="VariableStiffnessTitle">
+  <img src="./images/TitleImg/Fish1.png" margin=0px; alt="" height="40px"  class="" style=" vertical-align: middle;">  
+  <b>Variable Stiffness Robotic Fish</b>
+</h4>
+
+
+  <div class="Paper-Title-Wrapper1" id="Variable-Stiff-Fish1">
     <img src="./images/ResearchPic/Group/MU-zhixiang.png"  loading="lazy" margin=0px; height="25px"  class="" style=" vertical-align: text-bottom;">
     <!-- <b style="line-height: 1.6; text-align: justify;"> Propose a robotic fish with the ability of the large-scale range and fast fishtail stiffness adjustment</b> -->
     <div class="PaperTitle-hover-underline">
@@ -344,7 +473,12 @@
     <span class="Divider-icon">🐬</span>
   </div>
 
-  <div class="Paper-Title-Wrapper1">
+  <h4 style="font-size: 1.6em; font-weight: bold; margin-bottom: 20px;" id="WiredrivenTitle">
+    <img src="./images/TitleImg/Fish2.png" margin=0px; alt="" height="50px"  class="" style=" vertical-align: middle;">  
+    <b>Wire-driven Robotic Fish</b>
+  </h4>
+
+  <div class="Paper-Title-Wrapper1" id="wire-driven-Fish1">
     <img src="./images/ResearchPic/Group/MU-zhixiang.png" loading="lazy" margin=0px; height="25px"  class="" style=" vertical-align: text-bottom;">
     <!-- <b style="line-height: 1.6; text-align: justify;"> Propose a high-performance wire-driven flexible robotic fish and fishtail flexibility optimization method</b> -->
     <div class="PaperTitle-hover-underline">
@@ -373,11 +507,7 @@
   </p>
   </div>
   
-  <div class="Divider">
-    <span class="Divider-icon">🐬</span>
-  </div>
-
-  <div class="Paper-Title-Wrapper1">
+  <div class="Paper-Title-Wrapper1"  id="wire-driven-Fish2">
     <img src="./images/ResearchPic/Group/MU-zhixiang.png" loading="lazy" margin=0px; height="25px"  class="" style=" vertical-align: text-bottom;">
     <!-- <b style="line-height: 1.6; text-align: justify;"> Realize the design and motion modeling of a dual-wire driven elastic robotic fish</b> -->
     <div class="PaperTitle-hover-underline">
@@ -419,6 +549,10 @@
   </p>
   </div>
   
+  <div class="Divider">
+    <span class="Divider-icon">🐬</span>
+  </div>
+
   </div>
 
 <!-- 各个页面的替换内容分割线 -->
@@ -570,7 +704,7 @@
       toggleDo.classList.remove('active');
       // 关闭中文
       ChinesePresentaionDIV = document.getElementsByClassName('ChinesePresentaion');
-      console.log(ChinesePresentaionDIV[0])
+      // console.log(ChinesePresentaionDIV[0])
       ChinesePresentaionDIV[0].style.display ='none'
       EnglishPresentaionDIV = document.getElementsByClassName('EnglishPresentaion');
       EnglishPresentaionDIV[0].style.display ='inline-block'
@@ -583,6 +717,50 @@
       EnglishPresentaionDIV[0].style.display ='none'
     }
   })
+</script>
+
+<!-- /* 研究页 的侧边导航栏 */ -->
+
+<script>
+  function MyResearchMenuToggleSidebar(TabId) {
+      var MyResearchMenuSidebarList = document.getElementsByClassName('MyResearchMenuSidebar');
+      var MyResearchMenuToggleButtonList = document.getElementsByClassName('MyResearchMenuToggleButton');
+      var MyResearchMenuContent = document.getElementById('MaxContainer');
+      for (var i = 0; i < MyResearchMenuSidebarList.length; i++) {
+        // 处理每个元素
+        var MyResearchMenuSidebar = MyResearchMenuSidebarList[i];
+        var MyResearchMenuToggleButton = MyResearchMenuToggleButtonList[i];
+        MyResearchMenuSidebar.classList.toggle('open'); // 切换侧边栏的打开状态
+      
+        // 调整页面内容位置
+        if (MyResearchMenuSidebar.classList.contains('open')) {
+            // document.body.style.marginLeft = '280px'; // 打开时调整内容位置
+            MyResearchMenuContent.classList.add("MyResearchMenuContainerOpen");
+            MyResearchMenuContent.classList.remove("MyResearchMenuContainerClose");
+
+            // MyResearchMenuContent.style.marginLeft = '330px'; // 正文内容向右移动
+            MyResearchMenuToggleButton.innerHTML = '<'; // 改变按钮符号为向左
+        } else {
+            // document.body.style.marginLeft = '0'; // 关闭时恢复内容位置
+            MyResearchMenuContent.classList.add("MyResearchMenuContainerClose");
+            MyResearchMenuContent.classList.remove("MyResearchMenuContainerOpen");
+
+            // MyResearchMenuContent.style.marginLeft = '30px'; // 正文内容恢复
+            MyResearchMenuToggleButton.innerHTML = '>'; // 改变按钮符号为向右
+        }
+
+      }
+
+  }
+
+  function MyResearchMenuToggleSubmenu(event) {
+    const submenu = event.currentTarget.nextElementSibling; // 获取下一个兄弟元素（子菜单）
+    const toggleButton = event.currentTarget.querySelector('.submenu-indicator');
+    if (submenu) {
+        submenu.classList.toggle('open'); // 切换子菜单的打开状态
+        event.currentTarget.classList.toggle('active'); // 切换指示符状态
+    }
+  }
 </script>
 
 
