@@ -1,0 +1,1284 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LAN Chat</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #ffffff;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .Chat {
+            max-width: 1200px;
+            width: 100%;
+            height: 100vh;
+            margin: 0 auto;
+            background: transparent;
+            overflow: hidden;
+            display: flex;
+        }
+
+        .Chat-sidebar {
+            width: 240px;
+            border-right: 1px solid #eee;
+            display: flex;
+            flex-direction: column;
+            background: #f8f9fa;
+        }
+
+        .Chat-userList {
+            flex: 1;
+            overflow-y: auto;
+            padding: 15px;
+        }
+
+        .Chat-user {
+            padding: 12px 15px;
+            margin: 5px 0;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .Chat-user:hover {
+            background: #edf2f7;
+        }
+
+        .Chat-user.active {
+            background: #e3f2fd;
+            color: #2196f3;
+        }
+
+        .Chat-main {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+            max-width: calc(100% - 240px);
+        }
+
+        .Chat-header {
+            background: transparent;
+            color: #333;
+            padding: 15px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 1px solid #eee;
+        }
+
+        .Chat-headerRight {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .Chat-currentUser {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            cursor: pointer;
+            padding: 5px;
+            border-radius: 20px;
+            transition: background 0.3s;
+        }
+
+        .Chat-currentUser:hover {
+            background: #f3f3f5;
+        }
+
+        .Chat-currentUserAvatar {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            object-fit: cover;
+            background: #e3f2fd;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .Chat-currentUserName {
+            font-size: 0.9em;
+            font-weight: 500;
+        }
+
+        .Chat-title {
+            font-size: 1.25em;
+            font-weight: bold;
+            margin: 0;
+        }
+
+        .Chat-status {
+            font-size: 0.9em;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .Chat-statusDot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #4caf50;
+        }
+
+        .Chat-messages {
+            flex: 1;
+            padding: 20px 60px;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            background: #ffffff;
+        }
+
+        .Chat-message {
+            max-width: calc(100% - 80px);
+            padding: 0;
+            border-radius: 15px;
+            position: relative;
+            word-wrap: break-word;
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .Chat-messageAvatar {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: #e3f2fd;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            color: #1a73e8;
+            position: absolute;
+            top: 0;
+        }
+
+        .Chat-messageName {
+            font-size: 0.9em;
+            color: #666;
+            margin: 0 0 2px;
+            padding: 0 5px;
+        }
+
+        .Chat-messageContent {
+            background: #f3f3f5;
+            padding: 10px 15px;
+            border-radius: 15px;
+            margin: 0;
+            word-break: break-word;
+        }
+
+        .Chat-message.sent {
+            margin-left: auto;
+            align-items: flex-end;
+            padding-right: 5px;
+        }
+
+        .Chat-message.sent .Chat-messageContent {
+            border-bottom-right-radius: 5px;
+        }
+
+        .Chat-message.received {
+            margin-right: auto;
+            align-items: flex-start;
+            padding-left: 5px;
+        }
+
+        .Chat-message.received .Chat-messageContent {
+            border-bottom-left-radius: 5px;
+        }
+
+        .Chat-message.sent .Chat-messageAvatar {
+            right: -45px;
+        }
+
+        .Chat-message.received .Chat-messageAvatar {
+            left: -45px;
+        }
+
+        .Chat-messageTime {
+            font-size: 0.8em;
+            color: #666;
+            margin-top: 5px;
+            text-align: right;
+        }
+
+        .Chat-input {
+            padding: 20px;
+            border-top: 1px solid #eee;
+            display: flex;
+            gap: 10px;
+            background: #ffffff;
+            position: relative;
+            z-index: 1;
+            align-items: center;
+        }
+
+        .Chat-textbox {
+            flex: 1;
+            padding: 10px 15px;
+            border: 1px solid #eee;
+            border-radius: 20px;
+            outline: none;
+            font-size: 1em;
+            transition: all 0.3s;
+            background: #f3f3f5;
+        }
+
+        .Chat-textbox:focus {
+            border-color: #1a73e8;
+            background: #ffffff;
+            outline: none;
+        }
+
+        .Chat-send {
+            padding: 10px 20px;
+            background: #1a73e8;
+            color: #fff;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+
+        .Chat-send:hover {
+            background: #1557b0;
+        }
+
+        .Chat-setup {
+            padding: 20px;
+            text-align: center;
+            display: none;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+            z-index: 1000;
+            width: 300px;
+        }
+
+        .Chat-setup.active {
+            display: block;
+        }
+
+        .Chat-setupInput, .Chat-portInput {
+            padding: 10px;
+            margin: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            width: 200px;
+        }
+
+        .Chat-setupBtn {
+            padding: 10px 20px;
+            background: #1a73e8;
+            color: #fff;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .Chat-setupBtn:hover {
+            background: #1557b0;
+        }
+
+        /* 添加滚动条样式 */
+        .Chat-messages::-webkit-scrollbar {
+            width: 4px;
+        }
+
+        .Chat-messages::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        .Chat-messages::-webkit-scrollbar-thumb {
+            background: #ddd;
+            border-radius: 2px;
+        }
+
+        .Chat-messages::-webkit-scrollbar-thumb:hover {
+            background: #ccc;
+        }
+
+        .Chat-userAvatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: #e3f2fd;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            color: #1a73e8;
+            flex-shrink: 0;
+        }
+
+        .Chat-userInfo {
+            flex: 1;
+            overflow: hidden;
+        }
+
+        .Chat-userName {
+            font-weight: 500;
+            margin-bottom: 2px;
+        }
+
+        .Chat-userIp {
+            font-size: 0.8em;
+            color: #666;
+        }
+
+        /* 修改滚动条样式，使其更细腻 */
+        .Chat-userList::-webkit-scrollbar {
+            width: 4px;
+        }
+
+        .Chat-userList::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        .Chat-userList::-webkit-scrollbar-thumb {
+            background: #ddd;
+            border-radius: 2px;
+        }
+
+        .Chat-userList::-webkit-scrollbar-thumb:hover {
+            background: #ccc;
+        }
+
+        .Chat-userMenu {
+            position: absolute;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            padding: 10px;
+            display: none;
+            z-index: 1000;
+        }
+
+        .Chat-userMenu.active {
+            display: block;
+        }
+
+        .Chat-menuItem {
+            padding: 8px 15px;
+            cursor: pointer;
+            border-radius: 4px;
+            transition: background 0.3s;
+        }
+
+        .Chat-menuItem:hover {
+            background: #f3f3f5;
+        }
+
+        .Chat-editDialog {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.15);
+            display: none;
+            z-index: 1001;
+            width: 320px;
+        }
+
+        .Chat-editDialog.active {
+            display: block;
+        }
+
+        .Chat-colorPicker {
+            display: flex;
+            gap: 10px;
+            margin: 10px 0;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .Chat-colorOption {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        .Chat-colorOption:hover {
+            transform: scale(1.1);
+        }
+
+        .Chat-avatarUpload {
+            text-align: center;
+            margin-bottom: 15px;
+        }
+
+        .Chat-avatarPreview {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            margin: 0 auto 10px;
+            object-fit: cover;
+            background: #e3f2fd;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+
+        .Chat-avatarInput {
+            display: none;
+        }
+
+        .Chat-uploadHint {
+            font-size: 0.8em;
+            color: #666;
+        }
+
+        .Chat-user.self {
+            background: #f0f7ff;
+            border: 1px solid #e3f2fd;
+        }
+
+        .Chat-selfTag {
+            font-size: 12px;
+            color: #1a73e8;
+            background: #e3f2fd;
+            padding: 2px 6px;
+            border-radius: 10px;
+            margin-left: auto;
+        }
+
+        /* 修改系统消息样式 */
+        .Chat-systemMessage {
+            text-align: center;
+            padding: 8px 16px;
+            margin: 15px auto;
+            color: #5f6368;
+            font-size: 0.85em;
+            max-width: 280px;
+            background: #f8f9fa;
+            border-radius: 16px;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+            animation: fadeIn 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .Chat-fileInput {
+            display: none;
+        }
+
+        .Chat-fileButton {
+            padding: 8px;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: background 0.2s;
+            color: #1a73e8;
+        }
+
+        .Chat-fileButton:hover {
+            background: #f3f3f5;
+        }
+
+        .Chat-messageFile {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            border: 1px solid #eee;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .Chat-messageFile:hover {
+            background: #f3f3f5;
+        }
+
+        .Chat-fileIcon {
+            width: 32px;
+            height: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #e3f2fd;
+            border-radius: 8px;
+            color: #1a73e8;
+        }
+
+        .Chat-fileInfo {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .Chat-fileName {
+            font-weight: 500;
+            margin-bottom: 2px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .Chat-fileSize {
+            font-size: 0.8em;
+            color: #666;
+        }
+
+        .Chat-messageImage {
+            max-width: 300px;
+            max-height: 300px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        .Chat-messageImage:hover {
+            transform: scale(1.02);
+        }
+
+        /* 添加文件操作菜单样式 */
+        .Chat-fileActions {
+            position: fixed;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            padding: 8px 0;
+            z-index: 1000;
+            min-width: 160px;
+            display: none;
+        }
+
+        .Chat-fileActions.active {
+            display: block;
+        }
+
+        .Chat-fileAction {
+            padding: 8px 16px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: background 0.2s;
+        }
+
+        .Chat-fileAction:hover {
+            background: #f3f3f5;
+        }
+    </style>
+</head>
+<body>
+    <div class="Chat">
+        <div class="Chat-sidebar">
+            <div class="Chat-header" style="justify-content: center;">
+                <h2 style="font-size: 1em;">在线用户</h2>
+            </div>
+            <div class="Chat-userList" id="userList">
+                <!-- 用户列表将在这里动态添加 -->
+            </div>
+        </div>
+        <div class="Chat-main">
+            <div class="Chat-header">
+                <h1 class="Chat-title">LAN Chat</h1>
+                <div class="Chat-headerRight">
+                    <div class="Chat-status">
+                        <span class="Chat-statusDot"></span>
+                        <span class="Chat-statusText">在线</span>
+                    </div>
+                    <div class="Chat-currentUser" onclick="showEditDialog()">
+                        <div class="Chat-currentUserAvatar" id="currentUserAvatar">
+                            <!-- 头像将在JS中动态设置 -->
+                        </div>
+                        <span class="Chat-currentUserName" id="currentUserName"></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="Chat-setup active">
+                <input type="text" class="Chat-setupInput" id="nameInput" placeholder="输入你的名字">
+                <button class="Chat-setupBtn" onclick="startChat()">开始聊天</button>
+            </div>
+
+            <div class="Chat-messages" id="messages">
+                <!-- 消息将在这里动态添加 -->
+            </div>
+
+            <div class="Chat-input">
+                <input type="file" class="Chat-fileInput" id="fileInput" multiple>
+                <div class="Chat-fileButton" onclick="document.getElementById('fileInput').click()">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                </div>
+                <input type="text" class="Chat-textbox" id="messageInput" placeholder="输入消息...">
+                <button class="Chat-send" onclick="sendMessage()">发送</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="Chat-editDialog" id="editDialog">
+        <h3 style="margin-top: 0;">编辑个人信息</h3>
+        <div class="Chat-avatarUpload">
+            <div class="Chat-avatarPreview" id="avatarPreview" onclick="document.getElementById('avatarInput').click()">
+                <!-- 预览将在JS中设置 -->
+            </div>
+            <input type="file" class="Chat-avatarInput" id="avatarInput" accept="image/*">
+            <div class="Chat-uploadHint">点击更换头像</div>
+        </div>
+        <input type="text" class="Chat-setupInput" id="editNameInput" placeholder="新的昵称">
+        <div class="Chat-colorPicker" id="colorPicker">
+            <!-- 颜色选项将通过JS动态添加 -->
+        </div>
+        <button class="Chat-setupBtn" onclick="saveUserInfo()">保存</button>
+        <button class="Chat-setupBtn" style="background: #666;" onclick="closeEditDialog()">取消</button>
+    </div>
+
+    <script>
+        let username;
+        let broadcastChannel;
+        let users = new Map(); // 存储用户信息
+        let currentAvatar = null;  // 存储当前用户头像
+
+        const COLORS = [
+            '#e3f2fd', '#f3e5f5', '#e8f5e9', '#fff3e0', '#e0f7fa',
+            '#bbdefb', '#e1bee7', '#c8e6c9', '#ffe0b2', '#b2ebf2'
+        ];
+
+        function getRandomColor() {
+            const colors = ['#e3f2fd', '#f3e5f5', '#e8f5e9', '#fff3e0', '#e0f7fa'];
+            return colors[Math.floor(Math.random() * colors.length)];
+        }
+
+        function getInitials(name) {
+            return name.charAt(0).toUpperCase();
+        }
+
+        function startChat() {
+            username = document.getElementById('nameInput').value;
+            if (!username) {
+                alert('请输入你的名字');
+                return;
+            }
+
+            // 获取本地IP地址
+            getLocalIP().then(ip => {
+                broadcastChannel = new BroadcastChannel('local_chat');
+                
+                broadcastChannel.onmessage = (event) => {
+                    const message = event.data;
+                    switch(message.type) {
+                        case 'join':
+                            users.set(message.sender, {
+                                name: message.sender,
+                                ip: message.ip,
+                                color: getRandomColor()
+                            });
+                            updateUserList();
+                            addSystemMessage(`${message.sender} 加入了聊天`);
+                            
+                            if (message.sender !== username) {
+                                broadcastMessage({
+                                    type: 'user_info',
+                                    sender: username,
+                                    ip: ip,
+                                    color: users.get(username).color
+                                });
+                            }
+                            break;
+                        case 'user_info':
+                            // 接收其他用户的信息
+                            if (message.sender !== username) {
+                                users.set(message.sender, {
+                                    name: message.sender,
+                                    ip: message.ip,
+                                    color: message.color
+                                });
+                                updateUserList();
+                            }
+                            break;
+                        case 'leave':
+                            users.delete(message.sender);
+                            updateUserList();
+                            addSystemMessage(`${message.sender} 离开了聊天`);
+                            break;
+                        case 'message':
+                            if (message.sender !== username) {
+                                addMessage(message.text, message.sender, false);
+                            }
+                            break;
+                        case 'user_update':
+                            if (message.sender !== username && users.size > 0) {
+                                const oldName = message.oldName;
+                                const newName = message.newName || oldName;
+                                const updatedUser = message.user;
+                                const currentUsers = new Map(users);  // 创建当前用户列表的副本
+
+                                if (oldName !== newName) {
+                                    currentUsers.delete(oldName);
+                                }
+                                currentUsers.set(newName, updatedUser);
+                                users = currentUsers;  // 更新用户列表
+                                updateUserList();
+                            }
+                            break;
+                        case 'user_rename':
+                            if (message.oldName !== username) {
+                                users.delete(message.oldName);
+                                users.set(message.newName, message.user);
+                                updateUserList();
+                            }
+                            break;
+                        case 'file':
+                            if (message.sender !== username) {
+                                addFileMessage(message, false);
+                            }
+                            break;
+                    }
+                };
+
+                document.querySelector('.Chat-setup').classList.remove('active');
+                updateStatus('在线');
+
+                users.set(username, {
+                    name: username,
+                    ip: ip,
+                    color: getRandomColor()
+                });
+                updateUserList();
+
+                // 延迟发送加入消息，避免页面卡顿
+                setTimeout(() => {
+                    broadcastMessage({
+                        type: 'join',
+                        sender: username,
+                        ip: ip
+                    });
+                }, 100);
+            });
+        }
+
+        function sendMessage() {
+            const input = document.getElementById('messageInput');
+            const text = input.value.trim();
+            
+            if (text && broadcastChannel) {
+                const message = {
+                    type: 'message',
+                    text: text,
+                    sender: username,
+                    time: new Date().toLocaleTimeString()
+                };
+
+                broadcastMessage(message);
+                addMessage(text, username, true);
+                input.value = '';
+            }
+        }
+
+        function broadcastMessage(message) {
+            if (broadcastChannel) {
+                broadcastChannel.postMessage(message);
+            }
+        }
+
+        function updateUserList() {
+            const userList = document.getElementById('userList');
+            userList.innerHTML = '';
+            
+            const userArray = Array.from(users.entries()).sort(([nameA], [nameB]) => {
+                if (nameA === username) return -1;
+                if (nameB === username) return 1;
+                return nameA.localeCompare(nameB);
+            });
+            
+            userArray.forEach(([name, user]) => {
+                const userDiv = document.createElement('div');
+                userDiv.className = `Chat-user ${name === username ? 'self' : ''}`;
+                if (name === username) {
+                    userDiv.onclick = showEditDialog;
+                }
+                userDiv.innerHTML = `
+                    <div class="Chat-userAvatar" style="background: ${user.color}">
+                        ${user.avatar ? `<img src="${user.avatar}" alt="${name}" style="width: 100%; height: 100%; border-radius: 50%; object-fit: cover;">` : getInitials(name)}
+                    </div>
+                    <div class="Chat-userInfo">
+                        <div class="Chat-userName">${name}</div>
+                        <div class="Chat-userIp">IP: ${user.ip || '未知IP'}</div>
+                    </div>
+                    ${name === username ? '<div class="Chat-selfTag">我</div>' : ''}
+                `;
+                userList.appendChild(userDiv);
+            });
+
+            // 更新右上角用户信息
+            if (username) {
+                const currentUser = users.get(username);
+                const avatarDiv = document.getElementById('currentUserAvatar');
+                const nameSpan = document.getElementById('currentUserName');
+                
+                avatarDiv.style.background = currentUser.color;
+                avatarDiv.innerHTML = currentUser.avatar ? 
+                    `<img src="${currentUser.avatar}" alt="${username}" style="width: 100%; height: 100%; border-radius: 50%; object-fit: cover;">` : 
+                    getInitials(username);
+                nameSpan.textContent = username;
+            }
+        }
+
+        function addMessage(text, sender, isSent) {
+            const messages = document.getElementById('messages');
+            const messageDiv = document.createElement('div');
+            messageDiv.className = `Chat-message ${isSent ? 'sent' : 'received'}`;
+            
+            const user = users.get(sender) || {
+                name: sender,
+                color: getRandomColor(),
+                ip: '未知IP'
+            };
+            messageDiv.innerHTML = `
+                <div class="Chat-messageAvatar" style="background: ${user.color}">
+                    ${getInitials(sender)}
+                </div>
+                <div class="Chat-messageName">${sender}</div>
+                <div class="Chat-messageContent">
+                    ${text}
+                </div>
+                <div class="Chat-messageTime">${new Date().toLocaleTimeString()}</div>
+            `;
+            
+            messages.appendChild(messageDiv);
+            messages.scrollTop = messages.scrollHeight;
+        }
+
+        function updateStatus(status) {
+            document.querySelector('.Chat-statusText').textContent = status;
+            document.querySelector('.Chat-statusDot').style.background = 
+                status === '在线' ? '#4caf50' : '#f44336';
+        }
+
+        // 按Enter发送消息
+        document.getElementById('messageInput').addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                sendMessage();
+            }
+        });
+
+        // 页面关闭时发送离开消息
+        window.addEventListener('beforeunload', () => {
+            if (username && broadcastChannel) {
+                broadcastMessage({
+                    type: 'leave',
+                    sender: username,
+                });
+                broadcastChannel.close();
+            }
+        });
+
+        function showEditDialog() {
+            const dialog = document.getElementById('editDialog');
+            const nameInput = document.getElementById('editNameInput');
+            const avatarPreview = document.getElementById('avatarPreview');
+            const user = users.get(username);
+            
+            nameInput.value = username;
+            avatarPreview.style.background = user.color;
+            avatarPreview.innerHTML = user.avatar ? 
+                `<img src="${user.avatar}" alt="${username}" style="width: 100%; height: 100%; border-radius: 50%; object-fit: cover;">` : 
+                getInitials(username);
+            
+            // 生成颜色选项
+            colorPicker.innerHTML = COLORS.map(color => `
+                <div class="Chat-colorOption" 
+                     style="background: ${color}"
+                     onclick="selectColor('${color}')">
+                </div>
+            `).join('');
+            
+            dialog.classList.add('active');
+        }
+
+        function closeEditDialog() {
+            document.getElementById('editDialog').classList.remove('active');
+        }
+
+        function selectColor(color) {
+            const user = users.get(username);
+            if (user) {
+                const updatedUser = {
+                    ...user,
+                    color: color,
+                    ip: user.ip,  // 保持IP地址不变
+                    avatar: user.avatar  // 保持头像不变
+                };
+                users.set(username, updatedUser);
+                updateUserList();
+                broadcastMessage({
+                    type: 'user_update',
+                    sender: username,
+                    oldName: username,
+                    user: updatedUser,
+                    timestamp: Date.now()
+                });
+            }
+        }
+
+        function saveUserInfo() {
+            const newName = document.getElementById('editNameInput').value.trim();
+            const user = users.get(username);
+            let changed = false;
+
+            // 创建更新后的用户信息对象
+            const updatedUser = {
+                ...user,
+                name: newName || username,
+                avatar: currentAvatar || user.avatar,
+                ip: user.ip,  // 保持IP地址不变
+                color: user.color  // 如果没有新选择的颜色，保持原有颜色
+            };
+
+            changed = newName !== username || currentAvatar !== null;
+
+            if (changed) {
+                if (newName && newName !== username) {
+                    users.delete(username);
+                    users.set(newName, updatedUser);
+                } else {
+                    users.set(username, updatedUser);
+                }
+
+                if (newName) username = newName;
+                
+                broadcastMessage({
+                    type: 'user_update',
+                    sender: username,
+                    oldName: username,
+                    newName: newName,
+                    avatar: currentAvatar,
+                    user: updatedUser,
+                    timestamp: Date.now()  // 添加时间戳以确保更新顺序
+                });
+            }
+            
+            closeEditDialog();
+            updateUserList();
+            currentAvatar = null;  // 重置临时头像
+        }
+
+        // 添加头像上传相关函数
+        document.getElementById('avatarInput').addEventListener('change', function(e) {
+            const file = e.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    currentAvatar = e.target.result;
+                    document.getElementById('avatarPreview').innerHTML = `
+                        <img src="${currentAvatar}" alt="预览" style="width: 100%; height: 100%; border-radius: 50%; object-fit: cover;">
+                    `;
+                }
+                reader.readAsDataURL(file);
+            }
+        });
+
+        // 获取本地IP地址的函数
+        async function getLocalIP() {
+            try {
+                const response = await fetch('https://api.ipify.org?format=json');
+                const data = await response.json();
+                return data.ip;
+            } catch (error) {
+                // 如果无法获取IP，尝试使用RTCPeerConnection获取本地IP
+                return new Promise((resolve) => {
+                    const pc = new RTCPeerConnection({
+                        iceServers: []
+                    });
+                    pc.createDataChannel('');
+                    pc.createOffer().then(pc.setLocalDescription.bind(pc));
+                    
+                    pc.onicecandidate = (ice) => {
+                        if (!ice.candidate) return;
+                        
+                        const ipRegex = /([0-9]{1,3}(\.[0-9]{1,3}){3})/;
+                        const match = ipRegex.exec(ice.candidate.candidate);
+                        if (match) {
+                            resolve(match[1]);
+                        } else {
+                            resolve('未知IP');
+                        }
+                        pc.close();
+                    };
+                    
+                    setTimeout(() => resolve('未知IP'), 1000);
+                });
+            }
+        }
+
+        function addSystemMessage(text) {
+            const messages = document.getElementById('messages');
+            const messageDiv = document.createElement('div');
+            messageDiv.className = 'Chat-systemMessage';
+            messageDiv.innerHTML = `
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="8" cy="8" r="7" stroke="currentColor" stroke-width="1.5"/>
+                    <path d="M8 4v5M8 11v.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                </svg>
+                <span>${text}</span>
+            `;
+            
+            messages.appendChild(messageDiv);
+            messages.scrollTop = messages.scrollHeight;
+        }
+
+        // 修改文件处理相关函数
+        document.getElementById('fileInput').addEventListener('change', async function(e) {
+            const files = Array.from(e.target.files);
+            for (const file of files) {
+                if (file.size > 50 * 1024 * 1024) {  // 50MB限制
+                    alert('文件大小不能超过50MB');
+                    continue;
+                }
+                
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    // 将ArrayBuffer转换为base64字符串
+                    let fileData;
+                    if (file.type.startsWith('image/')) {
+                        fileData = e.target.result;  // 图片已经是base64格式
+                    } else {
+                        const uint8Array = new Uint8Array(e.target.result);
+                        const binaryString = uint8Array.reduce((str, byte) => str + String.fromCharCode(byte), '');
+                        fileData = 'data:' + file.type + ';base64,' + btoa(binaryString);
+                    }
+
+                    const message = {
+                        type: 'file',
+                        sender: username,
+                        fileName: file.name,
+                        fileSize: file.size,
+                        fileType: file.type,
+                        data: fileData,
+                        time: new Date().toLocaleTimeString()
+                    };
+                    
+                    broadcastMessage(message);
+                    addFileMessage(message, true);
+                };
+                
+                reader.readAsArrayBuffer(file);  // 统一使用ArrayBuffer读取
+            }
+            this.value = '';  // 清空input
+        });
+
+        function addFileMessage(message, isSent) {
+            const messages = document.getElementById('messages');
+            const messageDiv = document.createElement('div');
+            messageDiv.className = `Chat-message ${isSent ? 'sent' : 'received'}`;
+            
+            const user = users.get(message.sender) || {
+                name: message.sender,
+                color: getRandomColor(),
+                ip: '未知IP'
+            };
+            
+            let contentHtml;
+            if (message.fileType.startsWith('image/')) {
+                contentHtml = `
+                    <img src="${message.data}" alt="${message.fileName}" 
+                        class="Chat-messageImage" onclick="window.open('${message.data}')">
+                `;
+            } else {
+                const size = formatFileSize(message.fileSize);
+                contentHtml = `
+                    <div class="Chat-messageFile" onclick="showFileActions(event, '${message.fileName}', '${message.data}', '${message.fileType}')">
+                        <div class="Chat-fileIcon">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M17 6v11H3V3h8l2 3h4z" stroke="currentColor" stroke-width="1.5"/>
+                            </svg>
+                        </div>
+                        <div class="Chat-fileInfo">
+                            <div class="Chat-fileName">${message.fileName}</div>
+                            <div class="Chat-fileSize">${size}</div>
+                        </div>
+                    </div>
+                `;
+            }
+            
+            messageDiv.innerHTML = `
+                <div class="Chat-messageAvatar" style="background: ${user.color}">
+                    ${getInitials(message.sender)}
+                </div>
+                <div class="Chat-messageName">${message.sender}</div>
+                <div class="Chat-messageContent">
+                    ${contentHtml}
+                </div>
+                <div class="Chat-messageTime">${message.time}</div>
+            `;
+            
+            messages.appendChild(messageDiv);
+            messages.scrollTop = messages.scrollHeight;
+        }
+
+        function formatFileSize(bytes) {
+            if (bytes < 1024) return bytes + ' B';
+            if (bytes < 1024 * 1024) return (bytes / 1024).toFixed(1) + ' KB';
+            return (bytes / (1024 * 1024)).toFixed(1) + ' MB';
+        }
+
+        // 添加文件操作菜单到HTML
+        document.body.insertAdjacentHTML('beforeend', `
+            <div class="Chat-fileActions" id="fileActions">
+                <div class="Chat-fileAction" onclick="openFile()">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                        <path d="M8 2v7m0 0l-3-3m3 3l3-3M3 12h10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                    </svg>
+                    打开文件
+                </div>
+                <div class="Chat-fileAction" onclick="saveFileAs()">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                        <path d="M3 14h10V5L9 2H3v12z" stroke="currentColor" stroke-width="1.5"/>
+                        <path d="M6 10h4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                    </svg>
+                    另存为...
+                </div>
+            </div>
+        `);
+
+        let currentFileData = null;
+
+        function showFileActions(event, fileName, data, fileType) {
+            event.preventDefault();
+            event.stopPropagation();
+            
+            const actionsMenu = document.getElementById('fileActions');
+            actionsMenu.style.left = `${event.pageX}px`;
+            actionsMenu.style.top = `${event.pageY}px`;
+            actionsMenu.classList.add('active');
+            
+            currentFileData = { fileName, data, fileType };
+            
+            // 点击其他地方关闭菜单
+            document.addEventListener('click', closeFileActions);
+        }
+
+        function closeFileActions() {
+            document.getElementById('fileActions').classList.remove('active');
+            document.removeEventListener('click', closeFileActions);
+        }
+
+        function openFile() {
+            if (!currentFileData) return;
+            
+            const { data, fileType } = currentFileData;
+            const blob = base64ToBlob(data, fileType);
+            if (!blob) {
+                alert('无法打开文件');
+                return;
+            }
+
+            const url = URL.createObjectURL(blob);
+            // 根据文件类型选择打开方式
+            if (fileType.startsWith('image/')) {
+                window.open(url);
+            } else {
+                const link = document.createElement('a');
+                link.href = url;
+                link.target = '_blank';
+                link.click();
+            }
+            URL.revokeObjectURL(url);
+            closeFileActions();
+        }
+
+        function saveFileAs() {
+            if (!currentFileData) return;
+            
+            const { fileName, data, fileType } = currentFileData;
+            const blob = base64ToBlob(data, fileType);
+            if (!blob) {
+                alert('无法保存文件');
+                return;
+            }
+            
+            // 使用 showSaveFilePicker API (如果浏览器支持)
+            if ('showSaveFilePicker' in window) {
+                showSaveFilePicker({
+                    suggestedName: fileName,
+                    types: [{
+                        description: 'Files',
+                        accept: {
+                            [fileType || 'application/octet-stream']: [`.${fileName.split('.').pop()}`]
+                        }
+                    }]
+                }).then(async handle => {
+                    const writable = await handle.createWritable();
+                    await writable.write(blob);
+                    await writable.close();
+                    alert('文件保存成功！');
+                }).catch(() => {
+                    // 如果用户取消了保存，什么都不做
+                });
+            } else {
+                // 降级方案：直接下载
+                const url = URL.createObjectURL(blob);
+                const link = document.createElement('a');
+                link.href = url;
+                link.download = fileName;
+                link.click();
+                URL.revokeObjectURL(url);
+            }
+            
+            closeFileActions();
+        }
+
+        function base64ToBlob(base64, type) {
+            try {
+                // 从base64字符串中提取实际的数据部分
+                const byteString = atob(base64.split(',')[1]);
+                const arrayBuffer = new ArrayBuffer(byteString.length);
+                const uint8Array = new Uint8Array(arrayBuffer);
+                
+                for (let i = 0; i < byteString.length; i++) {
+                    uint8Array[i] = byteString.charCodeAt(i);
+                }
+                
+                return new Blob([arrayBuffer], { type });
+            } catch (error) {
+                console.error('Error converting base64 to blob:', error);
+                return null;
+            }
+        }
+    </script>
+</body>
+</html> 

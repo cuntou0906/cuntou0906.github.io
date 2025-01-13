@@ -1,13 +1,12 @@
-
 function randomEmoji() {
   const min = Math.min(...arguments), max = Math.max(...arguments);
   const randomUnicode = Math.floor(Math.random() * (max - min + 1)) + min;
   return String.fromCodePoint(randomUnicode);
 }
 
-let isAnimating = false;
-let isMoving = false;
-let moveTimer = null;
+let isAnimating_Emoj = false;
+let isMoving_Emoj = false;
+let moveTimer_Emoj = null;
 
 function getRandomEmoji() {
     //return emojis[Math.floor(Math.random() * emojis.length)];
@@ -19,9 +18,9 @@ function getRandomEmoji() {
 }
 
 function createFloatingEmoji(x, y) {
-    if (isAnimating) return;
+    if (isAnimating_Emoj) return;
     
-    isAnimating = true;
+    isAnimating_Emoj = true;
     const emoji = document.createElement('div');
     emoji.className = 'emoji';
     emoji.textContent = getRandomEmoji();
@@ -33,20 +32,20 @@ function createFloatingEmoji(x, y) {
     
     setTimeout(() => {
         emoji.remove();
-        isAnimating = false;
+        isAnimating_Emoj = false;
     }, 500);
 }
 
 document.addEventListener('mousemove', (e) => {
-    if (!isMoving) {
-        isMoving = true;
+    if (!isMoving_Emoj) {
+        isMoving_Emoj = true;
         createFloatingEmoji(e.clientX, e.clientY);
     }
 
     // Reset the timer on each movement
-    clearTimeout(moveTimer);
-    moveTimer = setTimeout(() => {
-        isMoving = false;
+    clearTimeout(moveTimer_Emoj);
+    moveTimer_Emoj = setTimeout(() => {
+        isMoving_Emoj = false;
     }, 100); // Consider mouse stopped after 100ms of no movement
 });
 

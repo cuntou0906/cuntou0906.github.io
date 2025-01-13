@@ -86,7 +86,7 @@ a:active { color: #ff544f; }
 	height: 60px; 
 	width: 100vw; 
 	/* position: absolute;  */
-	margin: -30px -30px;
+	margin: -00px -30px;
 }
 
 .container
@@ -108,13 +108,48 @@ html{
 	/* font-size: 1.0em; */
 }
 
-.motto{
-	text-align: center;
+.motto {
+	text-align: left;
 	position: fixed;
 	top: 40px;
-	left: 50%;
+	left: 57%;
 	opacity: 0.6;
 	z-index: 5;
+	transition: color 0.3s ease;
+}
+
+.motto:hover {
+	color: red;
+	animation: scaleUp 0.5s forwards;
+	/* letter-spacing: 1px; */
+}
+
+@keyframes scaleUp {
+	0% {
+		transform: translateX(0) scale(1);
+		letter-spacing: 0px;
+	}
+	100% {
+		transform: translateX(0) scale(1.01);
+		letter-spacing: 1px;
+	}
+}
+
+.motto b {
+	display: inline-block;
+	transition: transform 0.3s ease;
+}
+
+.motto:hover b {
+	animation: scaleUp 0.5s forwards;
+}
+
+.motto b:nth-child(1):hover {
+	animation-delay: 0s;
+}
+
+.motto b:nth-child(2):hover {
+	animation-delay: 0.1s;
 }
 
 @media(max-width:780px){
@@ -134,6 +169,7 @@ html{
 	margin-bottom: 5px;
 	border-radius: 10px;
 	line-height: 1.5;
+	border-left: 3px solid rgb(141, 216, 241); /* 左侧边框 */
 }
 
 .Publication-Patents-wrapper p{
@@ -141,6 +177,9 @@ html{
 	padding: 10px;
 	margin-bottom: 5px;
 	border-radius: 10px;
+	line-height: 1.5;
+	border-left: 3px solid rgb(141, 216, 241); /* 左侧边框 */
+
 }
 
 
@@ -149,13 +188,16 @@ html{
 	/* font-size: 17px; */
 	line-height: 1.5;
 	text-align: left;
-	margin: 0;
+	margin-bottom: 10px;
+	padding-left: 10px;
+	padding-right: 10px;
+
 }
 .researchDiV{
 	text-align: center;
 	background: #f8f9fa;
 	padding: 10px;
-	margin-bottom: 20px;
+	margin-bottom: 10px;
 	border-radius: 30px;
 }
 
@@ -525,21 +567,6 @@ section figure {
 	}
   }
 
-  .LibSpanHead{
-
-	width: auto;
-	height: auto;
-	/* position: absolute;
-	left: 1%; */
-	margin-left: 0px;
-	background-image: -webkit-linear-gradient(left,#FF9656,#DAAE74 10%,#CBB780 20%,  #A1D4A1 30%,#6AF8D3 40%, #64FBD3 50%,#6AF7D0 60%,#66FFFF 70%,#92DEB0 80%,#B6C492 90%,#EE9F60 100%);
-	-webkit-text-fill-color: transparent;/* 将字体设置成透明色 */
-	-webkit-background-clip: text;/* 裁剪背景图，使文字作为裁剪区域向外裁剪 */
-	-webkit-background-size: 200% 100%; 
-	-webkit-animation: masked-animation 4s linear infinite;
-	font-weight: bold;
-	font-size: 28px;
-  }
 
   #footerDef{
 	
@@ -713,14 +740,14 @@ footer.main-footer.fixed {
 	transform: scaleX(-1);
 } */
 
-.LogoLeft{
+/* .LogoLeft{
 	text-align: center;
 	position: fixed;
 	top: 30px;
 	left: 10px;
 	z-index: 3;
 	transform: scaleX(-1);
-}
+} */
 
 
 /* 首页新闻自定义项目符号列表 */
@@ -1080,7 +1107,7 @@ ul.Index_New {
 
 .ExpandText-wrapper {
 	position: relative;
-	margin-bottom: 20px;
+	margin-bottom: 10px;
 	background: #f8f9fa;
 	padding: 20px;
 	border-radius: 8px;
@@ -1165,19 +1192,60 @@ ul.Index_New {
 	margin: 10px auto;
 	width: 80%;
 	color: #666;
+	position: relative;
+	margin-bottom: 20px;
 }
 
 .Divider::before,
 .Divider::after {
 	content: '';
 	flex: 1;
-	border-bottom: 1px dashed #ccc;
+	border-bottom: 1.5px dashed #ccc;
+	transition: transform 1s ease-in-out;
+	transform-origin: right;
+}
+
+.Divider::after {
+	transform-origin: left;
 }
 
 .Divider-icon {
 	padding: 0 15px;
 	font-size: 20px;
 	color: #999;
+	z-index: 1;
+}
+
+@keyframes lineStretchLeft {
+	0% {
+		transform: scaleX(1);
+	}
+	50% {
+		transform: scaleX(0.0);
+	}
+	100% {
+		transform: scaleX(1);
+	}
+}
+
+@keyframes lineStretchRight {
+	0% {
+		transform: scaleX(1);
+	}
+	50% {
+		transform: scaleX(0.0);
+	}
+	100% {
+		transform: scaleX(1);
+	}
+}
+
+.Divider:hover::before {
+	animation: lineStretchLeft 2s ease-in-out infinite;
+}
+
+.Divider:hover::after {
+	animation: lineStretchRight 2s ease-in-out infinite;
 }
 
 .Divider:hover .Divider-icon {
@@ -1185,150 +1253,473 @@ ul.Index_New {
 	transition: transform 0.5s ease;
 }
 
+/* 实线分割线 */
+.DividerSolid {
+	display: flex;
+	align-items: center;
+	text-align: center;
+	margin: 10px auto;
+	width: 50%;
+	color: #666;
+	position: relative;
+	margin-bottom: 20px;
+	margin-top:20px;
+}
+
+.DividerSolid::before,
+.DividerSolid::after {
+	content: '';
+	flex: 1;
+	border-bottom: 1.5px solid #ccc;
+	transition: transform 1s ease-in-out;
+	transform-origin: right;
+}
+
+.DividerSolid::after {
+	transform-origin: left;
+}
+
+.DividerSolid-icon {
+	padding: 0 15px;
+	font-size: 20px;
+	color: #999;
+	z-index: 1;
+}
+
 
 /* 标题悬浮特效 */
-
-.PaperTitle-hover {
-	display: block;
+.PaperTitle-hover-underline {
 	position: relative;
-	overflow: hidden;
-	padding: 15px;
+	display: contents;
+	padding: 20px;
+	font-size: 17px;
 	cursor: pointer;
-	height: 1.2em;
-	width: 100%;
-	perspective: 1000px;
+	line-height: 1.5;
+	/* margin: 20px auto; */
+	background-color: #000000;
+	border-radius: 8px;
 }
 
-.PaperTitle-text {
-	font-size: 1.25em;
-	font-weight: bold;
-	color: #333;
-	margin: 0;
-	line-height: 1.6;
-	transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-	position: absolute;
-	top: -10px;
-	left: 0;
-	display: block;
-	backface-visibility: hidden;
-	transform: translateY(20px);
-	transform-origin: 50% 100%;
-	text-align: justify;
+.ExpandText-container h4:hover p.PaperTitle-hover-underline,
+.Paper-Title-Wrapper1:hover .PaperTitle-hover-underline {
+	transform: translateY(-1px);
 }
 
-.PaperTitle-clone {
-	position: absolute;
-	top: -10px;
-	left: 0;
-	width: 100%;
-	padding: 0px;
-	transform: translateY(60px) rotateX(90deg);
-	transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-	color: #333;
-	font-size: 1.25em;
-	font-weight: bold;
-	line-height: 1.6;
-	backface-visibility: hidden;
-	margin: 0;
-	transform-origin: 50% 0%;
-	text-align: justify;
-}
-
-/* 悬浮效果 */
-.PaperTitle-hover:hover .PaperTitle-text {
-	transform: translateY(-20px) rotateX(-90deg);
-}
-
-.PaperTitle-hover:hover .PaperTitle-clone {
-	transform: translateY(20px) rotateX(0deg);
-}
-
-
-/* 标题悬浮 */
-
-.GlowTitle {
-	position: relative;
-	font-size:1em;
-	font-weight: bold;
-	color: #000000;
-	cursor: pointer;
-	/* padding: 10px 20px; */
-	transition: all 0.3s ease;
-	display: block;
-	text-align: left;
-	width: 100%;
-	display: inline;
-	width: auto;
-	line-height: 1.6; 
-	text-align: justify;
-	margin-left: 5px;
-}
-
-.GlowTitle::before {
-	content: attr(data-text);
-	position: absolute;
-	top: -4px;
-	left: 0;
-	width: 100%;
-	/* height: 100%; */
-	color: #fff;
-	filter: blur(2px);
-	background: linear-gradient(45deg, 
-		#1976d2 0%,     /* 深蓝色 */
-		#2196f3 30%,    /* 标准蓝 */
-		#03a9f4 70%,    /* 浅蓝色 */
-		#4fc3f7 100%    /* 天蓝色 */
-	);
-	background-size: 200%;
-	-webkit-background-clip: text;
-	background-clip: text;
-	-webkit-text-fill-color: transparent;
-	animation: backgroundMove 10s linear infinite;
-	opacity: 0;
-	transition: opacity 0.3s ease;
-	text-align: left;
-	padding: 10px 20px;
-}
-
-.GlowTitle:hover {
-	text-shadow: 0 -2px 2px rgba(102, 194, 236, 0.15);
-	/* letter-spacing: 0.1px; */
-}
-
-.GlowTitle:hover::before {
-	opacity: 0.5;
-	filter: blur(3px);
-}
-
-@keyframes backgroundMove {
-	0% {
-		background-position: 0% 50%;
-	}
-	50% {
-		background-position: 100% 50%;
-	}
-	100% {
-		background-position: 0% 50%;
-	}
-}
-
-/* 添加底部发光线条 */
-.GlowTitle::after {
+.PaperTitle-hover-underline::after {
 	content: '';
 	position: absolute;
+	left: 0;
 	bottom: 0;
-	left: 20px;
 	width: 0;
-	height: 2px;
-	background: linear-gradient(45deg,
-		#1976d2 0%,
-		#2196f3 30%,
-		#03a9f4 70%,
-		#4fc3f7 100%
-	);
-	transition: width 0.3s ease;
+	height: 100%;
+	background: linear-gradient(90deg, #00b4db, #0083b0);
+	transition: width 0.3s ease-in-out;
+	z-index: -1;
+	opacity: 0.05;
+	border-radius: 8px;
 }
 
-.GlowTitle:hover::after {
-	width: calc(100% - 40px);
+.PaperTitle-hover-underline span {
+	/* position: relative; */
+	background: linear-gradient(90deg, #00b4db, #0083b0);
+	background-size: 0 2px;
+	background-position: 0 100%;
+	background-repeat: no-repeat;
+	padding-bottom: 2px;
+	margin-left: 10px;
+	transition: all 0.3s ease-in-out;
+	text-shadow: none;
+	color: #2c3e50;
+	font-weight: bold;
+	font-size: 1.25em;
+	text-align: justify;
+	margin-top: 10px;
+	margin-bottom: 10px;
+
+}
+.ExpandText-container h4:hover p.PaperTitle-hover-underline span,
+.Paper-Title-Wrapper1:hover .PaperTitle-hover-underline span {
+	background-size: 100% 2px;
+	text-shadow: 0 0 4px rgba(0, 180, 219, 0.3);
+	color: #0083b0;
+}
+.Paper-Title-Wrapper1{
+	padding: 10px;
+}
+
+/* 标题悬浮向上移动 */
+.TitleClip-flip-container {
+	position: relative;
+	height: 28px;
+	/* width: 500px; */
+	cursor: pointer;
+	overflow: hidden;
+	line-height: 28px;
+	z-index: 5;
+	margin-bottom: 0.5em;
+}
+
+.TitleClip-flip-text {
+	position: absolute;
+	display: flex;
+	text-align: left;
+	color: #2c3e50;
+	transition: transform 0.5s ease;
+	transform-origin: center;
+	width: 100%;
+	height: 28px;
+	line-height: 28px;
+	margin-left: 0px;
+	background-image: -webkit-linear-gradient(left,#FF9656,#DAAE74 10%,#CBB780 20%,  #A1D4A1 30%,#6AF8D3 40%, #64FBD3 50%,#6AF7D0 60%,#66FFFF 70%,#92DEB0 80%,#B6C492 90%,#EE9F60 100%);
+	-webkit-text-fill-color: transparent;/* 将字体设置成透明色 */
+	-webkit-background-clip: text;/* 裁剪背景图，使文字作为裁剪区域向外裁剪 */
+	-webkit-background-size: 200% 100%; 
+	-webkit-animation: masked-animation 4s linear infinite;
+	font-weight: bold;
+	font-size: 28px;
+}
+
+.TitleClip-flip-text.top {
+	transform: translateY(0);
+	top: 0;
+}
+
+.TitleClip-flip-text.bottom {
+	transform: translateY(100%);
+	top: 0;
+}
+
+.TitleClip-flip-container:hover .TitleClip-flip-text.top {
+	transform: translateY(-100%);
+}
+
+.TitleClip-flip-container:hover .TitleClip-flip-text.bottom {
+	transform: translateY(0);
+}
+
+.LibSpanHead{
+
+	width: auto;
+	height: auto;
+	/* position: absolute;
+	left: 1%; */
+	margin-left: 0px;
+	background-image: -webkit-linear-gradient(left,#FF9656,#DAAE74 10%,#CBB780 20%,  #A1D4A1 30%,#6AF8D3 40%, #64FBD3 50%,#6AF7D0 60%,#66FFFF 70%,#92DEB0 80%,#B6C492 90%,#EE9F60 100%);
+	-webkit-text-fill-color: transparent;/* 将字体设置成透明色 */
+	-webkit-background-clip: text;/* 裁剪背景图，使文字作为裁剪区域向外裁剪 */
+	-webkit-background-size: 200% 100%; 
+	-webkit-animation: masked-animation 4s linear infinite;
+	font-weight: bold;
+	font-size: 28px;
+  }
+
+
+
+/* log图片动画 */
+
+
+/* 添加图片容器样式 */
+.TitleClip-image-container {
+	width: 100px;
+	height: 100px;
+	margin: 0px 0;
+	border-radius: 8px;
+	cursor: pointer;
+	position: relative;
+}
+
+/* 添加图片包装器来处理overflow */
+.TitleClip-image-wrapper {
+	width: 100%;
+	height: 100%;
+	overflow: hidden;  /* 限制图片放大范围 */
+	border-radius: 8px;  /* 保持圆角 */
+}
+
+.TitleClip-image {
+	object-fit: cover;
+	transition: all 0.5s ease;
+	transform: scale(1);
+	filter: brightness(1);
+}
+
+.TitleClip-image-container:hover .TitleClip-image {
+	transform: scale(1.1);  /* 放大效果 */
+	filter: brightness(1.1);  /* 提高亮度 */
+}
+
+/* 添加气泡框样式 */
+.TitleClip-bubble {
+	position: absolute;
+	background: linear-gradient(135deg, #00b4db, #0083b0);  /* 渐变蓝色背景 */
+	padding: 8px 16px;  /* 稍微加大内边距 */
+	border-radius: 20px;  /* 更圆润的边框 */
+	box-shadow: 0 4px 15px rgba(0, 131, 176, 0.3);  /* 蓝色阴影 */
+	font-size: 14px;
+	color: white;  /* 白色文字 */
+	opacity: 0;
+	transform: translateY(10px);
+	transition: all 0.3s ease;
+	pointer-events: none;  /* 防止气泡影响图片悬浮 */
+	z-index: 1;  /* 确保气泡在图片上方 */
+	font-weight: 500;  /* 稍微加粗字体 */
+	letter-spacing: 0.5px;  /* 增加字间距 */
+}
+.TitleClip-bubblePos1{
+	top: -26px;
+	right: -5px;
+}
+.TitleClip-bubblePos2{
+	top: -10px;
+	right: -5px;
+}
+/* 添加气泡小三角 */
+.TitleClip-bubble::after {
+	content: '';
+	position: absolute;
+	bottom: -6px;
+	right: 20px;
+	width: 12px;
+	height: 12px;
+	background: linear-gradient(135deg, #00b4db, #0083b0);  /* 使用渐变蓝色 */
+	transform: rotate(45deg);
+	box-shadow: 4px 4px 5px rgba(0, 131, 176, 0.2);  /* 调整阴影 */
+}
+
+/* 悬浮时显示气泡 */
+.TitleClip-image-container:hover .TitleClip-bubble {
+	opacity: 1;
+	transform: translateY(0);
+	animation: bubblePop 0.3s ease;  /* 添加弹出动画 */
+}
+
+/* 添加弹出动画 */
+@keyframes bubblePop {
+	0% {
+		transform: translateY(10px) scale(0.9);
+	}
+	50% {
+		transform: translateY(-2px) scale(1.05);
+	}
+	100% {
+		transform: translateY(0) scale(1);
+	}
+}
+.LogoLeft{
+	text-align: center;
+	position: fixed;
+	top: 30px;
+	left: 10px;
+	z-index: 3;
+}
+
+.Group_CAS_IA_Img{
+	margin-top:100px; 
+	margin-right:20px; 
+	margin-left:20px; 
+	margin-bottom:20px; 
+	float: right;
+	width: 120px;
+	height: 120px;
+}
+
+.Group_CAS_IA_Img:hover img {
+	transform: scale(1.1);  /* 放大效果 */
+	filter: brightness(1.3);  /* 提高亮度 */
+	transition: all 0.3s ease;
+}
+
+h3.PublicationYearTitle{
+	position: relative;
+	margin-left: 15px;
+	margin-bottom: 0px;
+}
+
+
+/* 研究页 的侧边导航栏 */
+.MyResearchMenuSidebar {
+	position: fixed;
+	top: 230px; /* 距离顶部250px */
+	left: -290px; /* 初始隐藏在左侧 */
+	width: 250px;
+	height: calc(100% - 250px); /* 高度为页面总高减去250px */
+	background-color: #ffffff; /* 白色背景 */
+	color: #333; /* 深色文字 */
+	padding: 20px; /* 上、下、左为20px，右为0 */
+	box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* 更柔和的阴影效果 */
+	border-radius: 10px; /* 圆角效果 */
+	transition: left 0.3s ease; /* 侧边栏过渡效果 */
+	z-index: 999; /* 确保侧边栏在最上层 */
+	border: 1px solid #e0e0e0; /* 添加边框 */
+}
+
+.MyResearchMenuSidebar.open {
+	left: 0px; /* 打开时显示 */
+	transition: left 0.3 ease;
+}
+.MyResearchMenuContainerOpen {
+	padding-left: 290px; /* 打开时显示 */
+	transition: all 0.3 ease;
+}
+.MyResearchMenuContainerClose {
+	padding-left: 00px; /* 关闭时显示 */
+	transition: all 0.3 ease;
+}
+
+.MyResearchMenuSidebar h2 {
+	margin-top: 0;
+	text-align: center; /* 标题居中 */
+	font-size: 1.5em; /* 增加标题字体大小 */
+	color: #262626; /* 深色标题 */
+	font-weight: bold; /* 加粗标题 */
+	padding: 10px 0; /* 上下内边距 */
+	border-bottom: 2px solid #e0e0e0; /* 底部边框 */
+	transition: color 0.3s; /* 标题颜色过渡效果 */
+}
+
+.MyResearchMenuSidebar h2::before {
+	content: "📚 "; /* 添加目录图标 */
+	font-size: 1.3em; /* 图标大小 */
+	vertical-align: middle; /* 垂直对齐 */
+}
+
+.menu-wrapper {
+	max-height: calc(100% - 60px); /* 设置最大高度，留出空间给标题和按钮 */
+	overflow-y: auto; /* 允许垂直滚动 */
+	overflow-x: hidden; /* 禁用水平滚动条 */
+	padding-right: 10px; /* 向右移动滚动条 */
+}
+
+/* 自定义滚动条样式 */
+.menu-wrapper::-webkit-scrollbar {
+	width: 10px; /* 滚动条宽度 */
+	border-radius: 10px; /* 圆角 */
+}
+
+.menu-wrapper::-webkit-scrollbar-thumb {
+	background: #d9d9d9; /* 滚动条颜色 */
+	border-radius: 10px; /* 圆角 */
+}
+
+.menu-wrapper::-webkit-scrollbar-thumb:hover {
+	background: #c4c4c4; /* 悬停时滚动条颜色 */
+}
+
+li.NoSubMenu span a {
+	color: #262626;
+	text-decoration: none;
+}
+
+.MyResearchMenuSidebar ul {
+	list-style-type: none; /* 去掉默认的圆点 */
+	padding-left: 0; /* 去掉左侧内边距 */
+}
+
+.MyResearchMenuSidebar ul > li {
+	margin: 15px 0; /* 列表项之间的间距 */
+	transition: transform 0.3s; /* 列表项过渡效果 */
+	background-color: #f0f0f0; /* 背景颜色 */
+	border-radius: 5px; /* 圆角 */
+	padding: 10px; /* 内边距 */
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* 阴影效果 */
+	position: relative; /* 使指示符相对于列表项定位 */
+	font-size: 1.15em; /* 一级菜单字体大小 */
+	font-weight: bold; /* 一级菜单字体加粗 */
+	color: #262626; /* 一级菜单字体颜色 */
+}
+
+.MyResearchMenuSidebar ul > li:hover {
+	transform: scale(1.02); /* 悬停时放大效果 */
+	background-color: #e0e0e0; /* 悬停时背景颜色 */
+}
+
+.MyResearchMenuSidebar > ul li a {
+	color: #262626; /* 继承父元素的颜色 */
+	text-decoration: none; /* 去掉下划线 */
+	transition: color 0.3s;
+	display: block; /* 使链接占满整个列表项 */
+	text-align: justify; /* 子菜单内容两端对齐 */
+}
+
+.MyResearchMenuSidebar ul li a:hover {
+	color: #262626; /* 悬停时颜色保持不变 */
+}
+
+/* 二级菜单样式 */
+.MyResearchMenuSubmenu {
+	display: none; /* 默认隐藏子菜单 */
+	padding-left: 20px; /* 子菜单缩进 */
+}
+
+
+.MyResearchMenuSubmenu li {
+	background-color: #f9f9f9; /* 二级菜单背景颜色 */
+	border-radius: 5px; /* 圆角 */
+	margin: 5px 0; /* 二级菜单项之间的间距 */
+	padding: 8px; /* 二级菜单项内边距 */
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); /* 二级菜单阴影效果 */
+	display: flex; /* 使用 flexbox 进行布局 */
+	align-items: center; /* 垂直居中对齐 */
+}
+
+.MyResearchMenuSubmenu li a {
+	color: #262626; /* 二级菜单字体颜色 */
+	font-size: 0.6em; /* 二级菜单字体大小 */
+	text-decoration: none; /* 去掉下划线 */
+	flex: 1; /* 使链接占满整个列表项 */
+}
+
+.MyResearchMenuSubmenu li a:hover {
+	color: #000; /* 悬停时颜色变化 */
+	background-color: #e0e0e0; /* 悬停时背景颜色 */
+}
+
+.MyResearchMenuToggleButton {
+	position: absolute; /* 绝对定位 */
+	top: calc(50% - 50px); /* 垂直居中，按钮高度为100px */
+	right: -20px; /* 紧贴导航栏右侧 */
+	background: linear-gradient(to bottom, #fafafa, #e7e6e6); /* 渐变色按钮 */
+	color: #262626; /* 设置按钮字体颜色为深色 */
+	border: 1px solid #cac9c9; /* 添加灰色边框 */
+	height: 100px; /* 设置按钮高度为100px */
+	width: 20px; /* 设置按钮宽度为25px */
+	border-radius: 0 10px 10px 0; /* 左侧相反的圆角 */
+	cursor: pointer;
+	z-index: 1000; /* 确保按钮在最上层 */
+	transition: background-color 0.3s, transform 0.3s; /* 添加按钮的过渡效果 */
+	title: "Show contents！"; /* 添加悬浮提示 */
+}
+
+.MyResearchMenuToggleButton:hover {
+	background: linear-gradient(to bottom, #e6e6e6, #dbdbdb); /* 悬停时按钮颜色变化 */
+	transform: scale(1.1); /* 悬停时放大效果 */
+}
+
+.MyResearchMenuSubmenuToggle {
+	cursor: pointer; /* 鼠标悬停时显示为手型 */
+	color: #262626; /* 子菜单标题颜色 */
+	text-decoration: none; /* 去掉下划线 */
+}
+
+/* 正文内容样式 */
+.content {
+	margin-left: 0; /* 默认左边距 */
+	transition: margin-left 0.3s; /* 内容过渡效果 */
+	padding: 20px; /* 内容内边距 */
+}
+
+/* 指示符样式 */
+.submenu-indicator {
+	position: absolute;
+	right: 10px; /* 距离右侧10px */
+	top: 10px; /* 固定距离顶部10px */
+	transition: transform 0.3s; /* 指示符旋转过渡效果 */
+}
+
+.MyResearchMenuSubmenuToggle.active .submenu-indicator {
+	transform: rotate(90deg); /* 展开时旋转90度 */
+}
+
+.MyResearchMenuSubmenu.open {
+	display: block; /* 展开子菜单 */
 }
