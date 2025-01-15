@@ -226,7 +226,7 @@
 
     <!-- 通知栏 -->
     <div class="notification-wrapper">
-      <div class="notification-bar">
+      <div class="notification-bar" style="">
           <div class="notification-content">
               <span>Welcome to join Underwater Robot Team and make progress together💪!</span>
           </div>
@@ -284,6 +284,17 @@
   document.querySelector('.notification-bar').addEventListener('click', function() {
       this.style.display = 'none';
   });
+
+  // 点击通知图标显示或隐藏通知栏
+  document.querySelector('.notification-icon').addEventListener('click', function() {
+            const notificationBar = document.querySelector('.notification-bar');
+            if (notificationBar.style.display === 'none' || notificationBar.style.display === '') {
+                notificationBar.style.display = 'flex'; // 显示通知栏
+            } else {
+                notificationBar.style.display = 'none'; // 隐藏通知栏
+            }
+        });
+
 </script>
 
 <h4 style="margin-bottom: 0px;">
