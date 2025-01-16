@@ -1,0 +1,158 @@
+<!--
+	此示例下载自 https://echarts.apache.org/examples/zh/editor.html?c=mix-line-bar
+-->
+<!DOCTYPE html>
+<html lang="en" style="height: 100%">
+<head>
+  <meta charset="utf-8">
+</head>
+<body style="height: 100%; margin: 0">
+  <div class="PaperNumWrapper" style="text-align: center; width: 100%; height: 500px;">
+    <div id="PaperNumContainer" style="width: 100%; height: 100%;">
+    </div>
+  </div>
+
+  
+  <script type="text/javascript" src="https://registry.npmmirror.com/echarts/5.6.0/files/dist/echarts.min.js"></script>
+    <!-- Uncomment this line if you want to dataTool extension
+  <script type="text/javascript" src="https://registry.npmmirror.com/echarts/5.6.0/files/dist/extension/dataTool.min.js"></script>
+  -->
+  <!-- Uncomment this line if you want to use gl extension
+  <script type="text/javascript" src="https://registry.npmmirror.com/echarts-gl/2/files/dist/echarts-gl.min.js"></script>
+  -->
+  <!-- Uncomment this line if you want to echarts-stat extension
+  <script type="text/javascript" src="https://registry.npmmirror.com/echarts-stat/latest/files/dist/ecStat.min.js"></script>
+  -->
+  <!-- Uncomment this line if you want to echarts-graph-modularity extension
+  <script type="text/javascript" src="https://registry.npmmirror.com/echarts-graph-modularity/2/files/dist/echarts-graph-modularity.min.js"></script>
+  -->
+  <!-- Uncomment this line if you want to use map
+  <script type="text/javascript" src="https://registry.npmmirror.com/echarts/4.9.0/files/map/js/world.js"></script>
+  -->
+  <!-- Uncomment these two lines if you want to use bmap extension
+  <script type="text/javascript" src="https://api.map.baidu.com/api?v=3.0&ak=YOUR_API_KEY"></script>
+  <script type="text/javascript" src="https://registry.npmmirror.com/echarts/5.6.0/files/dist/extension/bmap.min.js"></script>
+  -->
+  <script type="text/javascript">
+    var dom = document.getElementById('PaperNumContainer');
+    var myChart = echarts.init(dom, null, {
+      renderer: 'canvas',
+      useDirtyRect: false
+    });
+    var app = {};
+    
+    var option;
+
+    option = {
+    tooltip: {
+    trigger: 'axis',
+    axisPointer: {
+        type: 'cross',
+        crossStyle: {
+        color: '#999'
+        }
+    }
+    },
+  toolbox: {
+    feature: {
+      dataView: { show: true, readOnly: false },
+      magicType: { show: true, type: ['line', 'bar'] },
+      restore: { show: true },
+      saveAsImage: { show: true }
+    }
+  },
+  legend: {
+    data: ['Journal', 'Conference', 'Total in this Year', 'Total']
+  },
+  xAxis: [
+    {
+      type: 'category',
+      data: ['2021', '2022', '2023', '2024'],
+      axisPointer: {
+        type: 'shadow'
+      }
+    }
+  ],
+  yAxis: [
+    {
+      type: 'value',
+      name: 'Number',
+      min: 0,
+      max: 10,
+      interval: 2,
+      axisLabel: {
+        formatter: '{value}'
+      }
+    },
+    {
+      type: 'value',
+      name: 'Number',
+      min: 0,
+      max: 15,
+      interval: 2,
+      axisLabel: {
+        formatter: '{value}'
+      }
+    }
+  ],
+  series: [
+    {
+      name: 'Journal',     //期刊数量
+      type: 'bar',
+      tooltip: {
+        valueFormatter: function (value) {
+          return value;
+        }
+      },
+      data: [
+        0, 2, 3, 2,  
+      ]
+    },
+    {
+      name: 'Conference',     //会议数量
+      type: 'bar',
+      tooltip: {
+        valueFormatter: function (value) {
+          return value;
+        }
+      },
+      data: [
+        4, 0, 1, 0, 
+      ]
+    },
+    {
+      name: 'Total in this Year',       //会议数量
+      type: 'bar',
+      tooltip: {
+        valueFormatter: function (value) {
+          return value;
+        }
+      },
+      data: [
+        4, 2, 4, 2, 
+      ]
+    },
+    {
+      name: 'Total',       //总数
+      type: 'line',
+      yAxisIndex: 1,
+      tooltip: {
+        valueFormatter: function (value) {
+          return value ;
+        }
+      },
+      data: [
+        4, 6, 10, 12, 
+      ]
+    }
+  ]
+};
+
+    if (option && typeof option === 'object') {
+      myChart.setOption(option);
+    }
+
+    window.addEventListener('resize', myChart.resize);
+  </script>
+</body>
+</html>
