@@ -33,7 +33,9 @@ function Set_PaperNum_echarts() {
                 magicType: { show: true, type: ['line', 'bar'] },
                 restore: { show: true },
                 saveAsImage: { show: true }
-            }
+            },
+            top:'88%',
+            right:'0%',
         },
         legend: {
             data: ['Journal', 'Conference', 'Total in this Year', 'Total'],
@@ -175,7 +177,9 @@ function Set_PatentsNum_echarts() {
                 magicType: { show: true, type: ['line', 'bar'] },
                 restore: { show: true },
                 saveAsImage: { show: true }
-            }
+            },
+            top:'88%',
+            right:'0%',
         },
         title:{
             text: 'Patents Statistics',
@@ -190,7 +194,7 @@ function Set_PatentsNum_echarts() {
             data: ['Patents', 'Total'],
             textStyle: { // 图例的文本样式
                 // color: '#333', // 字体颜色
-                fontSize: 16 // 字体大小，单位是像素（px）
+                fontSize: 16, // 字体大小，单位是像素（px）
             }
         },
         xAxis: [
