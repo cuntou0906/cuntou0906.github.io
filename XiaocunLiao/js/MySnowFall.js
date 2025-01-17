@@ -11,7 +11,7 @@ function createHeart() {
 
     const heart = document.createElement('div');
     heart.className = 'heartFall';
-    heart.innerHTML = '❤';
+    heart.innerHTML = '🔥';
     
     // 随机起始位置
     heart.style.left = random(5, 95) + 'vw';
