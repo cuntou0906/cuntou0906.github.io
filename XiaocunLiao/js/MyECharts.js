@@ -330,7 +330,7 @@ function SetPineScholarList(){
       saveAsImage: { show: true }
     },
     top:'90%',
-    right:'0%',
+    left:'10%',
   },
   series: [
     {
