@@ -89,7 +89,7 @@ a:active { color: #ff544f; }
 	margin: -00px -30px;
 }
 
-.container
+.Max_container
 {
 	max-width: 80em;
 	margin: 30px;
@@ -103,7 +103,7 @@ html{
 	/* font-size: 62.5%; */
 }
 
-.container > P
+.Max_container > P
 {
 	/* font-size: 1.0em; */
 }
@@ -201,13 +201,13 @@ html{
 	border-radius: 30px;
 }
 
-.container ul li{
+.Max_container ul li{
 	line-height: 1.5;
 }
-.container ul{
+.Max_container ul{
 	line-height: 1.5;
 }
-.container>p{
+.Max_container>p{
 	line-height: 1.5;
 }
 .ResearchPicPresention{
@@ -246,14 +246,6 @@ section {
 	bottom: 0px;
 }
 
-/*
-nav .container
-{
-    border-bottom-style: solid;
-    border-bottom-width: 5px;
-    border-bottom-color: #20457c
-}
-*/
 
 /* 中英文切换按钮 */
   .LanguageCheckbox{
@@ -327,7 +319,7 @@ nav .container
 	background: linear-gradient(0deg, #00d22d, #158a00);
   }
 
-.container h3{
+.Max_container h3{
 	justify-content: center;
 }
 
@@ -636,15 +628,26 @@ footer.main-footer.fixed {
 
 .ScholarDiv{
 	/* white-space: nowrap; */
-	/* display: flex; */
+	display: flex;
 	/* float: left; */
-	flex-wrap: nowrap;
+	flex-wrap: wrap;
 	/* position: relative; */
 }
 
 .ScholarDiv >ul{
-	width: 35%;
-	display: inline-block;
+	width: 31%;
+	/* display: inline-block; */
+	min-width: 255px;
+}
+.ScholarListWrapper{
+	text-align: center; 
+	width: 30%; 
+	height: 250px; 
+	margin-left: auto;
+	margin-right: auto;
+	max-width: 500px; 
+	min-width: 330px;
+	/* position: relative; */
 }
 
 .ResearchPicPresention{
@@ -949,7 +952,7 @@ ul.Index_New {
 		}
 	}
 
-	.container
+	.Max_container
 	{
 		max-width: calc(100% - 50px);
 	}
@@ -1332,7 +1335,7 @@ ul.Index_New {
 	text-shadow: none;
 	color: #2c3e50;
 	font-weight: bold;
-	font-size: 1.25em;
+	font-size: 1.15em;
 	text-align: justify;
 	margin-top: 10px;
 	margin-bottom: 10px;

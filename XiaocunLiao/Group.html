@@ -222,11 +222,11 @@
 
 
 
-<div class="container" style="text-align: left;">
+<div class="Max_container" style="text-align: left;">
 
     <!-- 通知栏 -->
     <div class="notification-wrapper">
-      <div class="notification-bar" style="">
+      <div class="notification-bar" style="display: flex;">
           <div class="notification-content">
               <span>Welcome to join Underwater Robot Team and make progress together💪!</span>
           </div>
@@ -438,7 +438,15 @@
     </b>
   </li>
 </ul>
+
+<div class="ScholarListWrapper" style="">
+  <div id="ScholarListContainer" style="width: 100%; height: 100%;">
+  </div>
 </div>
+
+</div>
+
+
 
 <p class="p4" id="Cooperation"> <b class="LibSpan" style="margin-right:5px;">Cooperation</b><b>&#10024 &#10024 &#10024</b></p>
 
@@ -1251,7 +1259,11 @@
     });
 </script>
 
-
-
+<!-- 绘图面板 -->
+<script type="text/javascript" src="./js/echarts.min.js"></script>
+<script src="./js/MyECharts.js"></script>
+<script type="text/javascript">
+    SetPineScholarList();
+</script>
  </body>
 </html>
