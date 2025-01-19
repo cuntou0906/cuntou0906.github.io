@@ -196,7 +196,7 @@ html{
 	float: right;
 	margin-left: 20px;
 	border-radius: 15px;
-	margin-right: 20px;
+	margin-right: 10px;
 
 }
 .Publication-paper-wrapper .Publication-paper-ListDetail a img{
@@ -276,7 +276,7 @@ html{
 	float: right;
 	margin-left: 20px;
 	border-radius: 15px;
-	margin-right: 20px;
+	margin-right: 10px;
 
 }
 .Publication-Patents-wrapper .Publication-Patents-ListDetail a img{
@@ -817,6 +817,61 @@ footer.main-footer.fixed {
 	margin-right: auto;
 }
 
+/* 审稿期刊列表 */
+.reviewerJournal_ul li::marker {
+	content: '✔︎';
+  }
+  .reviewerJournal_ul li{
+	padding-left: 20px;
+	margin-left: 30px;
+  }
+
+  /* 研究兴趣 */
+  .ResearchInterests_ul li::marker {
+	content: '✅';
+  }
+  .ResearchInterests_ul li{
+	padding-left: 20px;
+	margin-left: 10px;
+  }
+
+  /* 首页新闻 */
+  .Index_New_ul li::marker {
+	content: '📢';
+  }
+  .Index_New_ul li{
+	padding-left: 20px;
+	margin-left: 10px;
+  }
+
+  /* 教育 */
+  .Education_ul li::marker {
+	content: '•';
+	font-size: 1.1em;
+  }
+  .Education_ul li{
+	padding-left: 20px;
+	margin-left: 0px;
+  }
+
+   /* 聘用 */
+.Employment_ul li::marker {
+	content: '•';
+  }
+  .Employment_ul li{
+	padding-left: 20px;
+	margin-left: 0px;
+  }
+ 
+     /* 获奖 */
+.Awards_ul li::marker {
+	content: '🏆';
+  }
+  .Awards_ul li{
+	padding-left: 20px;
+	margin-left: 10px;
+  }
+ 
 
 /* 图片扫光效果  */
 .LXCImg {
