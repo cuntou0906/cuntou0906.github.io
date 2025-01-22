@@ -158,28 +158,169 @@ html{
 	}
 }
 
+/* 成果页成果列表 */
 .Publication-paper-wrapper h3,.Publication-Patents-wrapper,h3{
 	padding: 10px;
 	padding-left: 0px;
 }
-
-.Publication-paper-wrapper p{
+/* 论文 */
+.Publication-paper-wrapper .Publication-paper-ListDetail{
 	background: #f8f9fa;
 	padding: 10px;
-	margin-bottom: 5px;
-	border-radius: 10px;
+	margin-bottom: 10px;
 	line-height: 1.5;
+	border-radius: 10px;
 	border-left: 3px solid rgb(141, 216, 241); /* 左侧边框 */
+	position: relative;
+	align-items: center; /* 垂直居中 */
+	display: flex;
+	flex-flow: row nowrap;
+}
+.Publication-paper-wrapper .Publication-paper-ListDetail p{
+	line-height: 1.5;
+	margin-bottom: 0px;
+	width: 90%;
+	flex: 1;
+	text-align: left;
+
+}
+.Publication-paper-wrapper .Publication-paper-ListDetail a{
+	text-align: center;
+	align-items: center; /* 垂直居中 */
+	position: relative;
+	height: 30px;
+	width: 30px;
+	background-color: #dddbdb;
+	margin-top: auto;
+	margin-bottom: auto;
+	float: right;
+	margin-left: 20px;
+	border-radius: 15px;
+	margin-right: 10px;
+
+}
+.Publication-paper-wrapper .Publication-paper-ListDetail a img{
+	padding-top: 5px ;
+	margin-left: auto;
+	margin-right: auto; 
+}
+.Publication-paper-wrapper .Publication-paper-ListDetail a:hover{
+	background-color: #a8a8a8;
+	transform: scale(1.2);
 }
 
-.Publication-Patents-wrapper p{
+.Publication-paper-wrapper .Publication-paper-ListDetail a div.GoToReadTooltip{
+	visibility: hidden;
+	width: 60px;
+	background-color: #dff0fa;
+	color: #474747;
+	text-align: center;
+	border-radius: 5px;
+	padding: 5px 0;
+	position: absolute;
+	z-index: 1;
+	bottom: 125%; /* Position above the button */
+	left: 50%;
+	transform: translateX(-50%);
+	opacity: 0;
+	transition: opacity 0.3s;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+	font-size: 12px;
+}
+.Publication-paper-wrapper .Publication-paper-ListDetail a:hover div.GoToReadTooltip{
+	visibility: visible;
+	opacity: 0.8;
+}
+
+.Publication-paper-wrapper .Publication-paper-ListDetail a div.GoToReadTooltip::after{
+	content: "";
+	position: absolute;
+	top: 100%; /* Arrow at the bottom of the tooltip */
+	left: 50%;
+	margin-left: -5px;
+	border-width: 5px;
+	border-style: solid;
+	border-color: #e0f7fa transparent transparent transparent;
+}
+/* 专利 */
+
+.Publication-Patents-wrapper .Publication-Patents-ListDetail{
 	background: #f8f9fa;
 	padding: 10px;
-	margin-bottom: 5px;
-	border-radius: 10px;
+	margin-bottom: 10px;
 	line-height: 1.5;
+	border-radius: 10px;
 	border-left: 3px solid rgb(141, 216, 241); /* 左侧边框 */
+	position: relative;
+	align-items: center; /* 垂直居中 */
+	display: flex;
+	flex-flow: row nowrap;
+}
+.Publication-Patents-wrapper .Publication-Patents-ListDetail p{
+	line-height: 1.5;
+	margin-bottom: 0px;
+	width: 90%;
+	flex: 1;
+	text-align: left;
 
+}
+.Publication-Patents-wrapper .Publication-Patents-ListDetail a{
+	text-align: center;
+	align-items: center; /* 垂直居中 */
+	position: relative;
+	height: 30px;
+	width: 30px;
+	background-color: #dddbdb;
+	margin-top: auto;
+	margin-bottom: auto;
+	float: right;
+	margin-left: 20px;
+	border-radius: 15px;
+	margin-right: 10px;
+
+}
+.Publication-Patents-wrapper .Publication-Patents-ListDetail a img{
+	padding-top: 5px ;
+	margin-left: auto;
+	margin-right: auto; 
+}
+.Publication-Patents-wrapper .Publication-Patents-ListDetail a:hover{
+	background-color: #a8a8a8;
+	transform: scale(1.2);
+}
+
+.Publication-Patents-wrapper .Publication-Patents-ListDetail a div.GoToReadTooltip{
+	visibility: hidden;
+	width: 60px;
+	background-color: #dff0fa;
+	color: #474747;
+	text-align: center;
+	border-radius: 5px;
+	padding: 5px 0;
+	position: absolute;
+	z-index: 1;
+	bottom: 125%; /* Position above the button */
+	left: 50%;
+	transform: translateX(-50%);
+	opacity: 0;
+	transition: opacity 0.3s;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+	font-size: 12px;
+}
+.Publication-Patents-wrapper .Publication-Patents-ListDetail a:hover div.GoToReadTooltip{
+	visibility: visible;
+	opacity: 0.8;
+}
+
+.Publication-Patents-wrapper .Publication-Patents-ListDetail a div.GoToReadTooltip::after{
+	content: "";
+	position: absolute;
+	top: 100%; /* Arrow at the bottom of the tooltip */
+	left: 50%;
+	margin-left: -5px;
+	border-width: 5px;
+	border-style: solid;
+	border-color: #e0f7fa transparent transparent transparent;
 }
 
 
@@ -628,15 +769,26 @@ footer.main-footer.fixed {
 
 .ScholarDiv{
 	/* white-space: nowrap; */
-	/* display: flex; */
+	display: flex;
 	/* float: left; */
-	flex-wrap: nowrap;
+	flex-wrap: wrap;
 	/* position: relative; */
 }
 
 .ScholarDiv >ul{
-	width: 35%;
-	display: inline-block;
+	width: 31%;
+	/* display: inline-block; */
+	min-width: 255px;
+}
+.ScholarListWrapper{
+	text-align: center; 
+	width: 30%; 
+	height: 250px; 
+	margin-left: auto;
+	margin-right: auto;
+	max-width: 500px; 
+	min-width: 330px;
+	/* position: relative; */
 }
 
 .ResearchPicPresention{
@@ -665,6 +817,61 @@ footer.main-footer.fixed {
 	margin-right: auto;
 }
 
+/* 审稿期刊列表 */
+.reviewerJournal_ul li::marker {
+	content: '✔︎';
+  }
+  .reviewerJournal_ul li{
+	padding-left: 20px;
+	margin-left: 30px;
+  }
+
+  /* 研究兴趣 */
+  .ResearchInterests_ul li::marker {
+	content: '✅';
+  }
+  .ResearchInterests_ul li{
+	padding-left: 20px;
+	margin-left: 10px;
+  }
+
+  /* 首页新闻 */
+  .Index_New_ul li::marker {
+	content: '📢';
+  }
+  .Index_New_ul li{
+	padding-left: 20px;
+	margin-left: 10px;
+  }
+
+  /* 教育 */
+  .Education_ul li::marker {
+	content: '•';
+	font-size: 1.1em;
+  }
+  .Education_ul li{
+	padding-left: 20px;
+	margin-left: 0px;
+  }
+
+   /* 聘用 */
+.Employment_ul li::marker {
+	content: '•';
+  }
+  .Employment_ul li{
+	padding-left: 20px;
+	margin-left: 0px;
+  }
+ 
+     /* 获奖 */
+.Awards_ul li::marker {
+	content: '🏆';
+  }
+  .Awards_ul li{
+	padding-left: 20px;
+	margin-left: 10px;
+  }
+ 
 
 /* 图片扫光效果  */
 .LXCImg {

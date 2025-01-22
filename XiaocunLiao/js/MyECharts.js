@@ -29,7 +29,7 @@ function Set_PaperNum_echarts() {
         },
         toolbox: {
             feature: {
-                dataView: { show: true, readOnly: false },
+                dataView: { show: true, readOnly: true },
                 magicType: { show: true, type: ['line', 'bar'] },
                 restore: { show: true },
                 saveAsImage: { show: true }
@@ -148,7 +148,6 @@ function Set_PaperNum_echarts() {
 
     window.addEventListener('resize', myChart_PaperNumContainer.resize);
 }
-Set_PaperNum_echarts();
 
 
 function Set_PatentsNum_echarts() {
@@ -173,7 +172,7 @@ function Set_PatentsNum_echarts() {
         },
         toolbox: {
             feature: {
-                dataView: { show: true, readOnly: false },
+                dataView: { show: true, readOnly: true },
                 magicType: { show: true, type: ['line', 'bar'] },
                 restore: { show: true },
                 saveAsImage: { show: true }
@@ -283,4 +282,87 @@ function Set_PatentsNum_echarts() {
 
     window.addEventListener('resize', myChart_PatentsNumContainer.resize);
 }
-Set_PatentsNum_echarts();
+
+
+function SetPineScholarList(){
+    var ScholarListContainer_dom = document.getElementById('ScholarListContainer');
+    var myChart_ScholarListContainer = echarts.init(ScholarListContainer_dom, null, {
+      renderer: 'canvas',
+      useDirtyRect: false
+    });
+    var app = {};
+    
+    var option;
+
+    option = {
+  title: {
+    text: 'Scholar Statistics',
+    left: 'center',
+    top: '5%',
+    textStyle:{   
+        color:'#333',
+        fontSize: 16 ,
+        }
+  },
+  tooltip: {
+    trigger: 'item',
+    formatter: '{a} <br/>{b} : {c} ({d}%)'
+  },
+  legend: {
+    left: 'center',
+    top: 'bottom',
+    data: [
+      'rose1',
+      'rose2',
+      'rose3',
+    ],
+    textStyle: { // 图例的文本样式
+        // color: '#333', // 字体颜色
+        fontSize: 16, // 字体大小，单位是像素（px）
+    }
+  },
+  toolbox: {
+    show: true,
+    feature: {
+      mark: { show: true },
+      dataView: { show: true, readOnly: true },
+      restore: { show: true },
+      saveAsImage: { show: true }
+    },
+    top:'90%',
+    left:'10%',
+  },
+  series: [
+    {
+      name: 'Scholar',
+      type: 'pie',
+      radius: [20, 80],
+      center: ['50%', '50%'],
+      roseType: 'area',
+      itemStyle: {
+        borderRadius: 5
+      },
+      data: [
+        { value: 3, name: 'Senior Researcher' },
+        { value: 7, name: 'Associate Researcher' },
+        { value: 4, name: 'Assistant Researcher' },
+      ],
+      label:{
+          normal:{
+              show: true,
+              textStyle:{
+                  fontSize: 16
+              }
+          }
+      }
+    }
+  ]
+};
+
+    if (option && typeof option === 'object') {
+        myChart_ScholarListContainer.setOption(option);
+    }
+
+    window.addEventListener('resize', myChart_ScholarListContainer.resize);
+}
+
