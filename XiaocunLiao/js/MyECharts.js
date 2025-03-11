@@ -47,7 +47,7 @@ function Set_PaperNum_echarts() {
         xAxis: [
             {
                 type: 'category',
-                data: ['2021', '2022', '2023', '2024'],
+                data: ['2021', '2022', '2023', '2024', '2025'],
                 axisPointer: {
                     type: 'shadow'
                 },
@@ -99,7 +99,7 @@ function Set_PaperNum_echarts() {
                     }
                 },
                 data: [
-                    0, 2, 3, 2,
+                    0, 2, 3, 2, 1,
                 ]
             },
             {
@@ -111,11 +111,11 @@ function Set_PaperNum_echarts() {
                     }
                 },
                 data: [
-                    4, 0, 1, 0,
+                    4, 0, 1, 0, 0,
                 ]
             },
             {
-                name: 'Total in this Year',       //会议数量
+                name: 'Total in this Year',       //当年总数量
                 type: 'bar',
                 tooltip: {
                     valueFormatter: function (value) {
@@ -123,7 +123,7 @@ function Set_PaperNum_echarts() {
                     }
                 },
                 data: [
-                    4, 2, 4, 2,
+                    4, 2, 4, 2, 1,
                 ]
             },
             {
@@ -136,7 +136,7 @@ function Set_PaperNum_echarts() {
                     }
                 },
                 data: [
-                    4, 6, 10, 12,
+                    4, 6, 10, 12, 13,
                 ]
             }
         ]
