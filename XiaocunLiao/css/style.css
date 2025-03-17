@@ -262,7 +262,23 @@ html{
   .motto-wavy-text span:nth-child(28) { animation-delay: 2.7s; }
   .motto-wavy-text span:nth-child(29) { animation-delay: 2.8s; }
   .motto-wavy-text span:nth-child(30) { animation-delay: 2.9s; }
-
+  .motto-wavy-text span:nth-child(31) { animation-delay: 3.0s; }
+  .motto-wavy-text span:nth-child(32) { animation-delay: 3.1s; }
+  .motto-wavy-text span:nth-child(33) { animation-delay: 3.2s; }
+  .motto-wavy-text span:nth-child(34) { animation-delay: 3.3s; }
+  .motto-wavy-text span:nth-child(35) { animation-delay: 3.4s; }
+  .motto-wavy-text span:nth-child(36) { animation-delay: 3.5s; }
+  .motto-wavy-text span:nth-child(37) { animation-delay: 3.6s; }
+  .motto-wavy-text span:nth-child(38) { animation-delay: 3.7s; }
+  .motto-wavy-text span:nth-child(39) { animation-delay: 3.8s; }
+  .motto-wavy-text span:nth-child(40) { animation-delay: 3.9s; }
+  .motto-wavy-text span:nth-child(41) { animation-delay: 4.0s; }
+  .motto-wavy-text span:nth-child(42) { animation-delay: 4.1s; }
+  .motto-wavy-text span:nth-child(43) { animation-delay: 4.2s; }
+  .motto-wavy-text span:nth-child(44) { animation-delay: 4.3s; }
+  .motto-wavy-text span:nth-child(45) { animation-delay: 4.4s; }
+  .motto-wavy-text span:nth-child(46) { animation-delay: 4.5s; }
+  .motto-wavy-text span:nth-child(47) { animation-delay: 4.6s; }
 
 /* 成果页成果列表 */
 .Publication-paper-wrapper h3,.Publication-Patents-wrapper,h3{
