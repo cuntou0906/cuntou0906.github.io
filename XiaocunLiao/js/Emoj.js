@@ -50,8 +50,34 @@ document.addEventListener('mousemove', (e) => {
 });
 
 
-document.addEventListener('click', function(event) {
-    // 检查点击事件是否为左键点击
-     createFloatingEmoji(event.clientX, event.clientY);
+// document.addEventListener('click', function(event) {
+//     // 检查点击事件是否为左键点击
+//      createFloatingEmoji(event.clientX, event.clientY);
 
+// });
+
+// 鼠标点击波纹特效
+document.addEventListener('click', function(event) {
+    // 创建多个波纹效果元素
+    for (let i = 0; i < 5; i++) { // 生成5个波纹
+        const ripple = document.createElement('div');
+        ripple.className = 'ripple_mouseClick';
+        
+        // 设置波纹效果的位置
+        ripple.style.left = `${event.clientX - 15}px`; // 使波纹中心在点击位置
+        ripple.style.top = `${event.clientY - 15}px`; // 使波纹中心在点击位置
+        
+        // 随机化波纹的初始大小
+        const size = Math.random() * 10 + 20; // 随机大小范围在20px到30px之间
+        ripple.style.width = `${size}px`; // 波纹初始宽度
+        ripple.style.height = `${size}px`; // 波纹初始高度
+        
+        // 将波纹效果添加到页面
+        document.body.appendChild(ripple);
+        
+        // 在动画结束后移除元素
+        ripple.addEventListener('animationend', function() {
+            ripple.remove();
+        });
+    }
 });

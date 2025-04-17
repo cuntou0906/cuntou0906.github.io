@@ -1608,6 +1608,24 @@ ul.Index_New {
 	z-index: 1;
 }
 
+/* 鼠标点击特效波纹 */
+.ripple_mouseClick {
+	position: absolute;
+	border-radius: 50%;
+	background: rgba(153, 200, 234, 0.6); /* 使用更深的蓝色 */
+	pointer-events: none;
+	transform: scale(0);
+	animation: ripple_mouseClick-animation 0.8s linear forwards; /* 增加动画时间 */
+	box-shadow: 0 0 10px rgba(162, 201, 233, 0.5); /* 添加阴影 */
+}
+
+@keyframes ripple_mouseClick-animation {
+	to {
+		transform: scale(1.5); /* 控制波纹的最大扩散尺寸 */
+		opacity: 0; /* 逐渐变得透明 */
+	}
+}
+
 
 /* 标题悬浮特效 */
 .PaperTitle-hover-underline {
