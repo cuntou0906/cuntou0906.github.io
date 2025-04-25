@@ -1617,6 +1617,8 @@ ul.Index_New {
 	transform: scale(0);
 	animation: ripple_mouseClick-animation 0.8s linear forwards; /* 增加动画时间 */
 	box-shadow: 0 0 10px rgba(162, 201, 233, 0.5); /* 添加阴影 */
+	z-index: 1000; /* 设置z-index确保波纹在最顶层 */
+
 }
 
 @keyframes ripple_mouseClick-animation {
