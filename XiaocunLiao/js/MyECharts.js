@@ -423,13 +423,18 @@ $.getJSON('./json/ResearchInterests.json', function (graph) {
         emphasis: {
           focus: 'adjacency',
           lineStyle: {
-            width: 10
+            width: 6
           }
         }
       }
     ]
   };
   myChart.setOption(option);
+  myChart.setOption({
+    // width: '100%',  // 可以使用百分比或具体像素值
+    height: '100%', // 同上
+    // 其他配置项...
+});
 });
 
     if (option && typeof option === 'object') {
