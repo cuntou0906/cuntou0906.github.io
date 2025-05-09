@@ -200,7 +200,7 @@ function Set_PatentsNum_echarts() {
         xAxis: [
             {
                 type: 'category',
-                data: ['2021', '2022', '2023', '2024'],
+                data: ['2021', '2022', '2023', '2024', '2025'],
                 axisPointer: {
                     type: 'shadow'
                 },
@@ -252,7 +252,7 @@ function Set_PatentsNum_echarts() {
                     }
                 },
                 data: [
-                    2, 4, 4, 0,
+                    2, 4, 4, 0, 1,
                 ],
                 itemStyle: {
                     color: '#00cc33'
@@ -268,7 +268,7 @@ function Set_PatentsNum_echarts() {
                     }
                 },
                 data: [
-                    2, 6, 10, 10,
+                    2, 6, 10, 10, 11,
                 ],
                 itemStyle: {
                     color: '#ffcc33'
