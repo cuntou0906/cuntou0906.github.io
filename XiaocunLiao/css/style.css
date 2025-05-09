@@ -956,12 +956,15 @@ footer.main-footer.fixed {
 }
 
 /* 审稿期刊列表 */
-.reviewerJournal_ul li::marker {
+ul.reviewerJournal_ul li::marker {
 	content: '✔︎';
   }
-  .reviewerJournal_ul li{
-	padding-left: 20px;
+ul.reviewerJournal_ul li{
+	padding-left: 10px;
 	margin-left: 30px;
+  }
+ul.reviewerJournal_ul{
+	padding-left: 10px;
   }
 
   /* 研究兴趣 */
