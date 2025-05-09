@@ -352,17 +352,27 @@
     <li> <em>...</em></li>
   </ul>
 <br>
+
 <h4>
   <img src="./images/TitleImg/Interest.png" margin=0px; alt="" height="25px"  class="" style=" vertical-align: text-bottom;">  
   <b>Research Interests</b>
 </h4> 
-<ul class="ResearchInterests_ul">
-    <li>Bioinspired robotic fish</li>
-    <li>Bioinspired underwater robot</li>
-    <li>Robotic control</li>
-    <li>Intelligent control system</li>
-    <li><em>...</em></li>
-</ul>
+<div class="ResearchInterestsWrapper">
+  <ul class="ResearchInterests_ul" style="width: 30%; min-width: 250px;">
+      <li>Bioinspired robotic fish</li>
+      <li>Bioinspired robot</li>
+      <li>Underwater robot</li>
+      <li>Soft actuator</li>
+      <li>Artificial muscle</li>
+      <li>Robot control</li>
+      <li>Robot modeling</li>
+      <li>Robot optimization</li>
+      <li>Intelligent control system</li>
+      <li><em>...</em></li>
+  </ul>
+  <div id="ResearchInterestScontainer_ID" class="ResearchInterestsEchartWrapper" style=""></div>
+</div>
+
 <br>
 <h4>
   <img src="./images/TitleImg/Award.png" margin=0px; alt="" height="25px"  class="" style=" vertical-align: text-bottom;">  
@@ -547,7 +557,12 @@
     });
 </script>
 
-
+<!-- 绘图面板 -->
+<script type="text/javascript" src="./js/echarts.min.js"></script>
+<script src="./js/MyECharts.js"></script>
+<script type="text/javascript">
+    SetResearchInterestsList();
+</script>
 
  </body>
 </html>
