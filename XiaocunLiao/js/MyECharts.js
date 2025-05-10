@@ -1,3 +1,4 @@
+// 论文统计
 function Set_PaperNum_echarts() {
     var PaperNumContainer = document.getElementById('PaperNumContainer');
     var myChart_PaperNumContainer = echarts.init(PaperNumContainer, null, {
@@ -149,7 +150,7 @@ function Set_PaperNum_echarts() {
     window.addEventListener('resize', myChart_PaperNumContainer.resize);
 }
 
-
+// 专利统计
 function Set_PatentsNum_echarts() {
     var PatentsNumContainer = document.getElementById('PatentsNumContainer');
     var myChart_PatentsNumContainer = echarts.init(PatentsNumContainer, null, {
@@ -199,7 +200,7 @@ function Set_PatentsNum_echarts() {
         xAxis: [
             {
                 type: 'category',
-                data: ['2021', '2022', '2023', '2024'],
+                data: ['2021', '2022', '2023', '2024', '2025'],
                 axisPointer: {
                     type: 'shadow'
                 },
@@ -251,7 +252,7 @@ function Set_PatentsNum_echarts() {
                     }
                 },
                 data: [
-                    2, 4, 4, 0,
+                    2, 4, 4, 0, 1,
                 ],
                 itemStyle: {
                     color: '#00cc33'
@@ -267,7 +268,7 @@ function Set_PatentsNum_echarts() {
                     }
                 },
                 data: [
-                    2, 6, 10, 10,
+                    2, 6, 10, 10, 11,
                 ],
                 itemStyle: {
                     color: '#ffcc33'
@@ -283,6 +284,8 @@ function Set_PatentsNum_echarts() {
     window.addEventListener('resize', myChart_PatentsNumContainer.resize);
 }
 
+
+// 学者统计
 
 function SetPineScholarList(){
     var ScholarListContainer_dom = document.getElementById('ScholarListContainer');
@@ -364,5 +367,82 @@ function SetPineScholarList(){
     }
 
     window.addEventListener('resize', myChart_ScholarListContainer.resize);
+}
+
+
+// 研究兴趣
+
+function SetResearchInterestsList(){
+    var dom = document.getElementById('ResearchInterestScontainer_ID');
+    var myChart = echarts.init(dom, null, {
+      renderer: 'canvas',
+      useDirtyRect: false
+    });
+    var app = {};
+    var option;
+
+    myChart.showLoading();
+$.getJSON('./json/ResearchInterests.json', function (graph) {
+  myChart.hideLoading();
+  graph.nodes.forEach(function (node) {
+    node.label = {
+      show: node.symbolSize > 10
+    };
+  });
+  option = {
+    title: {
+      text: '',
+      subtext: '',
+      top: 'bottom',
+      left: 'right'
+    },
+    tooltip: {},
+    animationDuration: 1500,
+    animationEasingUpdate: 'quinticInOut',
+    series: [
+      {
+        name: '',
+        type: 'graph',
+        legendHoverLink: false,
+        layout: 'none',
+        data: graph.nodes,
+        links: graph.links,
+        categories: graph.categories,
+        roam: true,
+        label: {
+          position: 'right',
+          formatter: '{b}',
+          fontSize: 12,
+          fontFamily: 'Arial, sans-serif', // 设置字体
+
+        },
+        lineStyle: {
+          color: 'source',
+          curveness: 0.3
+        },
+        emphasis: {
+          focus: 'adjacency',
+          lineStyle: {
+            width: 6
+          }
+        }
+      }
+    ]
+  };
+  myChart.setOption(option);
+  myChart.setOption({
+    // width: '100%',  // 可以使用百分比或具体像素值
+    height: '100%', // 同上
+    // 其他配置项...
+});
+});
+
+    if (option && typeof option === 'object') {
+      myChart.setOption(option);
+    }
+
+    window.addEventListener('resize', myChart.resize);
+
+
 }
 
