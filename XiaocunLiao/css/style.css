@@ -2131,7 +2131,7 @@ li.NoSubMenu span a {
 	width: 140px;
 	margin: 30px 15px 10px 15px;
 	text-align: center;
-	z-index: 2;
+	z-index: 1;
 }
 .publication-timeline-event .publication-arrow,
 .publication-timeline-event .publication-connector,
