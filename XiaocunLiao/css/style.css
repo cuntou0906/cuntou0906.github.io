@@ -1439,7 +1439,7 @@ ul.Index_New {
 }
 
 
-/* 段落展开与折叠 */
+/* 课题组的研究内容段落的段落展开与折叠 */
 .ExpandText-container {
 	width: 100%;
 	margin: 10px auto;
@@ -1484,7 +1484,7 @@ ul.Index_New {
 }
 
 .ExpandText-content.ExpandText-collapsed {
-	max-height: 1.6em;
+	max-height: 6.0em;
 	overflow: hidden;
 	padding-bottom: 50px;
 }
@@ -1524,6 +1524,93 @@ ul.Index_New {
 	pointer-events: none;
 	z-index: 1;
 }
+
+/* 个人研究内容段落的段落展开与折叠 */
+.Personal-ExpandText-container {
+	width: 100%;
+	margin: 10px auto;
+	padding: 2px;
+}
+
+.Personal-ExpandText-wrapper {
+	position: relative;
+	margin-bottom: 10px;
+	background: #f8f9fa;
+	padding: 20px;
+	border-radius: 8px;
+}
+
+.Personal-ExpandText-content {
+	margin: 0;
+	line-height: 1.6;
+	color: #333;
+	display: block;
+	position: relative;
+}
+
+/* 展开状态时移除高度限制 */
+.Personal-ExpandText-content.Personal-ExpandText-expanded {
+	max-height: none;
+	padding-bottom: 50px;
+}
+
+.Personal-ExpandText-image {
+	width: 60%;
+	object-fit: cover;
+	border-radius: 8px;
+	box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+	display: block;
+	margin: 20px auto;
+}
+
+.Personal-ExpandText-text {
+	margin: 0;
+	line-height: 1.5;
+	text-align: justify;
+}
+
+.Personal-ExpandText-content.Personal-ExpandText-collapsed {
+	max-height: 20.0em;
+	overflow: hidden;
+	padding-bottom: 50px;
+}
+
+.Personal-ExpandText-btn {
+	position: absolute;
+	left: 50%;
+	bottom: 0;
+	transform: translateX(-50%);
+	display: inline-block;
+	padding: 8px 20px;
+	margin: 0;
+	background-color: #fff;
+	color: #1280f7;
+	border: 1px solid #1280f7;
+	border-radius: 4px;
+	cursor: pointer;
+	transition: all 0.3s ease;
+	font-size: 14px;
+	z-index: 2;
+}
+
+.Personal-ExpandText-btn:hover {
+	background-color: #3789e0;
+	color: #fff;
+}
+
+/* 渐变遮罩 */
+.Personal-ExpandText-content.Personal-ExpandText-collapsed::after {
+	content: '';
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 40px;
+	background: linear-gradient(transparent, #f8f9fa);
+	pointer-events: none;
+	z-index: 1;
+}
+
 
 /* 分隔线 */
 .Divider {
