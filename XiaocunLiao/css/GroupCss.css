@@ -1,0 +1,55 @@
+.Group_ResearchList_page {
+    display: none;
+}
+.Group_ResearchList_active {
+    display: block;
+}
+.Group_ResearchList_pagination {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end; /* 使内容靠右 */
+    margin: 10px 0px;
+    position: relative; /* 为伪元素定位 */
+}
+
+.Group_ResearchList_pagination button {
+    cursor: pointer;
+    padding: 7px 12px;
+    border: 1px solid #cdd2d8;
+    font-size: 14px;
+    color: #2c3e50;
+    background: #f8f9fa; /* 背景颜色 */
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border-radius: 4px;
+    font-weight: 500;
+    margin: 0 5px; /* 增加按钮间距 */
+}
+.Group_ResearchList_pagination button:hover {
+    background: #e2e6ea; /* 悬停时的背景颜色 */
+    border-color: #adb5bd; /* 悬停时的边框颜色 */
+}
+.Group_ResearchList_pagination button:active {
+    background: #d6d8db; /* 点击时的背景颜色 */
+}
+.Group_ResearchList_pagination span {
+    padding: 0 12px;
+    font-size: 14px;
+    color: #2c3e50;
+    font-weight: 500;
+}
+.Group_ResearchList_pagination input {
+    width: 50px;
+    height: 30px; /* 增加输入框高度 */
+    text-align: center;
+    font-size: 14px;
+    color: #2c3e50;
+    font-weight: 500;
+    border: 1px solid #cdd2d8; /* 输入框边框 */
+    border-radius: 4px; /* 输入框圆角 */
+    margin-left: 5px; /* 输入框左侧间距 */
+}
+.Group_ResearchList_pagination input:focus {
+    border-color: #80bdff; /* 聚焦时的边框颜色 */
+    outline: none; /* 去掉默认的轮廓 */
+}
