@@ -14,17 +14,33 @@
 
 .Group_ResearchList_pagination button {
     cursor: pointer;
-    padding: 7px 12px;
+    padding: 7px 8px;
     border: 1px solid #cdd2d8;
     font-size: 14px;
+    font-weight: bolder;
     color: #2c3e50;
     background: #f8f9fa; /* 背景颜色 */
     text-decoration: none;
     transition: all 0.3s ease;
     border-radius: 4px;
-    font-weight: 500;
     margin: 0 5px; /* 增加按钮间距 */
 }
+
+#Group_ResearchList_pagination_muzhi {
+    animation: Group_ResearchList_paginationImgBackAndForth 0.5s infinite alternate; /* 2秒周期，无限次播放，往返 */
+}
+@keyframes Group_ResearchList_paginationImgBackAndForth {
+    0%{
+        transform: translateX(0);
+      }
+    50% {
+      transform: translateX(-5px); /* 或者其他你想要的距离 */
+    }
+    100% {
+        transform: translateX(0);
+      }
+  }
+
 .Group_ResearchList_pagination button:hover {
     background: #e2e6ea; /* 悬停时的背景颜色 */
     border-color: #adb5bd; /* 悬停时的边框颜色 */
@@ -33,10 +49,11 @@
     background: #d6d8db; /* 点击时的背景颜色 */
 }
 .Group_ResearchList_pagination span {
-    padding: 0 12px;
+    padding: 0 8px;
     font-size: 14px;
     color: #2c3e50;
     font-weight: 500;
+    font-weight: bold;
 }
 .Group_ResearchList_pagination input {
     width: 50px;
