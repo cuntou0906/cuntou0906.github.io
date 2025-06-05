@@ -1013,6 +1013,75 @@ ul.reviewerJournal_ul{
 	margin-left: 10px;
   }
  
+	/* 代表研究概述 */
+.RepresentativeResearchOverview_ul li::marker {
+	content: '🐬';
+}
+.RepresentativeResearchOverview_ul li{
+	padding-left: 20px;
+	margin-left: 10px;
+}
+.RepresentativeResearchOverview_ul a{
+	text-decoration: none;
+}
+
+/* 代表性研究附图  轮播图*/
+.RRO_carousel {
+	position: relative;
+	width: 300px; /* 调整轮播图宽度 */
+	height: 150px; /* 调整轮播图高度 */
+	overflow: hidden;
+	border-radius: 10px; /* 圆角边框 */
+	box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* 阴影效果 */
+	margin-top: 60px;
+    margin-right: -60px;
+    margin-left: 20px;
+    margin-bottom: 0px;
+    float: right;
+	background-color: #f3f2f2; /* 设置背景为透明色 */
+
+}
+.RRO_carousel-images {
+	display: flex;
+	transition: transform 0.5s ease; /* 动画效果 */
+	width: 100%;
+	align-items: center; /* 垂直居中 */
+	background-color: transparent; /* 设置背景为透明色 */
+}
+.RRO_carousel-image {
+	min-width: 100%; /* 每张图片占满整个轮播图 */
+	height: 100%; /* 高度占满 */
+	object-fit: cover; /* 保持图片比例，确保图片不会被裁剪 */
+	border-radius: 10px; /* 圆角边框 */
+	background-color: transparent; /* 设置背景为透明色 */
+}
+.RRO_carousel-buttons {
+	position: absolute;
+	top: 50%;
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	transform: translateY(-50%);
+	z-index: 1; /* 确保按钮在图片上方 */
+}
+.RRO_carousel-button {
+	background-color: rgba(255, 255, 255, 0.7); /* 半透明背景 */
+	border: none;
+	padding: 5px;
+	cursor: pointer;
+	font-size: 18px;
+	border-radius: 5px;
+	width: 20px; /* 设置按钮宽度 */
+	height: 40px; /* 设置按钮高度 */
+	transition: background-color 0.3s ease, transform 0.3s ease; /* 添加过渡效果 */
+}
+.RRO_carousel-button:hover {
+	background-color: rgba(255, 255, 255, 1); /* 悬停时的背景颜色 */
+	transform: scale(1.1); /* 悬停时放大 */
+}
+.RRO_carousel-button:active {
+	background-color: rgba(200, 200, 200, 0.5); /* 点击时的背景颜色 */
+}
 
 /* 图片扫光效果  */
 .LXCImg {
