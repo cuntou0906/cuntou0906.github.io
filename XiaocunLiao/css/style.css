@@ -1014,15 +1014,25 @@ ul.reviewerJournal_ul{
   }
  
 	/* 代表研究概述 */
+.RepresentativeResearchOverview_ul{
+	/* display: flex; */
+    flex: 1; /* 使ul扩展以适应内容 */
+}
 .RepresentativeResearchOverview_ul li::marker {
 	content: '🐬';
 }
 .RepresentativeResearchOverview_ul li{
 	padding-left: 20px;
 	margin-left: 10px;
+	width: 100%;
+	padding-top: 5px;
+	padding-bottom: 5px;
+
+
 }
 .RepresentativeResearchOverview_ul a{
 	text-decoration: none;
+
 }
 
 /* 代表性研究附图  轮播图*/
