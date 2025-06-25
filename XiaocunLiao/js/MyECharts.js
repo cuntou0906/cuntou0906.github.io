@@ -100,7 +100,7 @@ function Set_PaperNum_echarts() {
                     }
                 },
                 data: [
-                    0, 2, 3, 2, 1,
+                    0, 2, 3, 2, 2,
                 ]
             },
             {
@@ -124,7 +124,7 @@ function Set_PaperNum_echarts() {
                     }
                 },
                 data: [
-                    4, 2, 4, 2, 1,
+                    4, 2, 4, 2, 2,
                 ]
             },
             {
@@ -137,7 +137,7 @@ function Set_PaperNum_echarts() {
                     }
                 },
                 data: [
-                    4, 6, 10, 12, 13,
+                    4, 6, 10, 12, 14,
                 ]
             }
         ]
