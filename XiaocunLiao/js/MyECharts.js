@@ -83,7 +83,8 @@ function Set_PaperNum_echarts() {
                 interval: 2,
                 axisLabel: {
                     formatter: '{value}',
-                    fontSize: 14 // 设置字体大小为14
+                    fontSize: 14, // 设置字体大小为14
+                    color: '#ff3333'
                 },
                 splitLine: {
                     show: true
@@ -131,6 +132,9 @@ function Set_PaperNum_echarts() {
                 name: 'Total',       //总数
                 type: 'line',
                 yAxisIndex: 1,
+                itemStyle: {
+                    color: '#ff3333'
+                },
                 tooltip: {
                     valueFormatter: function (value) {
                         return value;
@@ -191,7 +195,7 @@ function Set_PatentsNum_echarts() {
                 }
         },
         legend: {
-            data: ['Patents', 'Total'],
+            data: ['Total in this Year', 'Total'],
             textStyle: { // 图例的文本样式
                 // color: '#333', // 字体颜色
                 fontSize: 16, // 字体大小，单位是像素（px）
@@ -221,7 +225,8 @@ function Set_PatentsNum_echarts() {
                 interval: 2,
                 axisLabel: {
                     formatter: '{value}',
-                    fontSize: 14 // 设置字体大小为14
+                    fontSize: 14, // 设置字体大小为14
+                    color: '#00cc33'
                 },
                 splitLine: {
                     show: false
@@ -235,7 +240,8 @@ function Set_PatentsNum_echarts() {
                 interval: 2,
                 axisLabel: {
                     formatter: '{value}',
-                    fontSize: 14 // 设置字体大小为14
+                    fontSize: 14, // 设置字体大小为14
+                    color: '#ff3333',
                 },
                 splitLine: {
                     show: true
@@ -244,8 +250,9 @@ function Set_PatentsNum_echarts() {
         ],
         series: [
             {
-                name: 'Patents',     //专利
+                name: 'Total in this Year',     //专利
                 type: 'bar',
+                barWidth: 50,
                 tooltip: {
                     valueFormatter: function (value) {
                         return value;
@@ -271,7 +278,7 @@ function Set_PatentsNum_echarts() {
                     2, 6, 10, 10, 11,
                 ],
                 itemStyle: {
-                    color: '#ffcc33'
+                    color: '#ff3333'
                 }
             }
         ]
@@ -284,6 +291,143 @@ function Set_PatentsNum_echarts() {
     window.addEventListener('resize', myChart_PatentsNumContainer.resize);
 }
 
+// 引用量
+function Set_CitationNum_echarts() {
+    var CitationNumContainer = document.getElementById('CiteNumContainer');
+    var myChart_CitationNumContainer = echarts.init(CitationNumContainer, null, {
+        renderer: 'canvas',
+        useDirtyRect: false
+    });
+    var app = {};
+
+    var option;
+
+    option = {
+        tooltip: {
+            trigger: 'axis',
+            axisPointer: {
+                type: 'cross',
+                crossStyle: {
+                    color: '#999'
+                }
+            }
+        },
+        toolbox: {
+            feature: {
+                dataView: { show: true, readOnly: true },
+                magicType: { show: true, type: ['line', 'bar'] },
+                restore: { show: true },
+                saveAsImage: { show: true }
+            },
+            top:'88%',
+            right:'0%',
+        },
+        title:{
+            text: 'Citation Statistics',
+            left: 'center',
+            top: '90%',
+            textStyle:{   
+                color:'#333',
+                fontSize: 16 ,
+                }
+        },
+        legend: {
+            data: ['Total in this Year', 'Total'],
+            textStyle: { // 图例的文本样式
+                // color: '#333', // 字体颜色
+                fontSize: 16, // 字体大小，单位是像素（px）
+            }
+        },
+        xAxis: [
+            {
+                type: 'category',
+                data: ['2022', '2023', '2024', '2025'],
+                axisPointer: {
+                    type: 'shadow'
+                },
+                axisLabel: {
+                    fontSize: 14, // 设置字体大小为14
+                },
+                splitLine: {
+                    show: false
+                }
+            }
+        ],
+        yAxis: [
+            {
+                type: 'value',
+                name: '',
+                min: 0,
+                max: 50,
+                interval: 10,
+                axisLabel: {
+                    formatter: '{value}',
+                    fontSize: 14, // 设置字体大小为14
+                    color: '#89d7ec'
+
+                },
+                splitLine: {
+                    show: false
+                }
+            },
+            {
+                type: 'value',
+                name: '',
+                min: 0,
+                max: 100,
+                interval: 20,
+                axisLabel: {
+                    formatter: '{value}',
+                    fontSize: 14, // 设置字体大小为14
+                    color:'#ff3333',
+                },
+                splitLine: {
+                    show: true
+                }
+            }
+        ],
+        series: [
+            {
+                name: 'Total in this Year',     //该年引用量
+                type: 'bar',
+                barWidth: 50,
+                tooltip: {
+                    valueFormatter: function (value) {
+                        return value;
+                    }
+                },
+                data: [
+                    2, 13, 33, 26,
+                ],
+                itemStyle: {
+                    color: '#89d7ec'
+                }
+            },
+            {
+                name: 'Total',       //总数
+                type: 'line',
+                yAxisIndex: 1,
+                tooltip: {
+                    valueFormatter: function (value) {
+                        return value;
+                    }
+                },
+                data: [
+                    2, 15, 48, 74,
+                ],
+                itemStyle: {
+                    color: '#ff3333'
+                }
+            }
+        ]
+    };
+
+    if (option && typeof option === 'object') {
+        myChart_CitationNumContainer.setOption(option);
+    }
+
+    window.addEventListener('resize', myChart_CitationNumContainer.resize);
+}
 
 // 学者统计
 
