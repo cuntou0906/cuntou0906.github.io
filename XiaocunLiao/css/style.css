@@ -914,6 +914,29 @@ ul.reviewerJournal_ul{
 	margin-left: 10px;
   }
 
+ /* 首页基金 */
+ .Index_Project_ul li::marker {
+	content: '📐';
+  }
+  .Index_Project_ul li{
+	padding-left: 20px;
+	margin-left: 10px;
+	font-size: 1.1em;
+	font-weight: bolder;
+  }
+
+  /* 基金列表列表 */
+ul.Projects_ul li::marker {
+	content: '✔︎';
+  }
+ul.Projects_ul li{
+	padding-left: 10px;
+	margin-left: 30px;
+  }
+ul.Projects_ul{
+	padding-left: 40px;
+  }
+
   /* 教育 */
   .Education_ul li::marker {
 	content: '•';
