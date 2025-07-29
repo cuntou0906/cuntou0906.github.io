@@ -906,12 +906,20 @@ ul.reviewerJournal_ul{
   }
 
   /* 首页新闻 */
-  .Index_New_ul li::marker {
-	content: '📢';
-  }
+  /* .Index_New_ul li::marker {
+	content: '';
+	
+  } */
   .Index_New_ul li{
-	padding-left: 20px;
-	margin-left: 10px;
+	background-image:url(../images/SmallIcon/HotAnnimation.gif);
+	background-repeat: no-repeat;/* 防止图片重复 */
+	padding-left: 40px;
+	margin-left:-10px;
+	margin-top:10px;
+	list-style-type: none; /* 移除默认的列表项标记 */
+	background-position: left center; /* 图片位置 */
+	position: relative; /* 允许子元素绝对定位 */
+	
   }
 
  /* 首页基金 */
