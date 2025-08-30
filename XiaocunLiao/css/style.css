@@ -906,12 +906,43 @@ ul.reviewerJournal_ul{
   }
 
   /* 首页新闻 */
-  .Index_New_ul li::marker {
-	content: '📢';
-  }
+  /* .Index_New_ul li::marker {
+	content: '';
+	
+  } */
   .Index_New_ul li{
+	background-image:url(../images/SmallIcon/HotAnnimation.gif);
+	background-repeat: no-repeat;/* 防止图片重复 */
+	padding-left: 40px;
+	margin-left:-10px;
+	margin-top:10px;
+	list-style-type: none; /* 移除默认的列表项标记 */
+	background-position: left center; /* 图片位置 */
+	position: relative; /* 允许子元素绝对定位 */
+	
+  }
+
+ /* 首页基金 */
+ .Index_Project_ul li::marker {
+	content: '📐';
+  }
+  .Index_Project_ul li{
 	padding-left: 20px;
 	margin-left: 10px;
+	font-size: 1.1em;
+	font-weight: bolder;
+  }
+
+  /* 基金列表列表 */
+ul.Projects_ul li::marker {
+	content: '✔︎';
+  }
+ul.Projects_ul li{
+	padding-left: 10px;
+	margin-left: 30px;
+  }
+ul.Projects_ul{
+	padding-left: 40px;
   }
 
   /* 教育 */
