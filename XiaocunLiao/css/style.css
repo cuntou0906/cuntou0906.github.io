@@ -1537,7 +1537,7 @@ ul.Index_New {
 .Personal-ExpandText-btn {
 	position: absolute;
 	left: 50%;
-	bottom: 0;
+	bottom: 5px;
 	transform: translateX(-50%);
 	display: inline-block;
 	padding: 8px 20px;
@@ -1550,11 +1550,14 @@ ul.Index_New {
 	transition: all 0.3s ease;
 	font-size: 14px;
 	z-index: 2;
+	transition: transform 0.3s ease; /* 平滑过渡效果 */
 }
 
 .Personal-ExpandText-btn:hover {
 	background-color: #3789e0;
 	color: #fff;
+	transform: translateX(-50%) scale(1.1); /* 鼠标悬停时放大1.2倍 */
+	border-radius: 4px;
 }
 
 /* 渐变遮罩 */
@@ -1564,10 +1567,23 @@ ul.Index_New {
 	bottom: 0;
 	left: 0;
 	width: 100%;
-	height: 40px;
+	height: 150px;
 	background: linear-gradient(transparent, #f8f9fa);
 	pointer-events: none;
 	z-index: 1;
+}
+
+/* research页的页面目录索引效果 */
+.research_Page_List_b{
+	transition: transform 0.3s ease; /* 平滑过渡效果 */
+	font-weight: normal;
+}
+.research_Page_List_b:hover{
+	transform: scale(1.1); /* 鼠标悬停时放大1.2倍 */
+	font-weight: bolder;
+}
+.RepresentativeResearchOverview_ul{
+font-size: 1.1em;
 }
 
 
