@@ -1729,6 +1729,11 @@ font-size: 1.1em;
 	transform: translateY(-1px);
 }
 
+.Personal-ExpandText-container h4:hover p.PaperTitle-hover-underline,
+.Paper-Title-Wrapper1:hover .PaperTitle-hover-underline {
+	transform: translateY(-1px);
+}
+
 .PaperTitle-hover-underline::after {
 	content: '';
 	position: absolute;
@@ -1767,6 +1772,14 @@ font-size: 1.1em;
 	text-shadow: 0 0 4px rgba(0, 180, 219, 0.3);
 	color: #0083b0;
 }
+
+.Personal-ExpandText-container h4:hover p.PaperTitle-hover-underline span,
+.Paper-Title-Wrapper1:hover .PaperTitle-hover-underline span {
+	background-size: 100% 2px;
+	text-shadow: 0 0 4px rgba(0, 180, 219, 0.3);
+	color: #0083b0;
+}
+
 .Paper-Title-Wrapper1{
 	padding: 10px;
 }
