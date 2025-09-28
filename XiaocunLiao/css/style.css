@@ -1451,7 +1451,7 @@ ul.Index_New {
 .ExpandText-btn {
 	position: absolute;
 	left: 50%;
-	bottom: 0;
+	bottom: 5px;
 	transform: translateX(-50%);
 	display: inline-block;
 	padding: 8px 20px;
@@ -1464,11 +1464,13 @@ ul.Index_New {
 	transition: all 0.3s ease;
 	font-size: 14px;
 	z-index: 2;
+	transition: transform 0.3s ease; /* 平滑过渡效果 */
 }
 
 .ExpandText-btn:hover {
 	background-color: #3789e0;
 	color: #fff;
+	transform: translateX(-50%) scale(1.1); /* 鼠标悬停时放大1.2倍 */
 }
 
 /* 渐变遮罩 */
@@ -1557,7 +1559,6 @@ ul.Index_New {
 	background-color: #3789e0;
 	color: #fff;
 	transform: translateX(-50%) scale(1.1); /* 鼠标悬停时放大1.2倍 */
-	border-radius: 4px;
 }
 
 /* 渐变遮罩 */
