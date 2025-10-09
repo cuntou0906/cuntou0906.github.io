@@ -397,7 +397,7 @@ function Set_CitationNum_echarts() {
                     }
                 },
                 data: [
-                    2, 13, 33, 26,
+                    2, 13, 33, 43,
                 ],
                 itemStyle: {
                     color: '#89d7ec'
@@ -413,7 +413,7 @@ function Set_CitationNum_echarts() {
                     }
                 },
                 data: [
-                    2, 15, 48, 74,
+                    2, 15, 48, 91,
                 ],
                 itemStyle: {
                     color: '#ff3333'
