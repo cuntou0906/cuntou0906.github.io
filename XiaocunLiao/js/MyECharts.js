@@ -430,7 +430,6 @@ function Set_CitationNum_echarts() {
 }
 
 // 学者统计
-
 function SetPineScholarList(){
     var ScholarListContainer_dom = document.getElementById('ScholarListContainer');
     var myChart_ScholarListContainer = echarts.init(ScholarListContainer_dom, null, {
@@ -515,7 +514,6 @@ function SetPineScholarList(){
 
 
 // 研究兴趣
-
 function SetResearchInterestsList(){
     var dom = document.getElementById('ResearchInterestScontainer_ID');
     var myChart = echarts.init(dom, null, {

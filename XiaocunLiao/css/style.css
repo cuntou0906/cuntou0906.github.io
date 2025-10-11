@@ -58,7 +58,7 @@ h6
 
 p
 {
-	margin: 0 0 1.5em;
+	margin: 0 0 .875em;
 	line-height: 1.25;
 }
 
@@ -905,23 +905,7 @@ ul.reviewerJournal_ul{
 	margin-left: 10px;
   }
 
-  /* 首页新闻 */
-  /* .Index_New_ul li::marker {
-	content: '';
-	
-  } */
-  .Index_New_ul li{
-	background-image:url(../images/SmallIcon/HotAnnimation.gif);
-	background-repeat: no-repeat;/* 防止图片重复 */
-	padding-left: 40px;
-	margin-left:-10px;
-	margin-top:10px;
-	list-style-type: none; /* 移除默认的列表项标记 */
-	background-position: left center; /* 图片位置 */
-	position: relative; /* 允许子元素绝对定位 */
-	
-  }
-
+ 
  /* 首页基金 */
  .Index_Project_ul li::marker {
 	content: '📐';
@@ -932,6 +916,42 @@ ul.reviewerJournal_ul{
 	font-size: 1.1em;
 	font-weight: bolder;
   }
+
+   /* 首页新闻 */
+  /* .Index_New_ul li::marker {
+	content: '';
+	
+  } */
+  .Index_New_ul li{
+	background-image:url(../images/SmallIcon/HotAnnimation.gif);
+	background-repeat: no-repeat;/* 防止图片重复 */
+	padding-left: 40px;
+	margin-left:-10px;
+	margin-top:13px;
+	list-style-type: none; /* 移除默认的列表项标记 */
+	background-position: left center; /* 图片位置 */
+	position: relative; /* 允许子元素绝对定位 */
+	
+  }
+  .Index_New_ul li span u{
+	font-weight: bolder;
+  }
+
+/* 首页New的DIv */
+.Index_New_ul{
+	width: 100%;
+	height: 250px;
+	overflow-y: scroll; /* 启用垂直滚动 */
+	border-radius: 12px;
+	margin-top: 0px;
+	padding-top: 0px;
+	/* background: #ffffff;
+	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+	border-top: 1px solid #ddd;
+	border-bottom: 1px solid #ddd;
+	border-radius: 12px; */
+}
+
 
   /* 基金列表列表 */
 ul.Projects_ul li::marker {
@@ -2137,6 +2157,9 @@ li.NoSubMenu span a {
 	color: #262626; /* 子菜单标题颜色 */
 	text-decoration: none; /* 去掉下划线 */
 }
+
+
+
 
 /* 正文内容样式 */
 .content {
