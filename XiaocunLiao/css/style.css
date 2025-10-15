@@ -1515,9 +1515,12 @@ ul.Index_New {
 
 .Personal-ExpandText-wrapper {
 	position: relative;
-	margin-bottom: 10px;
+	margin-bottom: 5px;
 	background: #f8f9fa;
 	padding: 20px;
+	padding-bottom: 1px;
+	padding-top: 10px;
+
 	border-radius: 8px;
 }
 
@@ -1532,7 +1535,7 @@ ul.Index_New {
 /* 展开状态时移除高度限制 */
 .Personal-ExpandText-content.Personal-ExpandText-expanded {
 	max-height: none;
-	padding-bottom: 50px;
+	padding-bottom: 40px;
 }
 
 .Personal-ExpandText-image {
@@ -1541,13 +1544,21 @@ ul.Index_New {
 	border-radius: 8px;
 	box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 	display: block;
-	margin: 20px auto;
+	margin: 10px auto;
 }
 
 .Personal-ExpandText-text {
 	margin: 0;
 	line-height: 1.5;
 	text-align: justify;
+}
+
+.Personal-ExpandText-text-abstract {
+	margin: 0;
+	line-height: 1.5;
+	text-align: justify;
+	padding-bottom: 0%;
+	margin-bottom: 0%;
 }
 
 .Personal-ExpandText-content.Personal-ExpandText-collapsed {
