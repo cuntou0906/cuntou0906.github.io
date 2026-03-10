@@ -374,7 +374,7 @@ function Set_CitationNum_echarts() {
                 type: 'value',
                 name: '',
                 min: 0,
-                max: 100,
+                max: 120,
                 interval: 20,
                 axisLabel: {
                     formatter: '{value}',
