@@ -259,7 +259,7 @@ function Set_PatentsNum_echarts() {
                     }
                 },
                 data: [
-                    2, 4, 4, 0, 1, 1,
+                    2, 4, 4, 0, 1, 3,
                 ],
                 itemStyle: {
                     color: '#00cc33'
@@ -275,7 +275,7 @@ function Set_PatentsNum_echarts() {
                     }
                 },
                 data: [
-                    2, 6, 10, 10, 11, 12,
+                    2, 6, 10, 10, 11, 14,
                 ],
                 itemStyle: {
                     color: '#ff3333'
