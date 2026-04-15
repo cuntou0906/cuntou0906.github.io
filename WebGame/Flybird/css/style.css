@@ -38,20 +38,15 @@ width: 60px;
 position: absolute;
 }
 .score{
-
-margin-top: 20px;
 width: 150px;
-height: 50px;
-border-radius: 10px;
-background: yellowgreen;
-line-height: 50px;
-text-align: center;
-color: #fff;
+height: 30px;
 position: absolute;
-top: 10px;
-left:10px;
-cursor: pointer;
-
+top: 0%;
+left: 0%;
+z-index: 4;
+background: #329c9c;
+text-align: center;
+font-size: 20px;
 }
 .audio{
   position: absolute;
