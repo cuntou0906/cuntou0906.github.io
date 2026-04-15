@@ -1133,6 +1133,20 @@
 </div>
 
 
+    <!-- 站内搜索结果区域 -->
+    <div id="searchResultsPanel" class="search-results-panel" style="display: none;">
+      <div class="search-results-header">
+        <span class="search-results-title">站内搜索</span>
+        <button class="search-results-close" id="searchResultsClose">&times;</button>
+      </div>
+      <div class="search-input-wrapper">
+        <input type="text" id="sidebar-search-input" class="search-input-field" placeholder="输入关键词搜索..." autocomplete="off">
+        <button class="search-submit-btn" id="searchSubmitBtn"><i class="fas fa-search"></i></button>
+      </div>
+      <span class="search-results-count" id="searchResultsCount"></span>
+      <div class="search-results-content" id="searchResultsContent"></div>
+    </div>
+
 <div class="main-content" id="MainContentDiv">
   <nav class="navbar user-info-navbar" role="navigation" style="background-color: rgb(239, 248, 250);" >
     <ul class="user-info-menu left-links list-inline list-unstyled">
@@ -1277,20 +1291,6 @@
         this.style.display = 'none';
     });
 </script>
-
-    <!-- 站内搜索结果区域 -->
-    <div id="searchResultsPanel" class="search-results-panel" style="display: none;">
-      <div class="search-results-header">
-        <span class="search-results-title">站内搜索</span>
-        <button class="search-results-close" id="searchResultsClose">&times;</button>
-      </div>
-      <div class="search-input-wrapper">
-        <input type="text" id="sidebar-search-input" class="search-input-field" placeholder="输入关键词搜索..." autocomplete="off">
-        <button class="search-submit-btn" id="searchSubmitBtn"><i class="fas fa-search"></i></button>
-      </div>
-      <span class="search-results-count" id="searchResultsCount"></span>
-      <div class="search-results-content" id="searchResultsContent"></div>
-    </div>
 
   <br>
   <br>
