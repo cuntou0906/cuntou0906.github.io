@@ -48,7 +48,7 @@ function Set_PaperNum_echarts() {
         xAxis: [
             {
                 type: 'category',
-                data: ['2021', '2022', '2023', '2024', '2025'],
+                data: ['2021', '2022', '2023', '2024', '2025', '2026'],
                 axisPointer: {
                     type: 'shadow'
                 },
@@ -79,7 +79,7 @@ function Set_PaperNum_echarts() {
                 type: 'value',
                 name: '',
                 min: 0,
-                max: 15,
+                max: 20,
                 interval: 2,
                 axisLabel: {
                     formatter: '{value}',
@@ -101,7 +101,7 @@ function Set_PaperNum_echarts() {
                     }
                 },
                 data: [
-                    0, 2, 3, 2, 2,
+                    0, 2, 3, 2, 3, 2,
                 ]
             },
             {
@@ -113,7 +113,7 @@ function Set_PaperNum_echarts() {
                     }
                 },
                 data: [
-                    4, 0, 1, 0, 0,
+                    4, 0, 1, 0, 1, 0,
                 ]
             },
             {
@@ -125,7 +125,7 @@ function Set_PaperNum_echarts() {
                     }
                 },
                 data: [
-                    4, 2, 4, 2, 2,
+                    4, 2, 4, 2, 4, 2,
                 ]
             },
             {
@@ -141,7 +141,7 @@ function Set_PaperNum_echarts() {
                     }
                 },
                 data: [
-                    4, 6, 10, 12, 14,
+                    4, 6, 10, 12, 16, 18, 
                 ]
             }
         ]
@@ -204,7 +204,7 @@ function Set_PatentsNum_echarts() {
         xAxis: [
             {
                 type: 'category',
-                data: ['2021', '2022', '2023', '2024', '2025'],
+                data: ['2021', '2022', '2023', '2024', '2025', '2026'],
                 axisPointer: {
                     type: 'shadow'
                 },
@@ -259,7 +259,7 @@ function Set_PatentsNum_echarts() {
                     }
                 },
                 data: [
-                    2, 4, 4, 0, 1,
+                    2, 4, 4, 0, 1, 3,
                 ],
                 itemStyle: {
                     color: '#00cc33'
@@ -275,7 +275,7 @@ function Set_PatentsNum_echarts() {
                     }
                 },
                 data: [
-                    2, 6, 10, 10, 11,
+                    2, 6, 10, 10, 11, 14,
                 ],
                 itemStyle: {
                     color: '#ff3333'
@@ -341,7 +341,7 @@ function Set_CitationNum_echarts() {
         xAxis: [
             {
                 type: 'category',
-                data: ['2022', '2023', '2024', '2025'],
+                data: ['2022', '2023', '2024', '2025', '2026'],
                 axisPointer: {
                     type: 'shadow'
                 },
@@ -374,7 +374,7 @@ function Set_CitationNum_echarts() {
                 type: 'value',
                 name: '',
                 min: 0,
-                max: 100,
+                max: 120,
                 interval: 20,
                 axisLabel: {
                     formatter: '{value}',
@@ -397,7 +397,7 @@ function Set_CitationNum_echarts() {
                     }
                 },
                 data: [
-                    2, 13, 33, 26,
+                    2, 13, 31, 49, 19
                 ],
                 itemStyle: {
                     color: '#89d7ec'
@@ -413,7 +413,7 @@ function Set_CitationNum_echarts() {
                     }
                 },
                 data: [
-                    2, 15, 48, 74,
+                    2, 15, 46, 95, 114
                 ],
                 itemStyle: {
                     color: '#ff3333'
@@ -430,7 +430,6 @@ function Set_CitationNum_echarts() {
 }
 
 // 学者统计
-
 function SetPineScholarList(){
     var ScholarListContainer_dom = document.getElementById('ScholarListContainer');
     var myChart_ScholarListContainer = echarts.init(ScholarListContainer_dom, null, {
@@ -515,7 +514,6 @@ function SetPineScholarList(){
 
 
 // 研究兴趣
-
 function SetResearchInterestsList(){
     var dom = document.getElementById('ResearchInterestScontainer_ID');
     var myChart = echarts.init(dom, null, {

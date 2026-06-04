@@ -1,0 +1,236 @@
+/* Base styles */
+:root {
+    --primary: #4a6fa5;
+    --secondary: #6495ed;
+    --success: #43a047;
+    --danger: #d32f2f;
+    --dark: #121212;
+    --light: #f5f5f5;
+    --text: #e0e0e0;
+}
+
+body {
+    background: linear-gradient(135deg, var(--dark), #000033);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--text);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+}
+
+.container {
+    background: rgba(18, 18, 18, 0.8);
+    border: 2px solid var(--secondary);
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+    max-width: 1000px;
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+h1 {
+    text-align: center;
+    margin: 0 0 25px;
+    color: var(--secondary);
+    font-size: 2.8rem;
+    text-shadow: 0 0 15px rgba(100, 149, 237, 0.7);
+    font-weight: bold;
+}
+
+/* 难度选择下拉框样式 */
+.controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.difficulty-select {
+    background: linear-gradient(135deg, var(--secondary), #3a6ea5);
+    color: rgb(63, 56, 56);
+    border: none;
+    padding: 12px 30px;
+    font-size: 1.1rem;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    font-weight: bold;
+    min-width: 280px;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 15px center;
+    background-size: 18px;
+}
+
+.difficulty-select:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+    background: linear-gradient(135deg, #7bb3ff, #4a7fbf);
+}
+
+.difficulty-select:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(100, 149, 237, 0.5);
+}
+
+div.status {
+    text-align: center;
+    margin-bottom: 25px;
+    font-size: 1.3rem;
+    color: #c5cae9;
+    font-weight: bold;
+}
+
+#timer {
+    font-weight: bold;
+    color: var(--secondary);
+    margin-left: 10px;
+}
+
+/* 游戏区域样式 */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-gap: 1.5px;
+    margin: 30px auto;
+    width: 100%;
+    max-width: 400px;
+    min-height: 400px;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 8px;
+    justify-content: center;
+}
+
+.grid.wide {
+    max-width: 600px;
+    min-height: 600px;
+}
+
+.grid.expert {
+    max-width: 750px;
+    min-height: 750px;
+}
+
+.cell {
+    aspect-ratio: 1;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: all 0.2s;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.cell:hover {
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.cell:active {
+    transform: scale(0.95);
+}
+
+.cell.flag {
+    position: relative;
+}
+
+.cell.flag::after {
+    content: '🚩';
+    position: absolute;
+    font-size: 1.3rem;
+    color: var(--danger);
+    text-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
+}
+
+.cell.revealed {
+    background: rgba(255, 255, 255, 0.15);
+    border-color: var(--secondary);
+}
+
+.cell-number {
+    font-weight: bold;
+}
+
+.cell-1 { color: #1565c0; }
+.cell-2 { color: #287500; }
+.cell-3 { color: #f57c00; }
+.cell-4 { color: #006064; }
+.cell-5 { color: #795548; }
+.cell-6 { color: #b71c1c; }
+
+div .cell-7 { color: #7b1fa2; }
+
+div .cell-8 { color: #e65100; }
+
+button {
+    background: linear-gradient(to bottom, var(--primary), var(--secondary));
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    font-size: 1.1rem;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    margin: 0 auto;
+    display: block;
+}
+
+button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .difficulty-select {
+        font-size: 1rem;
+        padding: 10px 20px;
+    }
+
+    .grid {
+        grid-gap: 1px;
+        padding: 8px;
+    }
+
+    .cell {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 2.2rem;
+    }
+
+    .status {
+        font-size: 1rem;
+    }
+
+    .difficulty-select {
+        font-size: 0.95rem;
+        padding: 8px 15px;
+        min-width: 220px;
+    }
+
+    .grid {
+        grid-gap: 0.5px;
+        max-width: 95%;
+        padding: 5px;
+    }
+}

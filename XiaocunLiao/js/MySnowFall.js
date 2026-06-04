@@ -17,16 +17,16 @@ function createHeart() {
     heart.style.left = random(5, 95) + 'vw';
     
     // 随机大小
-    const size = random(5, 23);
+    const size = random(1, 20);
     heart.style.fontSize = size + 'px';
     
-    // 随机动画持续时间
-    const duration = random(7, 9);
+    // 随机动画持续时间  决定下落速度
+    const duration = random(10, 20);
     
     // 创建随机轨迹
     let startTime = null;
     const amplitude = random(40, 60);
-    const frequency = random(2, 3);
+    const frequency = random(2, 4);
     
     document.body.appendChild(heart);
     hearts.push(heart);
@@ -75,8 +75,8 @@ function startHearts() {
         for(let i = 0; i < 2; i++) {
             setTimeout(createHeart, i * 200);
         }
-        // 定期创建新的爱心
-        heartInterval = setInterval(createHeart, 2500);
+        // 定期创建新的爱心  这个时间用于控制爱心的密集程度
+        heartInterval = setInterval(createHeart, 3000);
     }, 500);
 }
 

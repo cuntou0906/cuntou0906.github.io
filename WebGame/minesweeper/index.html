@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>扫雷游戏 - Minesweeper</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>💣 扫雷游戏</h1>
+        <div class="controls">
+            <select id="difficulty-select" class="difficulty-select">
+                <option value="" disabled selected>选择游戏难度 🎮</option>
+                <option value="8-10" data-size="8" data-mines="10">初级 (8×8, 10雷) 🟢</option>
+                <option value="16-40" data-size="16" data-mines="40">中级 (16×16, 40雷) 🟡</option>
+                <option value="20-100" data-size="20" data-mines="100">高级 (20×20, 100雷) 🔴</option>
+            </select>
+        </div>
+        <div class="status">准备就绪! <span id="timer">00:00</span></div>
+        <div class="grid" id="grid"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

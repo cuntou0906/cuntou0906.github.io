@@ -58,7 +58,7 @@ h6
 
 p
 {
-	margin: 0 0 1.5em;
+	margin: 0 0 .875em;
 	line-height: 1.25;
 }
 
@@ -905,23 +905,7 @@ ul.reviewerJournal_ul{
 	margin-left: 10px;
   }
 
-  /* 首页新闻 */
-  /* .Index_New_ul li::marker {
-	content: '';
-	
-  } */
-  .Index_New_ul li{
-	background-image:url(../images/SmallIcon/HotAnnimation.gif);
-	background-repeat: no-repeat;/* 防止图片重复 */
-	padding-left: 40px;
-	margin-left:-10px;
-	margin-top:10px;
-	list-style-type: none; /* 移除默认的列表项标记 */
-	background-position: left center; /* 图片位置 */
-	position: relative; /* 允许子元素绝对定位 */
-	
-  }
-
+ 
  /* 首页基金 */
  .Index_Project_ul li::marker {
 	content: '📐';
@@ -932,6 +916,42 @@ ul.reviewerJournal_ul{
 	font-size: 1.1em;
 	font-weight: bolder;
   }
+
+   /* 首页新闻 */
+  /* .Index_New_ul li::marker {
+	content: '';
+	
+  } */
+  .Index_New_ul li{
+	background-image:url(../images/SmallIcon/HotAnnimation.gif);
+	background-repeat: no-repeat;/* 防止图片重复 */
+	padding-left: 40px;
+	margin-left:-10px;
+	margin-top:13px;
+	list-style-type: none; /* 移除默认的列表项标记 */
+	background-position: left center; /* 图片位置 */
+	position: relative; /* 允许子元素绝对定位 */
+	
+  }
+  .Index_New_ul li span u{
+	font-weight: bolder;
+  }
+
+/* 首页New的DIv */
+.Index_New_ul{
+	width: 100%;
+	height: 250px;
+	overflow-y: scroll; /* 启用垂直滚动 */
+	border-radius: 12px;
+	margin-top: 0px;
+	padding-top: 0px;
+	/* background: #ffffff;
+	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+	border-top: 1px solid #ddd;
+	border-bottom: 1px solid #ddd;
+	border-radius: 12px; */
+}
+
 
   /* 基金列表列表 */
 ul.Projects_ul li::marker {
@@ -989,7 +1009,7 @@ ul.Projects_ul{
 	width: 100%;
 	height: 100%;
 	top: 0;
-	left: -323px;
+	left: -500px;
 	/* overflow: hidden; */
 	/* background-color: red; */
 	/* border-right: 3px solid rgb(228, 228, 228,0.8); */
@@ -1451,7 +1471,7 @@ ul.Index_New {
 .ExpandText-btn {
 	position: absolute;
 	left: 50%;
-	bottom: 0;
+	bottom: 5px;
 	transform: translateX(-50%);
 	display: inline-block;
 	padding: 8px 20px;
@@ -1464,11 +1484,13 @@ ul.Index_New {
 	transition: all 0.3s ease;
 	font-size: 14px;
 	z-index: 2;
+	transition: transform 0.3s ease; /* 平滑过渡效果 */
 }
 
 .ExpandText-btn:hover {
 	background-color: #3789e0;
 	color: #fff;
+	transform: translateX(-50%) scale(1.1); /* 鼠标悬停时放大1.2倍 */
 }
 
 /* 渐变遮罩 */
@@ -1493,9 +1515,12 @@ ul.Index_New {
 
 .Personal-ExpandText-wrapper {
 	position: relative;
-	margin-bottom: 10px;
+	margin-bottom: 5px;
 	background: #f8f9fa;
 	padding: 20px;
+	padding-bottom: 1px;
+	padding-top: 10px;
+
 	border-radius: 8px;
 }
 
@@ -1510,7 +1535,7 @@ ul.Index_New {
 /* 展开状态时移除高度限制 */
 .Personal-ExpandText-content.Personal-ExpandText-expanded {
 	max-height: none;
-	padding-bottom: 50px;
+	padding-bottom: 40px;
 }
 
 .Personal-ExpandText-image {
@@ -1519,13 +1544,21 @@ ul.Index_New {
 	border-radius: 8px;
 	box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 	display: block;
-	margin: 20px auto;
+	margin: 10px auto;
 }
 
 .Personal-ExpandText-text {
 	margin: 0;
 	line-height: 1.5;
 	text-align: justify;
+}
+
+.Personal-ExpandText-text-abstract {
+	margin: 0;
+	line-height: 1.5;
+	text-align: justify;
+	padding-bottom: 0%;
+	margin-bottom: 0%;
 }
 
 .Personal-ExpandText-content.Personal-ExpandText-collapsed {
@@ -1537,7 +1570,7 @@ ul.Index_New {
 .Personal-ExpandText-btn {
 	position: absolute;
 	left: 50%;
-	bottom: 0;
+	bottom: 5px;
 	transform: translateX(-50%);
 	display: inline-block;
 	padding: 8px 20px;
@@ -1550,11 +1583,13 @@ ul.Index_New {
 	transition: all 0.3s ease;
 	font-size: 14px;
 	z-index: 2;
+	transition: transform 0.3s ease; /* 平滑过渡效果 */
 }
 
 .Personal-ExpandText-btn:hover {
 	background-color: #3789e0;
 	color: #fff;
+	transform: translateX(-50%) scale(1.1); /* 鼠标悬停时放大1.2倍 */
 }
 
 /* 渐变遮罩 */
@@ -1564,10 +1599,23 @@ ul.Index_New {
 	bottom: 0;
 	left: 0;
 	width: 100%;
-	height: 40px;
+	height: 150px;
 	background: linear-gradient(transparent, #f8f9fa);
 	pointer-events: none;
 	z-index: 1;
+}
+
+/* research页的页面目录索引效果 */
+.research_Page_List_b{
+	transition: transform 0.3s ease; /* 平滑过渡效果 */
+	font-weight: normal;
+}
+.research_Page_List_b:hover{
+	transform: scale(1.1); /* 鼠标悬停时放大1.2倍 */
+	font-weight: bolder;
+}
+.RepresentativeResearchOverview_ul{
+font-size: 1.1em;
 }
 
 
@@ -1712,6 +1760,11 @@ ul.Index_New {
 	transform: translateY(-1px);
 }
 
+.Personal-ExpandText-container h4:hover p.PaperTitle-hover-underline,
+.Paper-Title-Wrapper1:hover .PaperTitle-hover-underline {
+	transform: translateY(-1px);
+}
+
 .PaperTitle-hover-underline::after {
 	content: '';
 	position: absolute;
@@ -1750,6 +1803,14 @@ ul.Index_New {
 	text-shadow: 0 0 4px rgba(0, 180, 219, 0.3);
 	color: #0083b0;
 }
+
+.Personal-ExpandText-container h4:hover p.PaperTitle-hover-underline span,
+.Paper-Title-Wrapper1:hover .PaperTitle-hover-underline span {
+	background-size: 100% 2px;
+	text-shadow: 0 0 4px rgba(0, 180, 219, 0.3);
+	color: #0083b0;
+}
+
 .Paper-Title-Wrapper1{
 	padding: 10px;
 }
@@ -2107,6 +2168,9 @@ li.NoSubMenu span a {
 	color: #262626; /* 子菜单标题颜色 */
 	text-decoration: none; /* 去掉下划线 */
 }
+
+
+
 
 /* 正文内容样式 */
 .content {
