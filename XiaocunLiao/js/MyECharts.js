@@ -240,7 +240,7 @@ function Set_PatentsNum_echarts() {
                 interval: 2,
                 axisLabel: {
                     formatter: '{value}',
-                    fontSize: 14, // 设置字体大小为14
+                    fontSize: 20, // 设置字体大小为14
                     color: '#ff3333',
                 },
                 splitLine: {
