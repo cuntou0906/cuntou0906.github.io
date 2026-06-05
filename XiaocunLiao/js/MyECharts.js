@@ -236,11 +236,11 @@ function Set_PatentsNum_echarts() {
                 type: 'value',
                 name: '',
                 min: 0,
-                max: 15,
+                max: 20,
                 interval: 2,
                 axisLabel: {
                     formatter: '{value}',
-                    fontSize: 20, // 设置字体大小为14
+                    fontSize: 14, // 设置字体大小为14
                     color: '#ff3333',
                 },
                 splitLine: {
