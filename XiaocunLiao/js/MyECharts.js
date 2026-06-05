@@ -101,7 +101,7 @@ function Set_PaperNum_echarts() {
                     }
                 },
                 data: [
-                    0, 2, 3, 2, 3, 1,
+                    0, 2, 3, 2, 3, 2,
                 ]
             },
             {
@@ -125,7 +125,7 @@ function Set_PaperNum_echarts() {
                     }
                 },
                 data: [
-                    4, 2, 4, 2, 4, 1,
+                    4, 2, 4, 2, 4, 2,
                 ]
             },
             {
@@ -141,7 +141,7 @@ function Set_PaperNum_echarts() {
                     }
                 },
                 data: [
-                    4, 6, 10, 12, 16, 17, 
+                    4, 6, 10, 12, 16, 18, 
                 ]
             }
         ]
@@ -397,7 +397,7 @@ function Set_CitationNum_echarts() {
                     }
                 },
                 data: [
-                    2, 13, 31, 48, 14
+                    2, 13, 31, 49, 19
                 ],
                 itemStyle: {
                     color: '#89d7ec'
@@ -413,7 +413,7 @@ function Set_CitationNum_echarts() {
                     }
                 },
                 data: [
-                    2, 15, 46, 94, 108
+                    2, 15, 46, 95, 114
                 ],
                 itemStyle: {
                     color: '#ff3333'
