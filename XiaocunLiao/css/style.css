@@ -445,6 +445,92 @@ html{
 	border-color: #e0f7fa transparent transparent transparent;
 }
 
+/* 重要新闻 */
+.ImportNews-wrapper .ImportNews-ListDetail-Item{
+margin-left: 30px;
+width: 100%;
+}
+
+.ImportNews-wrapper .ImportNews-ListDetail .ImportNews-ListDetail-Item{
+	background: rgb(247, 236, 233);
+	padding: 10px;
+	margin-bottom: 10px;
+	line-height: 1.5;
+	border-radius: 10px;
+	border-left: 3px solid rgb(231, 62, 16); /* 左侧边框 */
+	position: relative;
+	align-items: center; /* 垂直居中 */
+	display: flex;
+	flex-flow: row nowrap;
+}
+.ImportNews-wrapper .ImportNews-ListDetail .ImportNews-ListDetail-Item p{
+	line-height: 1.5;
+	margin-bottom: 0px;
+	width: 90%;
+	flex: 1;
+	text-align: left;
+
+}
+.ImportNews-wrapper .ImportNews-ListDetail .ImportNews-ListDetail-Item > a{
+	text-align: center;
+	align-items: center; /* 垂直居中 */
+	position: relative;
+	height: 30px;
+	width: 30px;
+	background-color: #dddbdb;
+	margin-top: auto;
+	margin-bottom: auto;
+	float: right;
+	margin-left: 20px;
+	border-radius: 15px;
+	margin-right: 10px;
+
+}
+.ImportNews-wrapper .ImportNews-ListDetail .ImportNews-ListDetail-Item > a img{
+	padding-top: 5px ;
+	margin-left: auto;
+	margin-right: auto; 
+}
+.ImportNews-wrapper .ImportNews-ListDetail .ImportNews-ListDetail-Item > a:hover{
+	background-color: #a8a8a8;
+	transform: scale(1.2);
+}
+
+.ImportNews-wrapper .ImportNews-ListDetail .ImportNews-ListDetail-Item > a div.GoToSeeTooltip{
+	visibility: hidden;
+	width: 60px;
+	background-color: #dff0fa;
+	color: #474747;
+	text-align: center;
+	border-radius: 5px;
+	padding: 5px 0;
+	position: absolute;
+	z-index: 1;
+	bottom: 125%; /* Position above the button */
+	left: 50%;
+	transform: translateX(-50%);
+	opacity: 0;
+	transition: opacity 0.3s;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+	font-size: 12px;
+}
+.ImportNews-wrapper .ImportNews-ListDetail .ImportNews-ListDetail-Item > a:hover div.GoToSeeTooltip{
+	visibility: visible;
+	opacity: 0.8;
+}
+
+.ImportNews-wrapper .ImportNews-ListDetail .ImportNews-ListDetail-Item > a div.GoToSeeTooltip::after{
+	content: "";
+	position: absolute;
+	top: 100%; /* Arrow at the bottom of the tooltip */
+	left: 50%;
+	margin-left: -5px;
+	border-width: 5px;
+	border-style: solid;
+	border-color: #e0f7fa transparent transparent transparent;
+}
+
+
 
 /* 成果展示页面的单独css */
 .researchDiV p{
