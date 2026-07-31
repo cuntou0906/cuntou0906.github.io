@@ -285,6 +285,7 @@ html{
 	padding: 10px;
 	padding-left: 0px;
 }
+
 /* 论文 */
 .Publication-paper-wrapper .Publication-paper-ListDetail{
 	background: #f8f9fa;
@@ -297,6 +298,10 @@ html{
 	align-items: center; /* 垂直居中 */
 	display: flex;
 	flex-flow: row nowrap;
+	transition: transform 0.15s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+.Publication-paper-wrapper .Publication-paper-ListDetail:hover{
+	transform: scale(1.01); /* 大约 0.5px，但取决于整体 */
 }
 .Publication-paper-wrapper .Publication-paper-ListDetail p{
 	line-height: 1.5;
@@ -377,7 +382,12 @@ html{
 	align-items: center; /* 垂直居中 */
 	display: flex;
 	flex-flow: row nowrap;
+	transition: transform 0.15s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
+.Publication-Patents-wrapper .Publication-Patents-ListDetail:hover{
+	transform: scale(1.01); /* 大约 0.5px，但取决于整体 */
+}
+
 .Publication-Patents-wrapper .Publication-Patents-ListDetail p{
 	line-height: 1.5;
 	margin-bottom: 0px;
@@ -644,8 +654,13 @@ margin-right: 30px;
 	list-style-type: none; /* 移除默认的列表项标记 */
 	background-position: left center; /* 图片位置 */
 	position: relative; /* 允许子元素绝对定位 */
-	
-  }
+ 	transition: transform 0.15s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+.Index_New_ul li:hover {
+    transform: scale(1.01); /* 大约 0.5px，但取决于整体 */
+}
+
+
   .Index_New_ul li span u{
 	font-weight: bolder;
   }
@@ -655,6 +670,7 @@ margin-right: 30px;
 	width: 100%;
 	height: 250px;
 	overflow-y: scroll; /* 启用垂直滚动 */
+	overflow-x: hidden; /* 禁用水平滚动 */
 	border-radius: 12px;
 	margin-top: 0px;
 	padding-top: 0px;
@@ -667,8 +683,15 @@ margin-right: 30px;
 
 /* 重要新闻 */
 .ImportNews-wrapper .ImportNews-ListDetail-Item{
-margin-left: 30px;
+	margin-left: 30px;
+	transition: transform 0.15s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
+.ImportNews-wrapper .ImportNews-ListDetail-Item:hover{
+	transform: scale(1.01); /* 大约 0.5px，但取决于整体 */
+}
+
+
+
 
 .ImportNews-wrapper .ImportNews-ListDetail .ImportNews-ListDetail-Item{
 	background: rgb(247, 236, 233);
