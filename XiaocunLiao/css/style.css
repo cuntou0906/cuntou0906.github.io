@@ -445,6 +445,185 @@ html{
 	border-color: #e0f7fa transparent transparent transparent;
 }
 
+/* 代表性工作 */
+.FeaturedWorks-container {
+	/* max-width: 900px; */
+	/* width: 100%; */
+	background: #eff3ea;
+	border-radius: 12px;
+	box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+	padding: 8px 30px;
+}
+
+.FeaturedWorks-entry {
+	flex: 1;                     /* 占满剩余宽度 */
+    min-width: 0;
+    display: flex;               /* 🆕 使用 flex 布局 */
+    flex-direction: row;      /* 🆕 垂直排列 */
+    align-items: center;        /* 🆕 子元素垂直居中 */
+    justify-content: space-between; /* 🆕 左右两端对齐 */
+	padding: 12px 0;
+	border-bottom: 2px solid #ffffff;
+	transition: transform 0.15s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+.FeaturedWorks-entry:hover {
+    transform: scale(1.01); /* 大约 0.5px，但取决于整体 */
+}
+.FeaturedWorks-entry:last-child {
+	border-bottom: none;
+}
+.FeaturedWorks-content {
+    flex: 1;                     /* 占满剩余宽度 */
+    min-width: 0;                /* 防止溢出 */
+    display: flex;
+    flex-direction: column;
+    gap: 2px;                    /* 可选间距 */
+}
+/* 标题行：flex 布局，左侧文字，右侧图标 */
+.FeaturedWorks-title {
+	display: flex;          /* 保留用于星标+标题文字的排列 */
+	align-items: center;
+	font-size: 16.5px;
+	font-weight: 600;
+	color: #0b1a2e;
+	line-height: 1.4;
+	margin-bottom: 4px;
+	letter-spacing: -0.1px;
+	width: 100%;                 /* 占满容器宽度 */
+}
+
+.FeaturedWorks-title-text {
+	flex: 1;
+}
+
+.FeaturedWorks-entry > a {
+	font-size: 25px;
+	color: #0b1a2e;
+	text-decoration: none;
+}
+
+.FeaturedWorks-entry > a:hover {
+	color: #0057b3;
+	text-decoration: none;
+}
+
+/* 星标样式 */
+.FeaturedWorks-star {
+	margin-right: 8px;
+	font-size: 16px;
+}
+
+.FeaturedWorks-entry:hover .FeaturedWorks-title-text {
+    color: #1e58af;
+}
+
+.FeaturedWorks-link-icon {
+	margin-left: 20px;      /* 与内容保持间距 */
+    flex-shrink: 0;         /* 防止箭头被压缩 */
+    align-self: center;     /* 🆕 垂直居中（与父级 align-items 配合） */
+	font-size: 18px;
+	color: #0057b3;
+	text-decoration: none;
+	flex-shrink: 0;
+	transition: transform 0.15s;
+}
+
+.FeaturedWorks-link-icon:hover {
+	transform: translate(2px, -2px);
+	color: #003d80;
+}
+
+.FeaturedWorks-journal {
+	font-size: 14px;
+	font-style: italic;
+	color: #2c3e50;
+	margin-bottom: 3px;
+	width: 100%;                 /* 占满容器宽度 */
+}
+
+.FeaturedWorks-type-badge {
+	font-style: normal;
+	font-size: 14px;
+	background: #f3f4f5;
+	padding: 0 12px;
+	border-radius: 12px;
+	color: #304153;
+	margin-left: 6px;
+	font-weight: 500;
+	display: inline-block;
+}
+
+.FeaturedWorks-doi {
+	font-size: 14px;
+	color: #4a5b6e;
+	margin-bottom: 4px;
+	font-family: "SF Mono", "Menlo", "Monaco", "Consolas", monospace;
+	width: 100%;                 /* 占满容器宽度 */
+}
+
+.FeaturedWorks-doi a {
+	color: #0057b3;
+	text-decoration: none;
+}
+
+.FeaturedWorks-doi a:hover {
+	text-decoration: underline;
+}
+
+.FeaturedWorks-authors {
+	font-size: 13.5px;
+	color: #2c3e50;
+	width: 100%;                 /* 占满容器宽度 */
+}
+
+.FeaturedWorks-author-list {
+	display: inline;
+}
+
+.FeaturedWorks-separator {
+	margin: 0 2px;
+	color: #8a9aa8;
+}
+
+@media (max-width: 600px) {
+	.FeaturedWorks-container {
+		padding: 20px 18px;
+	}
+	.FeaturedWorks-title {
+		font-size: 15px;
+	}
+	.FeaturedWorks-link-icon {
+		font-size: 16px;
+		margin-left: 12px;
+	}
+	.FeaturedWorks-journal,
+	.FeaturedWorks-doi,
+	.FeaturedWorks-authors {
+		font-size: 12.5px;
+	}
+}
+
+@media print {
+
+	.FeaturedWorks-container {
+		box-shadow: none;
+		padding: 20px 0;
+	}
+	.FeaturedWorks-entry {
+		border-bottom-color: #ccc;
+	}
+	.FeaturedWorks-link-icon {
+		color: #333 !important;
+	}
+}
+
+/* 审阅期刊滚动条 */
+.ProfessionalActivities_Wrapper{
+	max-height: 170px; /* 设置高度 */
+	overflow-y: auto; /* 仅在垂直方向添加滚动条 */
+	-webkit-overflow-scrolling: touch; /* 可选：为了美观，可以添加平滑滚动效果（主要针对移动端） */
+}
+
 /* 首页新闻 */
 .IndexNew_Wrapper{
 margin-left: 0px;
@@ -1011,14 +1190,14 @@ footer.main-footer.fixed {
 }
 
 /* 审稿期刊列表 */
-ul.reviewerJournal_ul li::marker {
+ul.Professional Activities_ul li::marker {
 	content: '✔︎';
   }
-ul.reviewerJournal_ul li{
+ul.ProfessionalActivities_ul li{
 	padding-left: 10px;
 	margin-left: 30px;
   }
-ul.reviewerJournal_ul{
+ul.ProfessionalActivities_ul{
 	padding-left: 10px;
   }
 
