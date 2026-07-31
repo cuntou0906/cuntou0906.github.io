@@ -1190,14 +1190,14 @@ footer.main-footer.fixed {
 }
 
 /* 审稿期刊列表 */
-ul.Professional Activities_ul li::marker {
+ul.ProfessionalActivities_Items_ul li::marker {
 	content: '✔︎';
   }
-ul.ProfessionalActivities_ul li{
+ul.ProfessionalActivities_Items_ul li{
 	padding-left: 10px;
 	margin-left: 30px;
   }
-ul.ProfessionalActivities_ul{
+ul.ProfessionalActivities_Items_ul{
 	padding-left: 10px;
   }
 
@@ -1254,6 +1254,18 @@ ul.Projects_ul{
 	margin-left: 0px;
   }
  
+     /* 专业活动 */
+.ProfessionalActivities_ul > li::marker {
+	content: '•';
+  }
+.ProfessionalActivities_ul > ul > li::marker {
+	content: '>';
+  }
+.ProfessionalActivities_ul li{
+	padding-left: 20px;
+	margin-left: 0px;
+  }
+
      /* 获奖 */
 .Awards_ul li::marker {
 	content: '🏆';
