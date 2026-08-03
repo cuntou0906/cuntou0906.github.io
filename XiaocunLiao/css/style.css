@@ -658,6 +658,7 @@ margin-right: 30px;
 }
 .Index_New_ul li:hover {
     transform: scale(1.01); /* 大约 0.5px，但取决于整体 */
+	color: #0083b0;
 }
 
 
@@ -1170,6 +1171,24 @@ footer.main-footer.fixed {
 	/* position: relative; */
 }
 
+  /* 研究兴趣 */
+  .ResearchInterests_ul li::marker {
+	content: '✅';
+  }
+  .ResearchInterests_ul li:hover::marker {
+	content: '✔️';
+  }
+.ResearchInterests_ul li:hover {
+	color: #0083b0;
+	transform: scale(1.01);
+  }
+  .ResearchInterests_ul li{
+	padding-left: 20px;
+	margin-left: 10px;
+	transition: transform 0.3s ease; /* 平滑过渡效果 */
+
+  }
+
 .ResearchInterestsEchartWrapper{
 	text-align: center; 
 	width: 65%; 
@@ -1226,16 +1245,6 @@ ul.ProfessionalActivities_Items_ul{
 ul.ProfessionalActivities_Items_ul >li >a{
 	font-size:16px;
   }
-
-  /* 研究兴趣 */
-  .ResearchInterests_ul li::marker {
-	content: '✅';
-  }
-  .ResearchInterests_ul li{
-	padding-left: 20px;
-	margin-left: 10px;
-  }
-
  
  /* 首页基金 */
  .Index_Project_ul li::marker {
@@ -1248,7 +1257,6 @@ ul.ProfessionalActivities_Items_ul >li >a{
 	font-weight: bolder;
   }
 
-
   /* 基金列表列表 */
 ul.Projects_ul li::marker {
 	content: '✔︎';
@@ -1256,9 +1264,31 @@ ul.Projects_ul li::marker {
 ul.Projects_ul li{
 	padding-left: 10px;
 	margin-left: 30px;
+	transition: transform 0.3s ease; /* 平滑过渡效果 */
+  }
+.Projects_ul li:hover{
+	transform: scale(1.01);
+	color: #0083b0;
+
   }
 ul.Projects_ul{
 	padding-left: 40px;
+  }
+
+/* 个人学术名片链接 */
+/* publication 页面 */
+.PersonalScholorLink li{
+	transition: transform 0.3s ease; /* 平滑过渡效果 */
+  }
+.PersonalScholorLink li:hover{
+	transform: scale(1.01);
+  }
+
+p.PersonalScholorLinkDownPic > a{
+	transition: transform 0.3s ease; /* 平滑过渡效果 */
+  }
+p.PersonalScholorLinkDownPic > a:hover{
+	color: #ce2d2d;
   }
 
   /* 教育 */
@@ -1299,6 +1329,11 @@ ul.Projects_ul{
   .Awards_ul li{
 	padding-left: 20px;
 	margin-left: 10px;
+	transition: transform 0.3s ease; /* 平滑过渡效果 */
+  }
+  .Awards_ul li:hover{
+	transform: scale(1.005);
+	color: #0083b0;
   }
  
 /* 图片扫光效果  */
