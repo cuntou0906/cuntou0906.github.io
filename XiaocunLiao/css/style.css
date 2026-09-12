@@ -285,6 +285,7 @@ html{
 	padding: 10px;
 	padding-left: 0px;
 }
+
 /* 论文 */
 .Publication-paper-wrapper .Publication-paper-ListDetail{
 	background: #f8f9fa;
@@ -297,6 +298,10 @@ html{
 	align-items: center; /* 垂直居中 */
 	display: flex;
 	flex-flow: row nowrap;
+	transition: transform 0.15s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+.Publication-paper-wrapper .Publication-paper-ListDetail:hover{
+	transform: scale(1.01); /* 大约 0.5px，但取决于整体 */
 }
 .Publication-paper-wrapper .Publication-paper-ListDetail p{
 	line-height: 1.5;
@@ -377,7 +382,12 @@ html{
 	align-items: center; /* 垂直居中 */
 	display: flex;
 	flex-flow: row nowrap;
+	transition: transform 0.15s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
+.Publication-Patents-wrapper .Publication-Patents-ListDetail:hover{
+	transform: scale(1.01); /* 大约 0.5px，但取决于整体 */
+}
+
 .Publication-Patents-wrapper .Publication-Patents-ListDetail p{
 	line-height: 1.5;
 	margin-bottom: 0px;
@@ -435,6 +445,322 @@ html{
 }
 
 .Publication-Patents-wrapper .Publication-Patents-ListDetail a div.GoToReadTooltip::after{
+	content: "";
+	position: absolute;
+	top: 100%; /* Arrow at the bottom of the tooltip */
+	left: 50%;
+	margin-left: -5px;
+	border-width: 5px;
+	border-style: solid;
+	border-color: #e0f7fa transparent transparent transparent;
+}
+
+/* 代表性工作 */
+.FeaturedWorks-container {
+	/* max-width: 900px; */
+	/* width: 100%; */
+	background: #eff3ea;
+	border-radius: 12px;
+	box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+	padding: 8px 30px;
+}
+
+.FeaturedWorks-entry {
+	flex: 1;                     /* 占满剩余宽度 */
+    min-width: 0;
+    display: flex;               /* 🆕 使用 flex 布局 */
+    flex-direction: row;      /* 🆕 垂直排列 */
+    align-items: center;        /* 🆕 子元素垂直居中 */
+    justify-content: space-between; /* 🆕 左右两端对齐 */
+	padding: 12px 0;
+	border-bottom: 2px solid #ffffff;
+	transition: transform 0.15s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+.FeaturedWorks-entry:hover {
+    transform: scale(1.01); /* 大约 0.5px，但取决于整体 */
+}
+.FeaturedWorks-entry:last-child {
+	border-bottom: none;
+}
+.FeaturedWorks-content {
+    flex: 1;                     /* 占满剩余宽度 */
+    min-width: 0;                /* 防止溢出 */
+    display: flex;
+    flex-direction: column;
+    gap: 2px;                    /* 可选间距 */
+}
+/* 标题行：flex 布局，左侧文字，右侧图标 */
+.FeaturedWorks-title {
+	display: flex;          /* 保留用于星标+标题文字的排列 */
+	align-items: center;
+	font-size: 16.5px;
+	font-weight: 600;
+	color: #0b1a2e;
+	line-height: 1.4;
+	margin-bottom: 4px;
+	letter-spacing: -0.1px;
+	width: 100%;                 /* 占满容器宽度 */
+}
+
+.FeaturedWorks-title-text {
+	flex: 1;
+}
+
+.FeaturedWorks-entry > a {
+	font-size: 25px;
+	color: #0b1a2e;
+	text-decoration: none;
+}
+
+.FeaturedWorks-entry > a:hover {
+	color: #0057b3;
+	text-decoration: none;
+}
+
+/* 星标样式 */
+.FeaturedWorks-star {
+	margin-right: 8px;
+	font-size: 16px;
+}
+
+.FeaturedWorks-entry:hover .FeaturedWorks-title-text {
+    color: #1e58af;
+}
+
+.FeaturedWorks-link-icon {
+	margin-left: 20px;      /* 与内容保持间距 */
+    flex-shrink: 0;         /* 防止箭头被压缩 */
+    align-self: center;     /* 🆕 垂直居中（与父级 align-items 配合） */
+	font-size: 18px;
+	color: #0057b3;
+	text-decoration: none;
+	flex-shrink: 0;
+	transition: transform 0.15s;
+}
+
+.FeaturedWorks-link-icon:hover {
+	transform: translate(2px, -2px);
+	color: #003d80;
+}
+
+.FeaturedWorks-journal {
+	font-size: 14px;
+	font-style: italic;
+	color: #2c3e50;
+	margin-bottom: 3px;
+	width: 100%;                 /* 占满容器宽度 */
+}
+
+.FeaturedWorks-type-badge {
+	font-style: normal;
+	font-size: 14px;
+	background: #f3f4f5;
+	padding: 0 12px;
+	border-radius: 12px;
+	color: #304153;
+	margin-left: 6px;
+	font-weight: 500;
+	display: inline-block;
+}
+
+.FeaturedWorks-doi {
+	font-size: 14px;
+	color: #4a5b6e;
+	margin-bottom: 4px;
+	font-family: "SF Mono", "Menlo", "Monaco", "Consolas", monospace;
+	width: 100%;                 /* 占满容器宽度 */
+}
+
+.FeaturedWorks-doi a {
+	color: #0057b3;
+	text-decoration: none;
+}
+
+.FeaturedWorks-doi a:hover {
+	text-decoration: underline;
+}
+
+.FeaturedWorks-authors {
+	font-size: 13.5px;
+	color: #2c3e50;
+	width: 100%;                 /* 占满容器宽度 */
+}
+
+.FeaturedWorks-author-list {
+	display: inline;
+}
+
+.FeaturedWorks-separator {
+	margin: 0 2px;
+	color: #8a9aa8;
+}
+
+@media (max-width: 600px) {
+	.FeaturedWorks-container {
+		padding: 20px 18px;
+	}
+	.FeaturedWorks-title {
+		font-size: 15px;
+	}
+	.FeaturedWorks-link-icon {
+		font-size: 16px;
+		margin-left: 12px;
+	}
+	.FeaturedWorks-journal,
+	.FeaturedWorks-doi,
+	.FeaturedWorks-authors {
+		font-size: 12.5px;
+	}
+}
+
+@media print {
+
+	.FeaturedWorks-container {
+		box-shadow: none;
+		padding: 20px 0;
+	}
+	.FeaturedWorks-entry {
+		border-bottom-color: #ccc;
+	}
+	.FeaturedWorks-link-icon {
+		color: #333 !important;
+	}
+}
+
+/* 审阅期刊滚动条 */
+.ProfessionalActivities_Wrapper{
+	max-height: 170px; /* 设置高度 */
+	overflow-y: auto; /* 仅在垂直方向添加滚动条 */
+	-webkit-overflow-scrolling: touch; /* 可选：为了美观，可以添加平滑滚动效果（主要针对移动端） */
+}
+
+/* 首页新闻 */
+.IndexNew_Wrapper{
+margin-left: 0px;
+margin-right: 30px;
+}
+
+  /* 首页新闻 */
+  /* .Index_New_ul li::marker {
+	content: '';
+	
+  } */
+  .Index_New_ul li{
+	background-image:url(../images/SmallIcon/HotAnnimation.gif);
+	background-repeat: no-repeat;/* 防止图片重复 */
+	padding-left: 40px;
+	margin-left:-10px;
+	margin-top:13px;
+	list-style-type: none; /* 移除默认的列表项标记 */
+	background-position: left center; /* 图片位置 */
+	position: relative; /* 允许子元素绝对定位 */
+ 	transition: transform 0.15s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+.Index_New_ul li:hover {
+    transform: scale(1.01); /* 大约 0.5px，但取决于整体 */
+	color: #0083b0;
+}
+
+
+  .Index_New_ul li span u{
+	font-weight: bolder;
+  }
+
+/* 首页New的DIv */
+.Index_New_ul{
+	width: 100%;
+	height: 250px;
+	overflow-y: scroll; /* 启用垂直滚动 */
+	overflow-x: hidden; /* 禁用水平滚动 */
+	border-radius: 12px;
+	margin-top: 0px;
+	padding-top: 0px;
+	/* background: #ffffff;
+	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+	border-top: 1px solid #ddd;
+	border-bottom: 1px solid #ddd;
+	border-radius: 12px; */
+}
+
+/* 重要新闻 */
+.ImportNews-wrapper .ImportNews-ListDetail-Item{
+	margin-left: 30px;
+	transition: transform 0.15s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+.ImportNews-wrapper .ImportNews-ListDetail-Item:hover{
+	transform: scale(1.01); /* 大约 0.5px，但取决于整体 */
+}
+
+
+.ImportNews-wrapper .ImportNews-ListDetail .ImportNews-ListDetail-Item{
+	background: rgb(247, 236, 233);
+	padding: 10px;
+	margin-bottom: 10px;
+	line-height: 1.5;
+	border-radius: 10px;
+	border-left: 3px solid rgb(231, 62, 16); /* 左侧边框 */
+	position: relative;
+	align-items: center; /* 垂直居中 */
+	display: flex;
+	flex-flow: row nowrap;
+}
+.ImportNews-wrapper .ImportNews-ListDetail .ImportNews-ListDetail-Item p{
+	line-height: 1.5;
+	margin-bottom: 0px;
+	width: 90%;
+	flex: 1;
+	text-align: left;
+
+}
+.ImportNews-wrapper .ImportNews-ListDetail .ImportNews-ListDetail-Item > a{
+	text-align: center;
+	align-items: center; /* 垂直居中 */
+	position: relative;
+	height: 30px;
+	width: 30px;
+	background-color: #dddbdb;
+	margin-top: auto;
+	margin-bottom: auto;
+	float: right;
+	margin-left: 20px;
+	border-radius: 15px;
+	margin-right: 10px;
+
+}
+.ImportNews-wrapper .ImportNews-ListDetail .ImportNews-ListDetail-Item > a img{
+	padding-top: 5px ;
+	margin-left: auto;
+	margin-right: auto; 
+}
+.ImportNews-wrapper .ImportNews-ListDetail .ImportNews-ListDetail-Item > a:hover{
+	background-color: #a8a8a8;
+	transform: scale(1.2);
+}
+
+.ImportNews-wrapper .ImportNews-ListDetail .ImportNews-ListDetail-Item > a div.GoToSeeTooltip{
+	visibility: hidden;
+	width: 60px;
+	background-color: #dff0fa;
+	color: #474747;
+	text-align: center;
+	border-radius: 5px;
+	padding: 5px 0;
+	position: absolute;
+	z-index: 1;
+	bottom: 125%; /* Position above the button */
+	left: 50%;
+	transform: translateX(-50%);
+	opacity: 0;
+	transition: opacity 0.3s;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+	font-size: 12px;
+}
+.ImportNews-wrapper .ImportNews-ListDetail .ImportNews-ListDetail-Item > a:hover div.GoToSeeTooltip{
+	visibility: visible;
+	opacity: 0.8;
+}
+
+.ImportNews-wrapper .ImportNews-ListDetail .ImportNews-ListDetail-Item > a div.GoToSeeTooltip::after{
 	content: "";
 	position: absolute;
 	top: 100%; /* Arrow at the bottom of the tooltip */
@@ -842,6 +1168,24 @@ footer.main-footer.fixed {
 	/* position: relative; */
 }
 
+  /* 研究兴趣 */
+  .ResearchInterests_ul li::marker {
+	content: '✅';
+  }
+  .ResearchInterests_ul li:hover::marker {
+	content: '✔️';
+  }
+.ResearchInterests_ul li:hover {
+	color: #0083b0;
+	transform: scale(1.01);
+  }
+  .ResearchInterests_ul li{
+	padding-left: 20px;
+	margin-left: 10px;
+	transition: transform 0.3s ease; /* 平滑过渡效果 */
+
+  }
+
 .ResearchInterestsEchartWrapper{
 	text-align: center; 
 	width: 65%; 
@@ -885,26 +1229,19 @@ footer.main-footer.fixed {
 }
 
 /* 审稿期刊列表 */
-ul.reviewerJournal_ul li::marker {
+ul.ProfessionalActivities_Items_ul li::marker {
 	content: '✔︎';
   }
-ul.reviewerJournal_ul li{
+ul.ProfessionalActivities_Items_ul li{
 	padding-left: 10px;
 	margin-left: 30px;
   }
-ul.reviewerJournal_ul{
+ul.ProfessionalActivities_Items_ul{
 	padding-left: 10px;
   }
-
-  /* 研究兴趣 */
-  .ResearchInterests_ul li::marker {
-	content: '✅';
+ul.ProfessionalActivities_Items_ul >li >a{
+	font-size:16px;
   }
-  .ResearchInterests_ul li{
-	padding-left: 20px;
-	margin-left: 10px;
-  }
-
  
  /* 首页基金 */
  .Index_Project_ul li::marker {
@@ -917,42 +1254,6 @@ ul.reviewerJournal_ul{
 	font-weight: bolder;
   }
 
-   /* 首页新闻 */
-  /* .Index_New_ul li::marker {
-	content: '';
-	
-  } */
-  .Index_New_ul li{
-	background-image:url(../images/SmallIcon/HotAnnimation.gif);
-	background-repeat: no-repeat;/* 防止图片重复 */
-	padding-left: 40px;
-	margin-left:-10px;
-	margin-top:13px;
-	list-style-type: none; /* 移除默认的列表项标记 */
-	background-position: left center; /* 图片位置 */
-	position: relative; /* 允许子元素绝对定位 */
-	
-  }
-  .Index_New_ul li span u{
-	font-weight: bolder;
-  }
-
-/* 首页New的DIv */
-.Index_New_ul{
-	width: 100%;
-	height: 250px;
-	overflow-y: scroll; /* 启用垂直滚动 */
-	border-radius: 12px;
-	margin-top: 0px;
-	padding-top: 0px;
-	/* background: #ffffff;
-	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
-	border-top: 1px solid #ddd;
-	border-bottom: 1px solid #ddd;
-	border-radius: 12px; */
-}
-
-
   /* 基金列表列表 */
 ul.Projects_ul li::marker {
 	content: '✔︎';
@@ -960,9 +1261,31 @@ ul.Projects_ul li::marker {
 ul.Projects_ul li{
 	padding-left: 10px;
 	margin-left: 30px;
+	transition: transform 0.3s ease; /* 平滑过渡效果 */
+  }
+.Projects_ul li:hover{
+	transform: scale(1.01);
+	color: #0083b0;
+
   }
 ul.Projects_ul{
 	padding-left: 40px;
+  }
+
+/* 个人学术名片链接 */
+/* publication 页面 */
+.PersonalScholorLink li{
+	transition: transform 0.3s ease; /* 平滑过渡效果 */
+  }
+.PersonalScholorLink li:hover{
+	transform: scale(1.01);
+  }
+
+p.PersonalScholorLinkDownPic > a{
+	transition: transform 0.3s ease; /* 平滑过渡效果 */
+  }
+p.PersonalScholorLinkDownPic > a:hover{
+	color: #ce2d2d;
   }
 
   /* 教育 */
@@ -984,6 +1307,18 @@ ul.Projects_ul{
 	margin-left: 0px;
   }
  
+     /* 专业活动 */
+.ProfessionalActivities_ul > li::marker {
+	content: '•';
+  }
+.ProfessionalActivities_ul > ul > li::marker {
+	content: '>';
+  }
+.ProfessionalActivities_ul li{
+	padding-left: 20px;
+	margin-left: 0px;
+  }
+
      /* 获奖 */
 .Awards_ul li::marker {
 	content: '🏆';
@@ -991,6 +1326,11 @@ ul.Projects_ul{
   .Awards_ul li{
 	padding-left: 20px;
 	margin-left: 10px;
+	transition: transform 0.3s ease; /* 平滑过渡效果 */
+  }
+  .Awards_ul li:hover{
+	transform: scale(1.005);
+	color: #0083b0;
   }
  
 /* 图片扫光效果  */
